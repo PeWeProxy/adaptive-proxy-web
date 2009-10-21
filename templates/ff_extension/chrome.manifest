@@ -1,0 +1,4 @@
+content	adaptiveproxy	jar:chrome/adaptiveproxy.jar!/content/
+locale	adaptiveproxy	en-US	jar:chrome/adaptiveproxy.jar!/locale/en-US/
+skin	adaptiveproxy	classic/1.0	jar:chrome/adaptiveproxy.jar!/skin/
+overlay	chrome://browser/content/browser.xul	chrome://adaptiveproxy/content/firefoxOverlay.xul
