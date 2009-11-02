@@ -6,7 +6,7 @@ set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 server "nimbus.fiit.stuba.sk", :app, :web, :db, :primary => true
-set :user, "proxy"
+set :user, "proxy-user"
 set :use_sudo, false
 
 
