@@ -1,0 +1,3468 @@
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 00:03:27) [GET]
+
+MissingSourceFile (no such file to load -- macaddr):
+  lib/uuid/uuid.rb:14
+  app/controllers/patcher_controller.rb:1
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (157.2ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 00:04:34) [GET]
+
+MissingSourceFile (no such file to load -- macaddr):
+  lib/uuid/uuid.rb:14
+  app/controllers/patcher_controller.rb:1
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (52.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 00:04:54) [GET]
+
+MissingSourceFile (no such file to load -- macaddr):
+  lib/uuid/uuid.rb:14
+  app/controllers/patcher_controller.rb:1
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (57.9ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:05:13) [GET]
+Rendering patcher/index
+Completed in 10ms (View: 8 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:07:40) [GET]
+Rendering patcher/index
+Completed in 7ms (View: 2 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:07:42) [GET]
+Rendering patcher/index
+Completed in 4ms (View: 1 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:08:17) [GET]
+Rendering patcher/index
+Completed in 8ms (View: 2 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:10:00) [GET]
+Rendering patcher/index
+Completed in 8ms (View: 2 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:10:02) [GET]
+Rendering patcher/index
+Completed in 11ms (View: 2 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:10:33) [GET]
+Rendering patcher/index
+Completed in 7ms (View: 2 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:12:03) [GET]
+
+NoMethodError (undefined method `first' for #<MatchData "APUID=4910cea0a176012c9a500019db2ce30b">):
+  app/controllers/patcher_controller.rb:14:in `index'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (57.9ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:12:13) [GET]
+Rendering patcher/index
+Completed in 7ms (View: 2 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:12:28) [GET]
+Rendering patcher/index
+Completed in 11ms (View: 3 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:12:29) [GET]
+Rendering patcher/index
+Completed in 7ms (View: 2 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:13:01) [GET]
+Rendering patcher/index
+Completed in 8ms (View: 2 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:16:08) [GET]
+Rendering patcher/index
+Completed in 21ms (View: 15 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:22:20) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 90ms (View: 84 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:25:44) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+ERROR: compiling _run_erb_app47views47patcher47index46erb RAISED compile error
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:7: unterminated string meets end of file
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:7: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR
+Function body:           def _run_erb_app47views47patcher47index46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+;  unless @uid.nil? ; @output_buffer.concat "\n    <p>Your current adaptive proxy uid is: "
+; @output_buffer.concat(( @uid ).to_s); @output_buffer.concat "</p>\n"
+;  else ; @output_buffer.concat "\n    <p>Download "
+; @output_buffer.concat(( link_to "browser patcher (multiple browsers)", {:controller => "patcher", :action => "download_browser_patcher"} ).to_s); @output_buffer.concat "\n    <br/>\n    Download "
+
+; @output_buffer.concat(( link_to "download firefox extension (if you have firefox only)", {:controller => "patcher", :action => "download_ff_extension"}</p>
+<% end ).to_s); @output_buffer.concat "\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:7:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/barla/dev/proxy-user-reg/script/server:3
+-e:1:in `load'
+-e:1
+
+ActionView::TemplateError (compile error
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:7: unterminated string meets end of file
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:7: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR) on line #7 of app/views/patcher/index.erb:
+4: <% else %>
+5:     <p>Download <%= link_to "browser patcher (multiple browsers)", {:controller => "patcher", :action => "download_browser_patcher"} %>
+6:     <br/>
+7:     Download <%= link_to "download firefox extension (if you have firefox only)", {:controller => "patcher", :action => "download_ff_extension"}</p>
+8: <% end %>
+
+    app/views/patcher/index.erb:7:in `compile!'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (56.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:26:15) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 70ms (View: 65 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:27:10) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 26ms (View: 20 | 200 OK [http://localhost/patcher/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:28:32) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 6ms (View: 3 | 200 OK [http://localhost/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:28:55) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 8ms (View: 2 | 200 OK [http://localhost/]
+  [4;36;1mSQL (19.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (220.8ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (173.8ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (13.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;35;1mSQL (91.3ms)[0m   [0mCREATE TABLE `stored_apuids` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `identifier` varchar(255), `uid` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091028233629')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `access_log`[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mdescribe `access_log`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `access_log`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `keyword_cache`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mdescribe `keyword_cache`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `keyword_cache`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `stored_apuids`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `stored_apuids`[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:53:13) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 18ms (View: 12 | 200 OK [http://localhost/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:53:15) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 10ms (View: 3 | 200 OK [http://localhost/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:53:37) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 20ms (View: 14 | 200 OK [http://localhost/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:53:59) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 223ms (View: 217 | 200 OK [http://localhost/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:55:39) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 26ms (View: 16 | 200 OK [http://localhost/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 00:55:48) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 29ms (View: 23 | 200 OK [http://localhost/]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:01:52) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 31ms (View: 22 | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:01:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:01:57) [POST]
+  Parameters: {"commit"=>"Store", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"aaa"}
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 14ms (View: 8 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:01:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:03:37) [POST]
+  Parameters: {"commit"=>"Store", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"aaa"}
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 31ms (View: 24 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:03:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:04:28) [POST]
+  Parameters: {"commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"abkjsdksjd"}
+
+ActionController::UnknownAction (No action responded to store. Actions: download_a_file, download_browser_patcher, download_ff_extension, and index):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:06:36) [POST]
+  Parameters: {"commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"abkjsdksjd"}
+Redirected to http://localhost:3000/proxy-user-reg/
+Completed in 32ms | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:06:36) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 16ms (View: 10 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:06:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:09:26) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 35ms (View: 28 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:09:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:09:38) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 32ms (View: 26 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:09:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:10:33) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 31ms (View: 25 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:10:33) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:10:59) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 31ms (View: 25 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:10:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:14:14) [POST]
+  Parameters: {"validity"=>"ferko", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"ahoj"}
+Redirected to http://localhost:3000/proxy-user-reg/
+Completed in 4ms | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:14:14) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 15ms (View: 12 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:14:14) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:17:33) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 51ms (View: 45 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:17:33) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:17:43) [POST]
+  Parameters: {"start_date"=>{"month"=>"10", "day"=>"29", "year"=>"2009"}, "validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/proxy-user-reg/
+Completed in 7ms | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:17:44) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 16ms (View: 13 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:17:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:18:38) [POST]
+  Parameters: {"start_date"=>{"month"=>"10", "day"=>"29", "year"=>"2009"}, "validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+
+TypeError (can't convert HashWithIndifferentAccess into String):
+  app/controllers/patcher_controller.rb:15:in `+'
+  app/controllers/patcher_controller.rb:15:in `store'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (46.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:18:55) [POST]
+  Parameters: {"start_date"=>{"month"=>"10", "day"=>"29", "year"=>"2009"}, "validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/proxy-user-reg/
+Completed in 7ms | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:18:55) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 31ms (View: 25 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:18:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:20:36) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+ERROR: compiling _run_erb_app47views47patcher47index46erb RAISED compile error
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:19: syntax error, unexpected '<', expecting ')'
+              <%= select_date Date.today, :pr...
+               ^
+Function body:           def _run_erb_app47views47patcher47index46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  unless @uid.nil? ; @output_buffer.concat "\n    <p>Your current adaptive proxy uid is: "
+; @output_buffer.concat(( @uid ).to_s); @output_buffer.concat "</p>\n\n    "
+
+;  form_tag(:action => "store", :method => :post) do ; @output_buffer.concat "\n        <table>\n          <tr>\n            <td>\n              "
+
+
+
+; @output_buffer.concat(( label_tag(:identifier, "Identifier for later UID retrieval:") ).to_s); @output_buffer.concat "\n            </td>\n            <td>\n              "
+
+
+; @output_buffer.concat(( text_field_tag(:identifier) ).to_s); @output_buffer.concat "\n            </td>\n          </tr>\n          <tr>\n            <td>\n              "
+
+
+
+
+; @output_buffer.concat(( label_tag(:validity, "Store the UID for:") ).to_s); @output_buffer.concat "\n              "
+; @output_buffer.concat(( text_field_tag(:validity) ).to_s); @output_buffer.concat "\n              "
+; @output_buffer.concat(( label_tag(:validity, "days or until")
+              <%= select_date Date.today, :prefix => :start_date ).to_s); @output_buffer.concat "\n            </td>\n            <td>\n\n            </td>\n          </tr>\n        </table>\n\n        "
+
+
+
+
+
+
+
+; @output_buffer.concat(( submit_tag("Store") ).to_s); @output_buffer.concat "\n\n    "
+
+;  end ; @output_buffer.concat "\n\n"
+
+;  else ; @output_buffer.concat "\n    <p>Download "
+; @output_buffer.concat(( link_to "browser patcher (multiple browsers)", {:controller => "patcher", :action => "download_browser_patcher"} ).to_s); @output_buffer.concat "\n\n      <br/>\n      Download "
+
+
+; @output_buffer.concat(( link_to "download firefox extension (if you have firefox only)", {:controller => "patcher", :action => "download_ff_extension"} ).to_s); @output_buffer.concat "\n    </p>\n"
+
+;  end ; @output_buffer.concat "\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:41:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/barla/dev/proxy-user-reg/script/server:3
+-e:1:in `load'
+-e:1
+
+ActionView::TemplateError (compile error
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:19: syntax error, unexpected '<', expecting ')'
+              <%= select_date Date.today, :pr...
+               ^) on line #19 of app/views/patcher/index.erb:
+16:               <%= label_tag(:validity, "Store the UID for:") %>
+17:               <%= text_field_tag(:validity) %>
+18:               <%= label_tag(:validity, "days or until")
+19:               <%= select_date Date.today, :prefix => :start_date %>
+20:             </td>
+21:             <td>
+22: 
+
+    app/views/patcher/index.erb:41:in `compile!'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (55.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:20:49) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 24ms (View: 21 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:20:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:21:59) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+ERROR: compiling _run_erb_app47views47patcher47index46erb RAISED compile error
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:18: syntax error, unexpected $undefined, expecting ')'
+...o_s); @output_buffer.concat "\n            <td>\n          <...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:18: syntax error, unexpected $undefined
+...er.concat "\n            <td>\n          </tr>\n          <t...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:24: unknown regexp options - td
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:24: syntax error, unexpected $undefined
+...r.concat "\n            </td>\n            <td>\n\n         ...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:24: syntax error, unexpected $undefined
+...      </td>\n            <td>\n\n            </td>\n        ...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:24: unknown regexp options - tr
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:24: syntax error, unexpected $undefined
+...       </td>\n          </tr>\n        </table>\n\n        "
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:37: syntax error, unexpected $undefined
+...uffer.concat "\n\n      <br/>\n      Download "
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fer.concat(( link_to "download firefox extension (if you hav...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+...ion (if you have firefox only)", {:controller => "patcher", ...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ly)", {:controller => "patcher", :action => "download_ff_ext...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+...tion => "download_ff_extension"} ).to_s); @output_buffer.con...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: syntax error, unexpected $undefined, expecting ')'
+...o_s); @output_buffer.concat "\n    </p>\n"
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: unterminated string meets end of file
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR
+Function body:           def _run_erb_app47views47patcher47index46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  unless @uid.nil? ; @output_buffer.concat "\n    <p>Your current adaptive proxy uid is: "
+; @output_buffer.concat(( @uid ).to_s); @output_buffer.concat "</p>\n\n    "
+
+;  form_tag(:action => "store", :method => :post) do ; @output_buffer.concat "\n        <table>\n          <tr>\n            <td>\n              "
+
+
+
+; @output_buffer.concat(( label_tag(:identifier, "Identifier for later UID retrieval:") ).to_s); @output_buffer.concat "\n            </td>\n            <td>\n              "
+
+
+; @output_buffer.concat(( text_field_tag(:identifier) ).to_s); @output_buffer.concat "\n            </td>\n          </tr>\n          <tr>\n            <td>\n              "
+
+
+
+
+; @output_buffer.concat(( label_tag(:validity, "Store the UID for:") ).to_s); @output_buffer.concat "\n              "
+; @output_buffer.concat(( text_field_tag(:validity) ).to_s); @output_buffer.concat "\n              "
+; @output_buffer.concat(( label_tag(:validity, "days  ).to_s); @output_buffer.concat "\n            <td>\n          </tr>\n          <tr>\n            <td>\n              "
+
+
+
+
+; @output_buffer.concat(( label_tag(:validity, "or until") ).to_s); @output_buffer.concat "\n              "
+; @output_buffer.concat(( select_date Date.today, :prefix => :start_date ).to_s); @output_buffer.concat "\n            </td>\n            <td>\n\n            </td>\n          </tr>\n        </table>\n\n        "
+
+
+
+
+
+
+
+; @output_buffer.concat(( submit_tag("Store") ).to_s); @output_buffer.concat "\n\n    "
+
+;  end ; @output_buffer.concat "\n\n"
+
+;  else ; @output_buffer.concat "\n    <p>Download "
+; @output_buffer.concat(( link_to "browser patcher (multiple browsers)", {:controller => "patcher", :action => "download_browser_patcher"} ).to_s); @output_buffer.concat "\n\n      <br/>\n      Download "
+
+
+; @output_buffer.concat(( link_to "download firefox extension (if you have firefox only)", {:controller => "patcher", :action => "download_ff_extension"} ).to_s); @output_buffer.concat "\n    </p>\n"
+
+;  end ; @output_buffer.concat "\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/barla/dev/proxy-user-reg/script/server:3
+-e:1:in `load'
+-e:1
+
+ActionView::TemplateError (compile error
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:18: syntax error, unexpected $undefined, expecting ')'
+...o_s); @output_buffer.concat "\n            <td>\n          <...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:18: syntax error, unexpected $undefined
+...er.concat "\n            <td>\n          </tr>\n          <t...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:24: unknown regexp options - td
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:24: syntax error, unexpected $undefined
+...r.concat "\n            </td>\n            <td>\n\n         ...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:24: syntax error, unexpected $undefined
+...      </td>\n            <td>\n\n            </td>\n        ...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:24: unknown regexp options - tr
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:24: syntax error, unexpected $undefined
+...       </td>\n          </tr>\n        </table>\n\n        "
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:37: syntax error, unexpected $undefined
+...uffer.concat "\n\n      <br/>\n      Download "
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fer.concat(( link_to "download firefox extension (if you hav...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+...ion (if you have firefox only)", {:controller => "patcher", ...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ly)", {:controller => "patcher", :action => "download_ff_ext...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+...tion => "download_ff_extension"} ).to_s); @output_buffer.con...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: syntax error, unexpected $undefined, expecting ')'
+...o_s); @output_buffer.concat "\n    </p>\n"
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: unterminated string meets end of file
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:40: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR) on line #18 of app/views/patcher/index.erb:
+15:             <td>
+16:               <%= label_tag(:validity, "Store the UID for:") %>
+17:               <%= text_field_tag(:validity) %>
+18:               <%= label_tag(:validity, "days  %>
+19:             <td>
+20:           </tr>
+21:           <tr>
+
+    app/views/patcher/index.erb:40:in `compile!'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (52.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:22:18) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 48ms (View: 41 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:22:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:22:40) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 27ms (View: 25 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:22:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:23:16) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 55ms (View: 48 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:23:16) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:25:12) [POST]
+  Parameters: {"validity"=>"", "start_date"=>{"month"=>"10", "day"=>"29", "year"=>"2009"}, "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/proxy-user-reg/
+Completed in 8ms | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:25:12) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 35ms (View: 30 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:25:12) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:25:41) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 52ms (View: 46 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:25:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:29:14) [POST]
+  Parameters: {"validity"=>"", "start_date"=>{"month"=>"10", "day"=>"29", "year"=>"2009"}, "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/proxy-user-reg/
+Completed in 7ms | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:29:14) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 35ms (View: 30 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:29:14) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:29:38) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 40ms (View: 30 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:29:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:29:39) [POST]
+  Parameters: {"validity"=>"", "start_date"=>{"month"=>"1", "day"=>"1", "year"=>"2004"}, "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/proxy-user-reg/
+Completed in 7ms | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:29:39) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 15ms (View: 13 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:29:39) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:30:03) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 47ms (View: 42 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:30:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:30:05) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 19ms (View: 16 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:30:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:30:45) [POST]
+  Parameters: {"validity"=>"", "start_date"=>{"month"=>"10", "day"=>"29", "year"=>"2009"}, "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/proxy-user-reg/
+Completed in 7ms | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:30:45) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 32ms (View: 27 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:30:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:30:48) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 36ms (View: 30 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:30:48) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:30:50) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 16ms (View: 13 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:30:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:35:35) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 51ms (View: 45 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:35:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:37:21) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 29ms (View: 23 | 200 OK [http://localhost/proxy-user-reg/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:37:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:37:31) [POST]
+  Parameters: {"validity"=>"5", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+
+NameError (uninitialized constant PatcherController::StoredApuid):
+  app/controllers/patcher_controller.rb:19:in `store'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (127.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:38:02) [POST]
+  Parameters: {"validity"=>"5", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+
+NameError (uninitialized constant PatcherController::StoredApuid):
+  app/controllers/patcher_controller.rb:19:in `store'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (70.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:39:08) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 110ms (View: 104, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:39:08) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:39:18) [POST]
+  Parameters: {"validity"=>"5", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+  [4;35;1mStoredApuid Columns (33.3ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (38.2ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mStoredApuid Create (23.8ms)[0m   [0;1mINSERT INTO `stored_apuids` (`created_at`, `updated_at`, `uid`, `identifier`) VALUES('2009-10-29 00:39:18', '2009-10-29 00:39:18', '4910cea0a176012c9a500019db2ce30b', 'first_testing')[0m
+  [4;35;1mSQL (7.2ms)[0m   [0mCOMMIT[0m
+
+ActionController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/patcher_controller.rb:25:in `store'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (101.3ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:40:48) [POST]
+  Parameters: {"validity"=>"5", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+  [4;35;1mStoredApuid Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.5ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mStoredApuid Create (0.3ms)[0m   [0;1mINSERT INTO `stored_apuids` (`created_at`, `updated_at`, `uid`, `identifier`) VALUES('2009-10-29 00:40:48', '2009-10-29 00:40:48', '4910cea0a176012c9a500019db2ce30b', 'first_testing')[0m
+  [4;35;1mSQL (5.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 27ms (DB: 8) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:40:49) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:40:49) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:41:00) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"second_test"}
+  [4;35;1mStoredApuid Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.6ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mStoredApuid Create (0.5ms)[0m   [0;1mINSERT INTO `stored_apuids` (`created_at`, `updated_at`, `uid`, `identifier`) VALUES('2009-10-29 00:41:00', '2009-10-29 00:41:00', '4910cea0a176012c9a500019db2ce30b', 'second_test')[0m
+  [4;35;1mSQL (6.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 33ms (DB: 10) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:41:00) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 125ms (View: 119, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:41:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:41:36) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+  [4;35;1mStoredApuid Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.6ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mStoredApuid Create (0.5ms)[0m   [0;1mINSERT INTO `stored_apuids` (`created_at`, `updated_at`, `uid`, `identifier`) VALUES('2009-10-29 00:41:36', '2009-10-29 00:41:36', '4910cea0a176012c9a500019db2ce30b', '')[0m
+  [4;35;1mSQL (48.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 84ms (DB: 52) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:41:36) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 43ms (View: 28, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:41:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:43:27) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+  [4;35;1mStoredApuid Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.6ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 20ms (DB: 3) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:43:28) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 39ms (View: 33, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:43:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:43:38) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+  [4;36;1mStoredApuid Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.2ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 20ms (DB: 2) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:43:38) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:43:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:43:42) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"aaaa"}
+  [4;35;1mStoredApuid Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.2ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 20ms (DB: 2) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:43:42) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 36ms (View: 30, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:43:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:44:15) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+  [4;36;1mStoredApuid Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.2ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 19ms (DB: 2) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:44:15) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 33ms (View: 28, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:44:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStoredApuid Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (18.9ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'first_testing') LIMIT 1[0m
+  [4;35;1mStoredApuid Load (0.3ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'first_testing') LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mStoredApuid Load (1.4ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'aaa') LIMIT 1[0m
+  [4;36;1mStoredApuid Load (0.2ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'aaa') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:47:04) [POST]
+  Parameters: {"validity"=>"sakjdfsakdfj", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"slkjdskfj"}
+  [4;35;1mStoredApuid Columns (46.5ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.2ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 63ms (DB: 47) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:47:04) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:47:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:47:50) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"sdfdsf"}
+  [4;36;1mStoredApuid Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.2ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 29ms (DB: 2) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:47:51) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:47:51) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:48:19) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+  [4;35;1mStoredApuid Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.2ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 22ms (DB: 2) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:48:19) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:48:19) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:48:20) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+  [4;36;1mStoredApuid Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.2ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 85ms (DB: 2) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:48:20) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:48:20) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:48:21) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+  [4;35;1mStoredApuid Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.2ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 12ms (DB: 2) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:48:21) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:48:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:49:22) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+  [4;36;1mStoredApuid Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.4ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 22ms (DB: 3) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:49:22) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 37ms (View: 31, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:49:22) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:50:51) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+  [4;35;1mStoredApuid Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStoredApuid Create (0.3ms)[0m   [0mINSERT INTO `stored_apuids` (`created_at`, `updated_at`, `uid`, `identifier`) VALUES('2009-10-29 00:50:51', '2009-10-29 00:50:51', '4910cea0a176012c9a500019db2ce30b', '')[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 126ms (DB: 5) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:50:51) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:50:51) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:51:16) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:51:16) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 37ms (View: 30, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:51:16) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:51:44) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:51:44) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 35ms (View: 29, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:51:44) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:51:50) [POST]
+  Parameters: {"validity"=>"4", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+  [4;36;1mStoredApuid Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.4ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'first_testing') LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 88ms (DB: 2) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:51:50) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 18ms (View: 15, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:51:50) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:52:05) [POST]
+  Parameters: {"validity"=>"4", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+  [4;35;1mStoredApuid Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.2ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'first_testing') LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 20ms (DB: 2) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:52:05) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 36ms (View: 30, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:52:05) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:53:53) [POST]
+  Parameters: {"validity"=>"4", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+  [4;36;1mStoredApuid Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.2ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'first_testing') LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 21ms (DB: 2) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:53:53) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 41ms (View: 32, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:53:53) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:54:39) [POST]
+  Parameters: {"validity"=>"4", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+  [4;35;1mStoredApuid Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.4ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:54:39) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 17ms (View: 13, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:54:39) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:59:45) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 22ms (View: 18, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:59:45) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 01:59:50) [POST]
+  Parameters: {"validity"=>"4", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+  [4;36;1mStoredApuid Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.2ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+  [4;36;1mStoredApuid Load (0.2ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'first_testing') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 23ms (DB: 2) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 01:59:50) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 37ms (View: 31, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 01:59:50) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 02:00:15) [POST]
+  Parameters: {"validity"=>"4", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"first_testing"}
+  [4;36;1mStoredApuid Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.2ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+  [4;36;1mStoredApuid Load (0.2ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'first_testing') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 22ms (DB: 2) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 02:00:15) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 18ms (View: 15, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 02:00:16) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 02:00:38) [POST]
+  Parameters: {"validity"=>"adasds", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"asdasd"}
+  [4;36;1mStoredApuid Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.2ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 0) LIMIT 1[0m
+  [4;36;1mStoredApuid Load (0.5ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'asdasd') LIMIT 1[0m
+
+TypeError (can't convert nil into String):
+  app/controllers/patcher_controller.rb:20:in `+'
+  app/controllers/patcher_controller.rb:20:in `store'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (71.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 02:01:24) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 20ms (View: 17, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 02:01:24) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 02:01:28) [POST]
+  Parameters: {"validity"=>"dsfdsf", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"asdasd"}
+  [4;36;1mStoredApuid Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.2ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'asdasd') LIMIT 1[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 22ms (DB: 2) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 02:01:28) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 32ms (View: 26, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 02:01:28) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 02:01:58) [POST]
+  Parameters: {"validity"=>"sdfsdf", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"asdsad"}
+  [4;35;1mStoredApuid Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.9ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'asdsad') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mStoredApuid Create (0.5ms)[0m   [0;1mINSERT INTO `stored_apuids` (`created_at`, `updated_at`, `uid`, `identifier`) VALUES('2009-10-29 01:01:58', '2009-10-29 01:01:58', '4910cea0a176012c9a500019db2ce30b', 'asdsad')[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/proxy-user-reg/patcher/
+Completed in 39ms (DB: 8) | 302 Found [http://localhost/proxy-user-reg/patcher/store?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 02:01:58) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 36ms (View: 30, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 02:01:58) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 02:03:58) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 55ms (View: 49, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 02:03:58) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 02:04:17) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 141ms (View: 134, DB: 0) | 200 OK [http://localhost/proxy-user-reg/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 02:04:17) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:04:14) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 155ms (View: 149, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 14:04:14) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:15:25) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 101ms (View: 95, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 14:15:25) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:16:26) [POST]
+  Parameters: {"commit"=>"Retrieve", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/
+Completed in 25ms (DB: 0) | 302 Found [http://localhost/proxy-user-reg/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:16:27) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 43ms (View: 37, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 14:16:27) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:16:34) [POST]
+  Parameters: {"commit"=>"Retrieve ff_extension", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/proxy-user-reg/patcher/retrieve?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:16:34) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 42ms (View: 36, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 14:16:34) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:17:11) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+ERROR: compiling _run_erb_app47views47patcher47index46erb RAISED compile error
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+...( submit_tag(:Retrieve firefox extension) ).to_s); @output_b...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:42: syntax error, unexpected ')', expecting kEND
+...eve firefox extension) ).to_s); @output_buffer.concat "\n\n ...
+                              ^
+Function body:           def _run_erb_app47views47patcher47index46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  unless @uid.nil? ; @output_buffer.concat "\n    <p>Your current adaptive proxy uid is: "
+; @output_buffer.concat(( @uid ).to_s); @output_buffer.concat "</p>\n\n    "
+
+;  form_tag(:action => "store", :method => :post) do ; @output_buffer.concat "\n        <table>\n          <tr>\n            <td>\n              "
+
+
+
+; @output_buffer.concat(( label_tag(:identifier, "Identifier for later UID retrieval:") ).to_s); @output_buffer.concat "\n            </td>\n            <td>\n              "
+
+
+; @output_buffer.concat(( text_field_tag(:identifier) ).to_s); @output_buffer.concat "\n            </td>\n          </tr>\n          <tr>\n            <td>\n              "
+
+
+
+
+; @output_buffer.concat(( label_tag(:validity, "Store the UID for:") ).to_s); @output_buffer.concat "\n            </td>  \n            <td>\n              "
+
+
+; @output_buffer.concat(( text_field_tag(:validity) ).to_s); @output_buffer.concat "\n              "
+; @output_buffer.concat(( label_tag(:validity, "days")  ).to_s); @output_buffer.concat "\n            <td>\n          </tr>\n          <!--<tr>\n            <td>\n              "
+
+
+
+
+; @output_buffer.concat(( label_tag(:validity, "or until") ).to_s); @output_buffer.concat "\n            </td>  \n            <td>\n              "
+
+
+; @output_buffer.concat(( select_date Date.today, :prefix => :start_date ).to_s); @output_buffer.concat "\n            </td>\n          </tr>\n          -->\n        </table>\n\n        "
+
+
+
+
+
+; @output_buffer.concat(( submit_tag("Store") ).to_s); @output_buffer.concat "\n\n    "
+
+;  end ; @output_buffer.concat "\n\n    "
+
+;  form_tag(:action => "retrieve", :method => :post) do ; @output_buffer.concat "\n        "
+; @output_buffer.concat(( label_tag(:identifier, "Identifier:") ).to_s); @output_buffer.concat "\n        "
+; @output_buffer.concat(( text_field_tag(:identifier) ).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat(( submit_tag("Retrieve browser patcher") ).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat(( submit_tag(:Retrieve firefox extension) ).to_s); @output_buffer.concat "\n\n    "
+
+;  end ; @output_buffer.concat "\n\n"
+
+;  else ; @output_buffer.concat "\n    <p>Download "
+; @output_buffer.concat(( link_to "browser patcher (multiple browsers)", {:controller => "patcher", :action => "download_browser_patcher"} ).to_s); @output_buffer.concat "\n\n      <br/>\n      Download "
+
+
+; @output_buffer.concat(( link_to "download firefox extension (if you have firefox only)", {:controller => "patcher", :action => "download_ff_extension"} ).to_s); @output_buffer.concat "\n    </p>\n"
+
+;  end ; @output_buffer.concat "\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:56:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/barla/dev/proxy-user-reg/script/server:3
+-e:1:in `load'
+-e:1
+
+ActionView::TemplateError (compile error
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+...( submit_tag(:Retrieve firefox extension) ).to_s); @output_b...
+                              ^
+/home/barla/dev/proxy-user-reg/app/views/patcher/index.erb:42: syntax error, unexpected ')', expecting kEND
+...eve firefox extension) ).to_s); @output_buffer.concat "\n\n ...
+                              ^) on line #42 of app/views/patcher/index.erb:
+39:         <%= label_tag(:identifier, "Identifier:") %>
+40:         <%= text_field_tag(:identifier) %>
+41:     <%= submit_tag("Retrieve browser patcher") %>
+42:     <%= submit_tag(:Retrieve firefox extension) %>
+43: 
+44:     <% end %>
+45: 
+
+    app/views/patcher/index.erb:56:in `compile!'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (59.0ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:18:30) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 55ms (View: 49, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 14:18:30) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:19:00) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 41ms (View: 35, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 14:19:01) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:19:03) [POST]
+  Parameters: {"commit"=>"aaa", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/proxy-user-reg/patcher/retrieve?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:19:03) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 25ms (View: 19, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 14:19:03) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:19:27) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 40ms (View: 34, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 14:19:28) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:19:29) [POST]
+  Parameters: {"commit"=>"aaa", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/proxy-user-reg/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:19:29) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 40ms (View: 34, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 14:19:29) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:19:30) [POST]
+  Parameters: {"commit"=>"aaa", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/proxy-user-reg/patcher/retrieve?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:19:30) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 44ms (View: 38, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 14:19:30) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:21:18) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 45ms (View: 39, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 14:21:19) [GET]
+  Parameters: {"1256777413"=>nil}
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:22:27) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/proxy-user-reg/patcher/download_browser_patcher
+
+ActionController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/patcher_controller.rb:31:in `retrieve'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (149.3ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:24:44) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/proxy-user-reg/patcher/download_browser_patcher
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/proxy-user-reg/patcher/retrieve?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:24:44) [GET]
+Redirected to http://localhost:3000/proxy-user-reg/download/browser_patcher-58563bc0a6bc012ccc32001b24830953.jar
+Completed in 221ms (DB: 0) | 302 Found [http://localhost/proxy-user-reg/patcher/download_browser_patcher]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 14:24:44) [GET]
+
+ActionController::RoutingError (No route matches "/download/browser_patcher-58563bc0a6bc012ccc32001b24830953.jar" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:25:02) [POST]
+  Parameters: {"commit"=>"download firefox extension only", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/proxy-user-reg/patcher/download_ff_extension
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/proxy-user-reg/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_ff_extension (for 127.0.0.1 at 2009-10-29 14:25:02) [GET]
+
+Errno::ENOENT (No such file or directory - /home/barla/dev/proxy-user-reg/templates/636fc6e0a6bc012ccc34001b24830953/defaults/preferences/defaults.js):
+  app/controllers/patcher_controller.rb:62:in `initialize'
+  app/controllers/patcher_controller.rb:62:in `open'
+  app/controllers/patcher_controller.rb:62:in `download_a_file'
+  app/controllers/patcher_controller.rb:46:in `download_ff_extension'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (128.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:25:41) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 51ms (View: 48, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:25:48) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/download_browser_patcher
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:25:48) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/patcher_controller.rb:68:in `download_a_file'
+  app/controllers/patcher_controller.rb:42:in `download_browser_patcher'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (57.7ms)
+Rendered rescues/_request_and_response (2.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:27:35) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 63ms (View: 57, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:27:36) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "uid"=>"4910cea0a176012c9a500019db2ce30b", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/download_browser_patcher
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:27:36) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/patcher_controller.rb:68:in `download_a_file'
+  app/controllers/patcher_controller.rb:42:in `download_browser_patcher'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (130.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:28:10) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 44ms (View: 38, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:28:12) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "uid"=>"4910cea0a176012c9a500019db2ce30b", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/download_browser_patcher
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:28:12) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/patcher_controller.rb:69:in `download_a_file'
+  app/controllers/patcher_controller.rb:43:in `download_browser_patcher'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (53.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:28:24) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 130ms (View: 124, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:29:07) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 41ms (View: 35, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:29:08) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "uid"=>"4910cea0a176012c9a500019db2ce30b", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:29:08) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/patcher_controller.rb:68:in `download_a_file'
+  app/controllers/patcher_controller.rb:42:in `download_browser_patcher'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (95.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:29:11) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "uid"=>"4910cea0a176012c9a500019db2ce30b", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:29:11) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/patcher_controller.rb:68:in `download_a_file'
+  app/controllers/patcher_controller.rb:42:in `download_browser_patcher'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (52.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:29:22) [POST]
+  Parameters: {"commit"=>"download firefox extension only", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "uid"=>"4910cea0a176012c9a500019db2ce30b", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/download_ff_extension?uid=4910cea0a176012c9a500019db2ce30b
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_ff_extension (for 127.0.0.1 at 2009-10-29 14:29:22) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+
+Errno::ENOENT (No such file or directory - /home/barla/dev/proxy-user-reg/templates/4910cea0a176012c9a500019db2ce30b/defaults/preferences/defaults.js):
+  app/controllers/patcher_controller.rb:62:in `initialize'
+  app/controllers/patcher_controller.rb:62:in `open'
+  app/controllers/patcher_controller.rb:62:in `download_a_file'
+  app/controllers/patcher_controller.rb:46:in `download_ff_extension'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (79.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:30:19) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:30:22) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/patcher_controller.rb:68:in `download_a_file'
+  app/controllers/patcher_controller.rb:42:in `download_browser_patcher'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (54.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:30:30) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/patcher_controller.rb:68:in `download_a_file'
+  app/controllers/patcher_controller.rb:42:in `download_browser_patcher'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (90.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:32:05) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 40ms (View: 38, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:32:06) [GET]
+Redirected to http://localhost:3000/download/browser_patcher-6020d730a6bd012ccc4a001b24830953.jar
+Completed in 55ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 14:32:06) [GET]
+
+ActionController::RoutingError (No route matches "/download/browser_patcher-6020d730a6bd012ccc4a001b24830953.jar" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:32:45) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:32:47) [GET]
+Redirected to http://localhost:3000/download/browser_patcher-7842ead0a6bd012ccc4c001b24830953.jar
+Completed in 53ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:33:20) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 44ms (View: 38, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:33:23) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "uid"=>"4910cea0a176012c9a500019db2ce30b", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:33:23) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+Redirected to http://localhost:3000/download/browser_patcher-4910cea0a176012c9a500019db2ce30b.jar
+Completed in 61ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:36:02) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "uid"=>"4910cea0a176012c9a500019db2ce30b", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:36:02) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+Redirected to http://localhost:3000/download/browser_patcher-4910cea0a176012c9a500019db2ce30b.jar
+Completed in 167ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:36:28) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "uid"=>"4910cea0a176012c9a500019db2ce30b", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/
+
+ActionController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/patcher_controller.rb:36:in `retrieve'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (80.3ms)
+Rendered rescues/_request_and_response (2.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:38:21) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 62ms (View: 56, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:38:25) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>""}
+Redirected to http://localhost:3000/patcher/
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:38:25) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 20ms (View: 17, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:38:27) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"asdasdsad"}
+Redirected to http://localhost:3000/patcher/download_browser_patcher
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:38:27) [GET]
+Redirected to http://localhost:3000/download/browser_patcher-43447a50a6be012ccc57001b24830953.jar
+Completed in 32ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:41:10) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"asdasdsad"}
+  [4;35;1mStoredApuid Columns (103.2ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (75.4ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'asdasdsad') LIMIT 1[0m
+
+NameError (undefined local variable or method `identifier' for #<PatcherController:0xb75dc174>):
+  app/controllers/patcher_controller.rb:36:in `retrieve'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (119.9ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:41:28) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 27ms (View: 24, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:41:30) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"asdasdsad"}
+  [4;35;1mStoredApuid Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.2ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'asdasdsad') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 20ms (DB: 2) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:41:30) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 19ms (View: 17, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 14:41:44) [POST]
+  Parameters: {"validity"=>"4", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"misko"}
+  [4;35;1mStoredApuid Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.6ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+  [4;35;1mSQL (28.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mStoredApuid Create (67.2ms)[0m   [0;1mINSERT INTO `stored_apuids` (`created_at`, `updated_at`, `uid`, `identifier`) VALUES('2009-10-29 13:41:44', '2009-10-29 13:41:44', '4910cea0a176012c9a500019db2ce30b', 'misko')[0m
+  [4;35;1mSQL (22.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 149ms (DB: 121) | 302 Found [http://localhost/patcher/store?method=post]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 14:41:44) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 42ms (View: 36, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:41:48) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"misko"}
+  [4;36;1mStoredApuid Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.6ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=1
+Completed in 22ms (DB: 3) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:41:48) [GET]
+  Parameters: {"uid"=>"1"}
+Redirected to http://localhost:3000/download/browser_patcher-1.jar
+Completed in 68ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher?uid=1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 14:43:05) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"misko"}
+  [4;36;1mStoredApuid Columns (4.2ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.2ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b
+Completed in 33ms (DB: 5) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 14:43:05) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+Redirected to http://localhost:3000/download/browser_patcher-4910cea0a176012c9a500019db2ce30b.jar
+Completed in 94ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b]
+  [4;36;1mSQL (32.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `access_log`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `access_log`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `access_log`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `keyword_cache`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `keyword_cache`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `keyword_cache`[0m
+  [4;36;1mSQL (38.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (8.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (40.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSHOW FIELDS FROM `access_log`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `access_log`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `access_log`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `keyword_cache`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `keyword_cache`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `keyword_cache`[0m
+  [4;36;1mSQL (21.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;35;1mSQL (9.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `access_log`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `access_log`[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSHOW KEYS FROM `access_log`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `keyword_cache`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `keyword_cache`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `keyword_cache`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (7.5ms)[0m   [0;1mSHOW FIELDS FROM `access_log`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `access_log`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `access_log`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `keyword_cache`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `keyword_cache`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `keyword_cache`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (74.4ms)[0m   [0;1mCREATE TABLE `access_log` (`userid` varchar(50), `timestamp` datetime NOT NULL, `url` varchar(1000), `keywords` varchar(500)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (15.8ms)[0m   [0;1mCREATE TABLE `keyword_cache` (`url` varchar(1000), `checksum` varchar(100), `keywords` varchar(500)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (32.9ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (25.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (24.2ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091028233629')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `access_log`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `access_log`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `access_log`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `keyword_cache`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `keyword_cache`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `keyword_cache`[0m
+  [4;36;1mSQL (35.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (30.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (61.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Unknown table 'stored_apuids': DROP TABLE `stored_apuids`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;35;1mSQL (235.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20091028233629'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (40.5ms)[0m   [0mSHOW FIELDS FROM `access_log`[0m
+  [4;36;1mSQL (6.9ms)[0m   [0;1mdescribe `access_log`[0m
+  [4;35;1mSQL (27.8ms)[0m   [0mSHOW KEYS FROM `access_log`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `keyword_cache`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `keyword_cache`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `keyword_cache`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStoredApuids (20091028233629)
+  [4;35;1mSQL (254.3ms)[0m   [0mCREATE TABLE `stored_apuids` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `identifier` varchar(255), `uid` varchar(255), `valid_until` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (92.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091028233629')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `access_log`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `access_log`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `access_log`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `keyword_cache`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `keyword_cache`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `keyword_cache`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `stored_apuids`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `stored_apuids`[0m
+  [4;35;1mSQL (9.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 15:08:50) [POST]
+  Parameters: {"validity"=>"", "commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"misko"}
+  [4;36;1mStoredApuid Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (63.4ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStoredApuid Create (41.2ms)[0m   [0mINSERT INTO `stored_apuids` (`uid`, `valid_until`, `identifier`) VALUES('4910cea0a176012c9a500019db2ce30b', '2009-11-27 23:00:00', 'misko')[0m
+  [4;36;1mSQL (6.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 1217ms (DB: 121) | 302 Found [http://localhost/patcher/store?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 15:08:51) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 180ms (View: 168, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (1211.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 15:11:58) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 734ms (View: 732, DB: 1211) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 15:11:59) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 1154ms (View: 1151, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (62.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 15:14:37) [GET]
+Redirected to http://localhost:3000/download/browser_patcher-50baac50a6c3012ccc66001b24830953.jar
+Completed in 354ms (DB: 63) | 302 Found [http://localhost/patcher/download_browser_patcher]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 15:14:39) [GET]
+Redirected to http://localhost:3000/download/browser_patcher-5193db60a6c3012ccc67001b24830953.jar
+Completed in 210ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 15:14:51) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 144ms (View: 142, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 15:15:20) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 28ms (View: 25, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (98.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:11:07) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 278ms (View: 275, DB: 98) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 20:11:13) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"misko"}
+  [4;36;1mStoredApuid Columns (144.7ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (38.9ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b
+  [4;36;1mSQL (1.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStoredApuid Destroy (65.5ms)[0m   [0mDELETE FROM `stored_apuids` WHERE `id` = 1[0m
+  [4;36;1mSQL (35.3ms)[0m   [0;1mCOMMIT[0m
+Completed in 367ms (DB: 286) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 20:11:14) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+Redirected to http://localhost:3000/download/browser_patcher-4910cea0a176012c9a500019db2ce30b.jar
+Completed in 575ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 20:11:35) [POST]
+  Parameters: {"commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"misko"}
+  [4;35;1mStoredApuid Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (3.3ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mStoredApuid Create (78.4ms)[0m   [0;1mINSERT INTO `stored_apuids` (`uid`, `valid_until`, `identifier`) VALUES('4910cea0a176012c9a500019db2ce30b', '2009-11-27 23:00:00', 'misko')[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 363ms (DB: 91) | 302 Found [http://localhost/patcher/store?method=post]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:11:35) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 32ms (View: 28, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 20:11:40) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "leave_apuid"=>"1", "identifier"=>"misko"}
+  [4;36;1mStoredApuid Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (16.8ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStoredApuid Destroy (20.9ms)[0m   [0mDELETE FROM `stored_apuids` WHERE `id` = 2[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCOMMIT[0m
+Completed in 158ms (DB: 44) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 20:11:40) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+Redirected to http://localhost:3000/download/browser_patcher-4910cea0a176012c9a500019db2ce30b.jar
+Completed in 135ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 20:11:50) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "leave_apuid"=>"1", "identifier"=>"misko"}
+  [4;35;1mStoredApuid Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (5.2ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 49ms (DB: 8) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:11:50) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 71ms (View: 31, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 20:12:15) [POST]
+  Parameters: {"commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"misko"}
+  [4;35;1mStoredApuid Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.3ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mStoredApuid Create (0.5ms)[0m   [0;1mINSERT INTO `stored_apuids` (`uid`, `valid_until`, `identifier`) VALUES('4910cea0a176012c9a500019db2ce30b', '2009-11-27 23:00:00', 'misko')[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 35ms (DB: 12) | 302 Found [http://localhost/patcher/store?method=post]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:12:15) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 32ms (View: 29, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 20:12:20) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "leave_apuid"=>"1", "identifier"=>"misko"}
+  [4;36;1mStoredApuid Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.6ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b
+  [4;36;1mSQL (3.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStoredApuid Destroy (0.5ms)[0m   [0mDELETE FROM `stored_apuids` WHERE `id` = 3[0m
+  [4;36;1mSQL (14.7ms)[0m   [0;1mCOMMIT[0m
+Completed in 73ms (DB: 27) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 20:12:20) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+Redirected to http://localhost:3000/download/browser_patcher-4910cea0a176012c9a500019db2ce30b.jar
+Completed in 117ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 20:12:25) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "leave_apuid"=>"1", "identifier"=>"misko"}
+  [4;35;1mStoredApuid Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (12.2ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 23ms (DB: 13) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:12:25) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 44ms (View: 17, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 20:13:33) [POST]
+  Parameters: {"commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"misko"}
+  [4;35;1mStoredApuid Columns (12.4ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (4.6ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mStoredApuid Create (0.7ms)[0m   [0;1mINSERT INTO `stored_apuids` (`uid`, `valid_until`, `identifier`) VALUES('4910cea0a176012c9a500019db2ce30b', '2009-11-27 23:00:00', 'misko')[0m
+  [4;35;1mSQL (153.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 267ms (DB: 175) | 302 Found [http://localhost/patcher/store?method=post]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:13:34) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 102ms (View: 99, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 20:13:34) [POST]
+  Parameters: {"commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"misko"}
+  [4;36;1mStoredApuid Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (34.0ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 46ms (DB: 35) | 302 Found [http://localhost/patcher/store?method=post]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:13:34) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 107ms (View: 103, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 20:13:40) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "leave_apuid"=>"1", "identifier"=>"misko"}
+  [4;36;1mStoredApuid Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.3ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStoredApuid Destroy (0.3ms)[0m   [0mDELETE FROM `stored_apuids` WHERE `id` = 4[0m
+  [4;36;1mSQL (107.1ms)[0m   [0;1mCOMMIT[0m
+Completed in 235ms (DB: 109) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 20:13:41) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+Redirected to http://localhost:3000/download/browser_patcher-4910cea0a176012c9a500019db2ce30b.jar
+Completed in 829ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b]
+  [4;36;1mSQL (43.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 20:13:54) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "leave_apuid"=>"1", "identifier"=>"misko"}
+  [4;35;1mStoredApuid Columns (14.7ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (16.7ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 70ms (DB: 75) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:13:54) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 98ms (View: 95, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (27.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 20:14:37) [POST]
+  Parameters: {"commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"misko"}
+  [4;35;1mStoredApuid Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (1.4ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mStoredApuid Create (37.5ms)[0m   [0;1mINSERT INTO `stored_apuids` (`uid`, `valid_until`, `identifier`) VALUES('4910cea0a176012c9a500019db2ce30b', '2009-11-27 23:00:00', 'misko')[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 62ms (DB: 72) | 302 Found [http://localhost/patcher/store?method=post]
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:14:37) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 36ms (View: 32, DB: 2) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 20:14:42) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "leave_apuid"=>"1", "identifier"=>"misko"}
+  [4;36;1mStoredApuid Columns (17.9ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.5ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStoredApuid Destroy (4.5ms)[0m   [0mDELETE FROM `stored_apuids` WHERE `id` = 5[0m
+  [4;36;1mSQL (7.3ms)[0m   [0;1mCOMMIT[0m
+Completed in 48ms (DB: 30) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 20:14:42) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+Redirected to http://localhost:3000/download/browser_patcher-4910cea0a176012c9a500019db2ce30b.jar
+Completed in 336ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 20:14:50) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "leave_apuid"=>"1", "identifier"=>"misko"}
+  [4;35;1mStoredApuid Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.5ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 48ms (DB: 2) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:14:50) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 166ms (View: 163, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 20:15:20) [POST]
+  Parameters: {"commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"misko"}
+  [4;35;1mStoredApuid Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.1ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mStoredApuid Create (0.4ms)[0m   [0;1mINSERT INTO `stored_apuids` (`uid`, `valid_until`, `identifier`) VALUES('4910cea0a176012c9a500019db2ce30b', '2009-11-27 23:00:00', 'misko')[0m
+  [4;35;1mSQL (21.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 74ms (DB: 24) | 302 Found [http://localhost/patcher/store?method=post]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:15:20) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 45ms (View: 42, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 20:15:25) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "leave_apuid"=>"1", "identifier"=>"misko"}
+  [4;36;1mStoredApuid Columns (25.0ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.4ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStoredApuid Destroy (0.3ms)[0m   [0mDELETE FROM `stored_apuids` WHERE `id` = 6[0m
+  [4;36;1mSQL (14.9ms)[0m   [0;1mCOMMIT[0m
+Completed in 52ms (DB: 41) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 20:15:25) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+Redirected to http://localhost:3000/download/browser_patcher-4910cea0a176012c9a500019db2ce30b.jar
+Completed in 93ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:15:30) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 38ms (View: 35, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:15:30) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 47ms (View: 44, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 20:16:15) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "leave_apuid"=>"1", "identifier"=>"misko"}
+  [4;35;1mStoredApuid Columns (20.8ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.5ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 31ms (DB: 21) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:16:15) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 70ms (View: 38, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-10-29 20:16:19) [POST]
+  Parameters: {"commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"misko"}
+  [4;35;1mStoredApuid Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (0.1ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mStoredApuid Create (0.3ms)[0m   [0;1mINSERT INTO `stored_apuids` (`uid`, `valid_until`, `identifier`) VALUES('4910cea0a176012c9a500019db2ce30b', '2009-11-27 23:00:00', 'misko')[0m
+  [4;35;1mSQL (23.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/patcher/
+Completed in 71ms (DB: 25) | 302 Found [http://localhost/patcher/store?method=post]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-10-29 20:16:19) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 57ms (View: 42, DB: 0) | 200 OK [http://localhost/patcher/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 20:16:24) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "leave_apuid"=>"1", "identifier"=>"misko"}
+  [4;36;1mStoredApuid Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (23.6ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b
+Completed in 35ms (DB: 25) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 20:16:24) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+Redirected to http://localhost:3000/download/browser_patcher-4910cea0a176012c9a500019db2ce30b.jar
+Completed in 104ms (DB: 0) | 302 Found [http://localhost/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#retrieve (for 127.0.0.1 at 2009-10-29 20:16:28) [POST]
+  Parameters: {"commit"=>"download browser patcher", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "leave_apuid"=>"1", "identifier"=>"misko"}
+  [4;36;1mStoredApuid Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;35;1mStoredApuid Load (0.1ms)[0m   [0mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/patcher/retrieve?method=post]
+  [4;36;1mSQL (5.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#download_browser_patcher (for 127.0.0.1 at 2009-10-29 20:16:28) [GET]
+  Parameters: {"uid"=>"4910cea0a176012c9a500019db2ce30b"}
+Redirected to http://localhost:3000/download/browser_patcher-4910cea0a176012c9a500019db2ce30b.jar
+Completed in 116ms (DB: 5) | 302 Found [http://localhost/patcher/download_browser_patcher?uid=4910cea0a176012c9a500019db2ce30b]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-02 15:15:53) [GET]
+
+ActionController::RoutingError (No route matches "/relax/" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-11-02 15:15:55) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 136ms (View: 129, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#store (for 127.0.0.1 at 2009-11-02 15:40:12) [POST]
+  Parameters: {"commit"=>"Store", "method"=>"post", "authenticity_token"=>"eWv19PYKZwC8NiqUIAEF4PdY/iUIOO6l/85MFwb+cP4=", "identifier"=>"misko"}
+  [4;35;1mStoredApuid Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `stored_apuids`[0m
+  [4;36;1mStoredApuid Load (129.8ms)[0m   [0;1mSELECT * FROM `stored_apuids` WHERE (`stored_apuids`.`identifier` = 'misko') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 209ms (DB: 131) | 302 Found [http://localhost/patcher/store?method=post]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatcherController#index (for 127.0.0.1 at 2009-11-02 15:40:12) [GET]
+Rendering template within layouts/patcher
+Rendering patcher/index
+Completed in 20ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStoredApuid Delete all (41.9ms)[0m   [0mDELETE FROM `stored_apuids` WHERE (valid_until < '2009-11-02') [0m
+  [4;36;1mStoredApuid Delete all (1310.5ms)[0m   [0;1mDELETE FROM `stored_apuids` WHERE (valid_until < '2009-11-02') [0m
+  [4;35;1mStoredApuid Delete all (24.9ms)[0m   [0mDELETE FROM `stored_apuids` WHERE (valid_until < '2009-11-02') [0m

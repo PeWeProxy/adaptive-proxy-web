@@ -2,7 +2,7 @@
 #	Application
 #############################################################
 
-set :application, "proxy_user_reg"
+set :application, "proxy"
 set :deploy_to, "/var/rails/#{application}"
 
 #############################################################

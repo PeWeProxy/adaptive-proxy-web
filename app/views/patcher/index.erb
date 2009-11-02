@@ -1,3 +1,55 @@
+<% unless @uid.nil? %>
+    <p>Your current adaptive proxy uid is: <%= @uid %></p>
 
+    <% form_tag(:action => "store", :method => :post) do %>
+        <table>
+          <tr>
+            <td>
+              <%= label_tag(:identifier, "Identifier for later UID retrieval:") %>
+            </td>
+            <td>
+              <%= text_field_tag(:identifier) %>
+            </td>
+          </tr>
+          <!--
+          <tr>
+            <td>
+              <%= label_tag(:validity, "Store the UID for:") %>
+            </td>
+            <td>
+              <%= text_field_tag(:validity) %>
+              <%= label_tag(:validity, "days") %>
+            <td>
+          </tr>
+          -->
+          <!--<tr>
+            <td>
+              <%= label_tag(:validity, "or until") %>
+            </td>  
+            <td>
+              <%= select_date Date.today, :prefix => :start_date %>
+            </td>
+          </tr>
+          -->
+        </table>
 
-<%= @uid %>
+        <%= submit_tag("Store") %>
+
+    <% end %>
+
+    <% form_tag(:action => "retrieve", :method => :post) do %>
+        <%= label_tag(:identifier, "Identifier:") %>
+        <%= text_field_tag(:identifier) %>
+        <%= label_tag(:identifier, "Leave uid for future use:") %>
+        <%= check_box_tag :leave_apuid, "1", false %>
+        <%= submit_tag(@patcher_button_label) %>
+        <%= submit_tag(@patcher_ff_ext_label) %>
+    <% end %>
+
+<% else %>
+    <p>Download <%= link_to "browser patcher (multiple browsers)", {:controller => "patcher", :action => "download_browser_patcher"} %>
+
+      <br/>
+      Download <%= link_to "download firefox extension (if you have firefox only)", {:controller => "patcher", :action => "download_ff_extension"} %>
+    </p>
+<% end %>
