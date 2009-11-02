@@ -1,46 +1,36 @@
-#############################################################
-#	Application
-#############################################################
-
 set :application, "proxy"
+set :repository,  "gitosis@nimbus.fiit.stuba.sk:proxy-user-reg"
 set :deploy_to, "/var/rails/#{application}"
 
-#############################################################
-#	Settings
-#############################################################
+set :scm, :git
+# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-default_run_options[:pty] = true
+server "nimbus.fiit.stuba.sk", :app, :web, :db, :primary => true
+set :user, "proxy"
 set :use_sudo, false
 
-#############################################################
-#	Servers
-#############################################################
-
-set :user, "barla"
-set :domain, "nimbus.fiit.stuba.sk"
-server domain, :app, :web
-role :db, domain, :primary => true
-
-#############################################################
-#	Subversion
-#############################################################
-
-set :repository,  "https://leela.fiit.stuba.sk/svn/proxy/proxy_user_reg/"
-#set :svn_username, ""
-#set :svn_password, ""
-set :deploy_via, :export
-
-#############################################################
-# Passenger
-#############################################################
 
 namespace :passenger do
   desc "Restart Application"
-  task :restart, :roles => :app do
+  task :restart do
     run "touch #{current_path}/tmp/restart.txt"
   end
 end
 
 namespace :deploy do
-  %w(start restart).each { |name| task name, :roles => :app do passenger.restart end }
+  task "start", :roles => :app do
+    passenger.restart
+  end
+
+  desc "Symlink shared"
+  task :symlink_shared do
+    run "ln -nfs #{shared_path} #{release_path}/shared"
+  end
+
+  task "restart", :roles => :app do
+    passenger.restart
+  end
 end
+
+after 'deploy:update_code', 'deploy:symlink_shared'
+
