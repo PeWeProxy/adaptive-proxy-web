@@ -19,7 +19,7 @@ common: &common
    host: localhost
    port: 3306
    username: proxy
-   password: proxy@NimbuS
+   password: proxy@cvks
 
 development:
    <<: *common

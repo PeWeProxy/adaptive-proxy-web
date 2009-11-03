@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.hours do
+every :day do
   runner "StoredApuid.clean_database" 
 end
