@@ -1,0 +1,22 @@
+Your uid: <%= @uid %>
+<table>
+  <thead>
+  <tr>
+    <th>Timestamp</th>
+    <th>URL</th>
+    <th>Keywords</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @logs.each_with_index do |log, index| %>
+      <tr>
+        <td><%= log.timestamp %></td>
+        <td><%= log.url %></td>
+        <td><%= log.keywords %></td>
+        <td><%= link_to "delete", {:action => :delete, :id => index}, {:confirm => "are you sure?", :method => :post} %>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @logs %>

@@ -46,6 +46,8 @@
         <%= submit_tag(@patcher_ff_ext_label) %>
     <% end %>
 
+    <%= link_to "Your stored logs", {:controller => :logs, :action => :list} %>
+
 <% else %>
     <p>Download <%= link_to "browser patcher (multiple browsers)", {:controller => "patcher", :action => "download_browser_patcher"} %>
 

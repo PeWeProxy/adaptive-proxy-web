@@ -1,8 +1,3 @@
-
-#require 'zip/zip'
-
-#require 'archive/tar/minitar'
-
 class PatcherController < ApplicationController
   @@uid_label = "APUID="
   @@uid = "$replace_this$"
@@ -10,7 +5,7 @@ class PatcherController < ApplicationController
   PATCHER_FF_EXT_LABEL = "download firefox extension only"
 
   def index
-    @uid = request.env["HTTP_USER_AGENT"].match(/APUID=(\S*)/).nil? ? nil:$~[1]
+    @uid = session[:uid]
     @patcher_button_label = PATCHER_BUTTON_LABEL
     @patcher_ff_ext_label = PATCHER_FF_EXT_LABEL
   end
