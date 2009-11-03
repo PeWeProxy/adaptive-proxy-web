@@ -10,9 +10,6 @@ require 'fileutils'
 require 'thread'
 require 'tmpdir'
 
-require 'rubygems'
-require 'macaddr'
-
 
 ##
 # = Generating UUIDs
@@ -57,7 +54,7 @@ require 'macaddr'
 #
 # For more information see {RFC 4122}[http://www.ietf.org/rfc/rfc4122.txt].
 
-class UUID
+class Uuid
 
   VERSION = '2.0.1'
 

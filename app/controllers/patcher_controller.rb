@@ -1,4 +1,4 @@
-require 'uuid/uuid'
+
 #require 'zip/zip'
 
 #require 'archive/tar/minitar'
@@ -10,7 +10,7 @@ class PatcherController < ApplicationController
   PATCHER_FF_EXT_LABEL = "download firefox extension only"
 
   def index
-    @uid = request.env["HTTP_USER_AGENT"].match(/APUID=(\S*)/)[1]
+    @uid = request.env["HTTP_USER_AGENT"].match(/APUID=(\S*)/).nil? ? nil:$~[1]
     @patcher_button_label = PATCHER_BUTTON_LABEL
     @patcher_ff_ext_label = PATCHER_FF_EXT_LABEL
   end
@@ -47,7 +47,7 @@ class PatcherController < ApplicationController
   end
 
   def initialize
-    @generator = UUID.new
+    @generator = Uuid.new
   end
 
   def download_browser_patcher
