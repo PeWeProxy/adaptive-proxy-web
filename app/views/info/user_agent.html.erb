@@ -11,10 +11,11 @@
   <h2>A čo moje súkromie?</h2>
 
   <p>
-    Všetko čo o Tebe vieme je Tvoje číslo (ktoré sme Ti priradili a ktoré nám posielaš v User Agent texte) a na aké
-    stránky chodíš. Ak <a href="#">nechceš aby sme zaznamenávali Tvoje návštevy na niektorých stránkach</a>, môžeš si to
-    samozrejme nastaviť. Rovnako môžeš <a href="#">nenávratne zmazať všetky alebo len niektoré záznamy o sebe</a> z
-    našej databázy. Viac si prečítaj v <a href="#">tomto návode</a>.
+    V pilotnej prevádzke je jedinou informáciou, ktorú o Tebe vieme, číslo (ktoré sme Ti priradili a ktoré nám posielaš
+    v User Agent texte) a stránky na ktoré pod týmto číslom chodíš. Ak nechceš aby sme zaznamenávali Tvoje
+    návštevy na niektorých stránkach, môžeš si to samozrejme <%= link_to "nastaviť", {:controller => :info, :action => :foxyproxy} %>
+    (aktuálne iba pre prehliadač <%= link_to "firefox", "http://www.mozilla.com/firefox"  %>). Rovnako môžeš <%= link_to "nenávratne zmazať
+všetky alebo len niektoré záznamy o sebe", {:controller => :logs, :action => :list} %> z našej databázy. <!--Viac si prečítaj v <a href="#">tomto návode</a>.-->
   </p>
 </div>
 
@@ -30,8 +31,7 @@
 <h2>Nastavenie</h2>
 
 <p>
-  Najjednoduchší spôsob ako si nastaviť User Agent text je stiahnuť si a spustiť náš program
-  <a href="#">browser-patcher</a>. Ten všetko nastaví za Teba. Ak si browser-patcher sťahovať nechceš alebo nemôžeš,
+  Najjednoduchší spôsob ako si nastaviť User Agent text je stiahnuť si a spustiť náš program <%= link_to "browser_patcher", {:controller => "patcher"}%>. Ten všetko nastaví za Teba. Ak si browser-patcher sťahovať nechceš alebo nemôžeš,
   môžes si User Agent nastaviť ručne podľa tohto návodu. Pozor lebo nastavovanie sa líši v závislosti od použitého
   prehliadača.
 </p>
@@ -58,7 +58,7 @@ Vo výsledku by to malo vyzerať asi takto
 <h3>Firefox</h3>
 
 <ul>
-  <li>Do poľa pre zadávanie adresy vlož adresu <a href="about:config">about:config</a></li>
+  <li>Do poľa pre zadávanie adresy vlož adresu <%= link_to "about:config", "about:config" %></li>
   <li>Ak sa zobrazí varovanie, sľúb že budeš opatrný</li>
   <li>Vytvor novú premennú typu <em>String</em> s menom <em>general.useragent.extra.adaptiveproxy</em> a ako hodnotu
     zadaj svoj identifikátor
@@ -96,5 +96,5 @@ Vo výsledku by to malo vyzerať asi takto
 
 <h3>Ostatné</h3>
 <p>
-  Ak si tu nenašiel svoj prehľadávač, <a href="#">napíš nám</a>, pridáme ho.
+  Ak si tu nenašiel svoj prehľadávač, <%= link_to "napíš nám", "http://nimbus.fiit.stuba.sk/redmine/projects/proxy/issues" %>, pridáme ho.
 </p>
