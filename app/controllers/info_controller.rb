@@ -3,6 +3,7 @@ class InfoController < ApplicationController
   end
 
   def show
+    @uid = session[:uid]
     render :action => params[:page]
   end
 end

@@ -16,7 +16,7 @@ class PatcherController < ApplicationController
     elsif (!StoredApuid.find_by_identifier(params[:identifier]).nil?)
       flash[:error] = "sorry, this identifier is already taken"
     else
-      StoredApuid.create(:identifier => params[:identifier], :uid => request.env["HTTP_USER_AGENT"].match(/APUID=(\S*)/)[1], :valid_until => Date.today + 30)
+      StoredApuid.create(:identifier => params[:identifier], :uid => session[:uid], :valid_until => Date.today + 30)
     end
     redirect_to :back
   end
@@ -42,7 +42,7 @@ class PatcherController < ApplicationController
   end
 
   def initialize
-    @generator = Uuid.new
+    
   end
 
   def download_browser_patcher
@@ -54,7 +54,7 @@ class PatcherController < ApplicationController
   end
 
   def download_a_file filename, extension, edit_path, string, uid_label, uid=nil
-    uid ||= @generator.generate(:compact).to_s
+    uid = session[:uid]
 
     if (uid.index(uid_label).nil?)
       uid_to_print = uid_label + uid
