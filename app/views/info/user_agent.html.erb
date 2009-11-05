@@ -1,67 +1,85 @@
 <h1>User Agent</h1>
 
 <p>
-User Agent je text, ktorý posiela Tvoj prehliadač vždy, keď chceš pristúpiť na nejakú stránku. Daná stránka (alebo presnejšie server) sa z neho dozvie aký máš prehliadač, operačný systém, prípadne iné užitočné veci. Náš proxy server sa na tento text pozerá, aby dokázal priradiť Tvoju aktuálnu požiadavku k tým predchádzajúcim v Tvojom profile. Potrebujeme preto, aby sa v tvojom User Agent texte nachádzal špeciálny kód, podľa ktorého Ťa budeme poznať.
+  User Agent je text, ktorý posiela Tvoj prehliadač vždy, keď chceš pristúpiť na nejakú stránku. Daná stránka (alebo
+  presnejšie server) sa z neho dozvie aký máš prehliadač, operačný systém, prípadne iné užitočné veci. Náš proxy server
+  sa na tento text pozerá, aby dokázal priradiť Tvoju aktuálnu požiadavku k tým predchádzajúcim v Tvojom profile.
+  Potrebujeme preto, aby sa v tvojom User Agent texte nachádzal špeciálny kód, podľa ktorého Ťa budeme poznať.
 </p>
 
 <div class="sidebar">
   <h2>A čo moje súkromie?</h2>
 
   <p>
-  Všetko čo o Tebe vieme je Tvoje číslo (ktoré sme Ti priradili a ktoré nám posielaš v User Agent texte) a na aké stránky chodíš. Ak <a href="#">nechceš aby sme zaznamenávali Tvoje návštevy na niektorých stránkach</a>, môžeš si to samozrejme nastaviť. Rovnako môžeš <a href="#">nenávratne zmazať všetky alebo len niektoré záznamy o sebe</a> z našej databázy. Viac si prečítaj v <a href="#">tomto návode</a>.
+    Všetko čo o Tebe vieme je Tvoje číslo (ktoré sme Ti priradili a ktoré nám posielaš v User Agent texte) a na aké
+    stránky chodíš. Ak <a href="#">nechceš aby sme zaznamenávali Tvoje návštevy na niektorých stránkach</a>, môžeš si to
+    samozrejme nastaviť. Rovnako môžeš <a href="#">nenávratne zmazať všetky alebo len niektoré záznamy o sebe</a> z
+    našej databázy. Viac si prečítaj v <a href="#">tomto návode</a>.
   </p>
 </div>
 
 <p>
-Tvoj User Agent text je aktuálne <strong class="useragent"><%= request.env['HTTP_USER_AGENT'] %></strong>
-<% if request.env['HTTP_USER_AGENT'].match(/APUID=(\S*)/) %>
-  To je dobre a nemusiš viac robiť nič.
-<% else %>
-  Zatiaľ v ňom chýba náš špeciálny kód.
-<% end %>
+  Tvoj User Agent text je aktuálne <strong class="useragent"><%= request.env['HTTP_USER_AGENT'] %></strong>
+  <% if request.env['HTTP_USER_AGENT'].match(/APUID=(\S*)/) %>
+      To je dobre a nemusiš viac robiť nič.
+  <% else %>
+      Zatiaľ v ňom chýba náš špeciálny kód.
+  <% end %>
 </p>
 
 <h2>Nastavenie</h2>
 
 <p>
-Najjednoduchší spôsob ako si nastaviť User Agent text je stiahnuť si a spustiť náš program <a href="#">browser-patcher</a>. Ten všetko nastaví za Teba. Ak si browser-patcher sťahovať nechceš alebo nemôžeš, môžes si User Agent nastaviť ručne podľa tohto návodu. Pozor lebo nastavovanie sa líši v závislosti od použitého prehliadača.
+  Najjednoduchší spôsob ako si nastaviť User Agent text je stiahnuť si a spustiť náš program
+  <a href="#">browser-patcher</a>. Ten všetko nastaví za Teba. Ak si browser-patcher sťahovať nechceš alebo nemôžeš,
+  môžes si User Agent nastaviť ručne podľa tohto návodu. Pozor lebo nastavovanie sa líši v závislosti od použitého
+  prehliadača.
 </p>
 
-<p>Pri ručnom nastavovaní použite tento identifikátor: <strong class="useragent"><%= @uid %></strong></p>
+<p>
+  Pri ručnom nastavovaní použi tento identifikátor: <strong><%= @uid %></strong>.
+</p>
 
 <h3>Internet Explorer</h3>
-<p>
+
 <ul>
   <li>Spusti program <em>regedit.exe</em></li>
-  <li>Nájdi vetvu <em>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\User Agent\Post Platform</em></li>
+  <li>Nájdi vetvu
+    <em>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\User Agent\Post Platform</em>
+  </li>
   <li>V tejto vetve vytvor nový reťazec do ktorého vlož svoj identifikátor</li>
 </ul>
 
 Vo výsledku by to malo vyzerať asi takto
 
 <img src="/images/ie/regedit.png" alt="Nastavenie User Agent textu pre Internet Explorer" title="Nastavenie User Agent textu pre Internet Explorer"/>
-</p>
+
 
 <h3>Firefox</h3>
-<p>
+
 <ul>
   <li>Do poľa pre zadávanie adresy vlož adresu <a href="about:config">about:config</a></li>
   <li>Ak sa zobrazí varovanie, sľúb že budeš opatrný</li>
-  <li>Vytvor novú premennú typu <em>String</em> s menom <em>general.useragent.extra.adaptiveproxy</em> a ako hodnotu zadaj svoj identifikátor</li>
+  <li>Vytvor novú premennú typu <em>String</em> s menom <em>general.useragent.extra.adaptiveproxy</em> a ako hodnotu
+    zadaj svoj identifikátor
+  </li>
   <li>Reštartuj Firefox</li>
 </ul>
 
 Vo výsledku by to malo vyzerať asi takto
 
 <img src="/images/ff/config.png" alt="Nastavenie User Agent textu pre Firefox" title="Nastavenie User Agent textu pre Firefox"/>
-</p>
+
 
 <h3>Google Chrome</h3>
-<p>
+
 <ul>
   <li>Na ploche si vytvor nový odkaz na Google Chrome skopírovaním už existujúceho odkazu</li>
   <li>Klikni na nový odkaz pravým tlačidlom a zvoľ Vlastnosti</li>
-  <li>Do poľa <em>Cieľ</em> doplň k existujúcej ceste parameter <em>--user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/530.5 (KHTML, like Gecko) Chrome/2.0.172.28 Safari/530.5"</em> a na koniec doplň svoj identifikátor</li>
+  <li>Do poľa <em>Cieľ</em> doplň k existujúcej ceste parameter
+    <em>--user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/530.5 (KHTML, like Gecko)
+      Chrome/2.0.172.28 Safari/530.5"</em> a na koniec doplň svoj identifikátor
+  </li>
   <li>Ak už máš Google Chrome otvorený, zavri ho</li>
   <li>Spusti Google Chrome novovytvoreným odkazom</li>
   <li><strong>Pozor, User Agent text bude nastavený len pri spúštaní týmto odkazom</strong></li>
@@ -70,14 +88,15 @@ Vo výsledku by to malo vyzerať asi takto
 Vo výsledku by to malo vyzerať asi takto
 
 <img src="/images/chrome/shortcut.png" alt="Nastavenie User Agent textu pre Google Chrome" title="Nastavenie User Agent textu pre Google Chrome"/>
-</p>
+
 
 <h3>Opera</h3>
 <p>
-Nastavenie User Agent textu pre Operu je manuálne veľmi komplikované, pretože vyžaduje modifikáciu binárneho kódu knižnice <em>opera.dll</em>.
+  Nastavenie User Agent textu pre Operu je manuálne veľmi komplikované, pretože vyžaduje modifikáciu binárneho kódu
+  knižnice <em>opera.dll</em>.
 </p>
 
 <h3>Ostatné</h3>
 <p>
-Ak si tu nenašiel svoj prehľadávač, <a href="#">napíš nám</a>, pridáme ho.
+  Ak si tu nenašiel svoj prehľadávač, <a href="#">napíš nám</a>, pridáme ho.
 </p>

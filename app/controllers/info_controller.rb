@@ -1,9 +1,6 @@
 class InfoController < ApplicationController
-  def index
-  end
 
-  def show
+  def user_agent
     @uid = session[:uid]
-    render :action => params[:page]
   end
 end
