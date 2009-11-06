@@ -54,7 +54,7 @@ class PatcherController < ApplicationController
   end
 
   def download_a_file filename, extension, edit_path, string, uid_label, uid=nil
-    uid = session[:uid]
+    uid ||= session[:uid]
 
     if (uid.index(uid_label).nil?)
       uid_to_print = uid_label + uid
