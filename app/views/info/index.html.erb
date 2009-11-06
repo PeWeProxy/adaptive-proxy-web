@@ -1,0 +1,18 @@
+<h1>Vitajte na stránkach projektu Adaptívneho proxy servera</h1>
+
+<p>
+ Adaptívny proxy server je projekt, ktorý má za cieľ vytvoriť platformu pre personalizované, kolaboratívne surfovanie na webe
+ a tým pádom platformu pre vyhodnocovanie niektorých bakalárskych, diplomových a dizertačných prác (najmä) zo skupiny
+ <%= link_to "PeWe", "http://pewe.fiit.stuba.sk" %>.
+</p>
+
+<p>
+  V tejto, prvej verejnej, fáze máme za cieľ odladiť implementáciu a konfiguráciu proxy servera a vytvoriť prvú dátovú sadu
+  logov surfovania na webe (zaznamenávame čas, URLku a kľúčové slová). V tom nám môžeš pomôcť aj Ty.
+</p>
+
+<%= link_to "Prečítaj si o spôsobe identifikácie používateľa v proxy serveri na základe nastavenia user-agent reťazca", {:controller => :info, :action => :user_agent} %><br/>
+<%= link_to "stiahni si browser patcher (prípadne si prenes identifikátor na iný počítač)", {:controller => :patcher, :action => :download} %><br/>
+<%= link_to "nastav a zapni si proxy server", {:controller => :info, :action => :settings} %><br/>
+<%= link_to "surfuj", "http://www.google.com" %><br/>
+<%= link_to "oznám nám chyby v správaní proxy servera, ak nejaké zaznamenáš", "http://nimbus.fiit.stuba.sk/redmine/projects/proxy/issues" %>.

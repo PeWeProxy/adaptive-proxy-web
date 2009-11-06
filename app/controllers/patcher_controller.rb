@@ -4,8 +4,9 @@ class PatcherController < ApplicationController
   PATCHER_BUTTON_LABEL = "download browser patcher"
   PATCHER_FF_EXT_LABEL = "download firefox extension only"
 
-  def index
+  def download
     @uid = session[:uid]
+    @new_uid = session[:new_uid]
     @patcher_button_label = PATCHER_BUTTON_LABEL
     @patcher_ff_ext_label = PATCHER_FF_EXT_LABEL
   end

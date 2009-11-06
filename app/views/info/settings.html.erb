@@ -1,0 +1,66 @@
+<h1>Surfovanie s proxy serverom</h1>
+
+<a name="settings"/>
+<h2>Nastavenie proxy servera</h2>
+
+<p>
+    Najideálnejšie je použiť náš <%= link_to "browser_patcher" , {:controller => "patcher", :action => :download} %>, ktorý celé nastavenie vykoná
+    za Teba. Ak toto riešenie nemôžeš alebo nechceš použiť, môžeš si samozrejme proxy server nastaviť manuálne.
+</p>
+<p>
+  Vo firefoxe klikni na Edit/Tools -> Preferences/Options -> Advanced -> Network -> Settings. Vyber si <strong>
+  manual proxy configuration</strong> a do
+  <ul>
+    <li>políčka <strong>HTTP Proxy</strong> napíš: nimbus.fiit.stuba.sk</li> a do
+    <li>vedľajšieho políčka <strong>Port</strong> napíš: 9666</li>
+  </ul>
+Potvrď stlačením OK.
+</p>
+
+<a name="privacy"/>
+<h2>Kontrola surfovania cez proxy</h2>
+
+<p>
+  Každý sa snaží chrániť svoje súkromie a preto je nám jasné, že niekedy budeš chcieť surfovať "napriamo",
+  bez nášho proxy. Na tejto stránke nájdeš stručný návod, ako sa dá proxy rýchlo vypnúť/zapnúť alebo ako sa dá
+  nastaviť, ktoré stránky majú "ísť cez proxy" a ktoré nie. Opísaný postup sa dá momentálne využiť iba pre prehliadač
+  Mozilla Firefox (využívajú sa addons pre tento prehliadač).
+</p>
+
+<h3>Jednoduché riešenie - vypnúť/zapnúť proxy</h3>
+<p>
+  Najjednoduchší spôsob, akým ovládať proxy je cez firefox addon <%= link_to "QuickProxy", "https://addons.mozilla.org/en-US/firefox/addon/1557" %>.
+  Po jeho nainštalovaní uvidíš v pravom dolnom rohu Tvojho firefoxu (v status bar-e) tlacitko QuickProxy, ktorého stláčaním
+  zapínaš/vypínaš používanie proxy (zelená - proxy zapnuté, červená - proxy vypnuté).
+</p>
+
+<h3>Pokročilé riešenie - nastavovanie proxy cez FoxyProxy</h3>
+<p>Ak chceš mať detailnejšiu kontrolu nad tým, ako surfuješ cez proxy, použi firefox addon
+  <%= link_to "FoxyProxy", "https://addons.mozilla.org/en-US/firefox/addon/2464" %>. Ten v podstate nahrádza riešenie proxy
+zabudované vo firefoxe. Po jeho nainštalovaní uvidíš v pravom dolnom rohu FoxyProxy. Keď naň klikneš ľavým tlačidlom, otvorí
+  sa Ti okno v ktorom môžeš definovať viacero proxy serverov. Pokračuj kliknutím na <strong>Add New Proxy</strong>.</p>
+
+<p>
+  Ponechaj nastavené <strong>Manual Proxy Configuration</strong> a do
+</p>
+  <ul>
+    <li>políčka <strong>Host or IP Address</strong> napíš: nimbus.fiit.stuba.sk</li> a do
+    <li>vedľajšieho políčka <strong>Port</strong> napíš: 9666</li>
+  </ul>
+<p>
+  Klikni na tabku <strong>URL Patterns</strong>, kde klikni na <strong>Add New Pattern</strong>. Do políčka
+<strong>Pattern Name</strong> napíš "all http", do políčka <strong>URL Pattern</strong> napíš "http://*" a uisti sa, že máš
+  zaškrtnuté voľby <strong>Whitelist</strong> a <strong>Regular Expression</strong>. Potvrď stlačením OK.
+</p>
+<p>
+  Nakoniec sa preklikni do tabky <strong>General</strong>, kde do políčka <strong>ProxyName</strong> zadaj "AdaptiveProxy@simbus" a stlač OK.
+</p>
+<p>
+  V okne s prehľadom proxy serverov Ti pribudol proxy server AdaptiveProxy@Nimbus. Surfovanie s týmto proxy serverom
+  namiesto "default" riešenia  urobíš buď výberom z horného menu Mode alebo po zatvorení okna pomocou pravého kliknutia na
+  nápis "FoxyProxy: Default". 
+</p>
+
+
+
+
