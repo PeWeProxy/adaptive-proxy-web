@@ -19,7 +19,7 @@ timelog = function($) {
 
   upload_activity = function() {
     if (active_in_last_period) {
-      $.post('http://' + base + '/activity/update', { 'checksum': _ap_checksum, 'period': period, 'nologging': 'true' });
+      $.post('http://' + base + '/activity/update?nologging', { 'checksum': _ap_checksum, 'period': period, 'nologging': 'true' });
       active_in_last_period = false;
     }
   }
