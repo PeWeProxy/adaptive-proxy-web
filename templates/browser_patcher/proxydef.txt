@@ -1,0 +1,1 @@
+nimbus.fiit.stuba.sk:9666
