@@ -1,12 +1,4 @@
-<h1>User Agent</h1>
-
-<p>
-  User Agent je text, ktorý posiela Tvoj prehliadač vždy, keď chceš pristúpiť na nejakú stránku. Daná stránka (alebo
-  presnejšie server) sa z neho dozvie aký máš prehliadač, operačný systém, prípadne iné užitočné veci. Náš proxy server
-  sa na tento text pozerá, aby vedel, ktoré stránky si pozerá jedna konkrétna osoba. Potrebujeme preto, aby sa v tvojom User Agent texte nachádzal špeciálny kód, podľa ktorého Ťa budeme poznať.
-</p>
-
-<div class="sidebar">
+<aside>
   <h2>A čo moje súkromie?</h2>
 
   <p>
@@ -14,20 +6,24 @@
     v User Agent texte) a stránky na ktoré pod týmto číslom chodíš. Ak nechceš aby sme zaznamenávali Tvoje
     návštevy na niektorých stránkach, môžeš si to samozrejme <%= link_to "nastaviť", {:controller => :info, :action => :settings, :anchor => "privacy"} %>
     (aktuálne iba pre prehliadač <%= link_to "firefox", "http://www.mozilla.com/firefox"  %>). Rovnako môžeš <%= link_to "nenávratne zmazať
-všetky alebo len niektoré záznamy o sebe", {:controller => :logs, :action => :list} %> z našej databázy. <!--Viac si prečítaj v <a href="#">tomto návode</a>.-->
+všetky alebo len niektoré záznamy o sebe", {:controller => :logs, :action => :list} %> z našej databázy.
   </p>
-</div>
+</aside>
 
 <p>
-  Tvoj User Agent text je aktuálne <strong class="useragent"><%= request.env['HTTP_USER_AGENT'] %></strong>
+  User Agent je text, ktorý posiela Tvoj prehliadač vždy, keď chceš pristúpiť na nejakú stránku. Daná stránka (alebo
+  presnejšie server) sa z neho dozvie aký máš prehliadač, operačný systém, prípadne iné užitočné veci. Náš proxy server
+  sa na tento text pozerá, aby vedel, ktoré stránky si pozerá jedna konkrétna osoba. Potrebujeme preto, aby sa v tvojom User Agent texte nachádzal špeciálny kód, podľa ktorého Ťa budeme poznať.
+</p>
+
+<p>
+  Tvoj User Agent text je aktuálne <em class="uid"><%= request.env['HTTP_USER_AGENT'] %></em>
   <% if request.env['HTTP_USER_AGENT'].match(/APUID=(\S*)/) %>
       To je dobre a nemusiš viac robiť nič.
   <% else %>
       Zatiaľ v ňom chýba náš špeciálny kód.
   <% end %>
 </p>
-
-<h2>Nastavenie</h2>
 
 <p>
   Najjednoduchší spôsob ako si nastaviť User Agent text je stiahnuť si a spustiť náš program <%= link_to "browser_patcher", {:controller => "patcher", :action => "download"}%>. Ten všetko nastaví za Teba. Ak si browser-patcher sťahovať nechceš alebo nemôžeš,
@@ -36,64 +32,84 @@ všetky alebo len niektoré záznamy o sebe", {:controller => :logs, :action => 
 </p>
 
 <p>
-  Pri ručnom nastavovaní použi tento identifikátor: <strong><%= @uid %></strong>.
+  Pri ručnom nastavovaní použi tento identifikátor: <em class="uid"><%= @uid %></em>.
 </p>
 
-<h3>Internet Explorer</h3>
-
-<ul>
-  <li>Spusti program <em>regedit.exe</em></li>
-  <li>Nájdi vetvu
-    <em>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\User Agent\Post Platform</em>
+<ul class="foldable">
+  <li>
+  <%= link_to 'Chcem to nastaviť automaticky<br/><em>Stiahni Browser Patcher (potrebná Java 1.6)', { :controller => 'patcher', :action => 'download' }, :class => 'button handle' %>
   </li>
-  <li>V tejto vetve vytvor nový reťazec do ktorého vlož svoj identifikátor</li>
+  <li>
+    <a href="#" id="browsers" class="button handle">Nastavím si to ručne</a>
+    <ul id="browsers-fold" class="browsers foldable fold">
+      <li>
+        <h2 id="firefox" class="firefox right handle">Mozilla Firefox</h2>
+        <div class="fold" id="firefox-fold">
+          <ol>
+            <li>Do poľa pre zadávanie adresy vlož adresu <%= link_to "about:config", "about:config" %></li>
+            <li>Ak sa zobrazí varovanie, sľúb že budeš opatrný</li>
+            <li>Vytvor novú premennú typu <em>String</em> s menom <em>general.useragent.extra.adaptiveproxy</em> a ako hodnotu
+              zadaj svoj identifikátor
+            </li>
+            <li>Reštartuj Firefox</li>
+          </ol>
+
+          <p>Vo výsledku by to malo vyzerať asi takto</p>
+
+          <%= image_tag "ff/config.png", {:alt => "Nastavenie User Agent textu pre Firefox"} %>
+        </div>
+      </li>
+
+      <li>
+        <h2 id="chrome" class="chrome left handle">Google Chrome</h2>
+        <div id="chrome-fold" class="fold">
+          <ol>
+            <li>Na ploche si vytvor nový odkaz na Google Chrome skopírovaním už existujúceho odkazu</li>
+            <li>Klikni na nový odkaz pravým tlačidlom a zvoľ Vlastnosti</li>
+            <li>Do poľa <em>Cieľ</em> doplň k existujúcej ceste parameter
+              <em>--user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/530.5 (KHTML, like Gecko)
+                Chrome/2.0.172.28 Safari/530.5"</em> a na koniec doplň svoj identifikátor
+            </li>
+            <li>Ak už máš Google Chrome otvorený, zavri ho</li>
+            <li>Spusti Google Chrome novovytvoreným odkazom</li>
+            <li><strong>Pozor, User Agent text bude nastavený len pri spúštaní týmto odkazom</strong></li>
+          </ol>
+
+          <p>Vo výsledku by to malo vyzerať asi takto</p>
+
+          <%= image_tag "chrome/shortcut.png", {:alt => "Nastavenie User Agent textu pre Google Chrome"} %>
+        </div>
+      </li>
+
+      <li>
+        <h2 id="opera" class="opera right handle">Opera</h2>
+        <div id="opera-fold" class="fold">
+          <p>
+            Nastavenie User Agent textu pre Operu je manuálne veľmi komplikované, pretože vyžaduje modifikáciu binárneho kódu
+            knižnice <em>opera.dll</em>.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <h2 id="ie" class="ie left handle">Internet Explorer</h2>
+          <div id="ie-fold" class="fold">
+          <ol class="tutorial">
+            <li>Spusti program <em>regedit.exe</em></li>
+            <li>Nájdi vetvu
+              <em>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\User Agent\Post Platform</em>
+            </li>
+            <li>V tejto vetve vytvor nový reťazec do ktorého vlož svoj identifikátor</li>
+          </ol>
+
+          <p>Vo výsledku by to malo vyzerať asi takto</p>
+
+          <%= image_tag "ie/regedit.png", {:alt => "Nastavenie User Agent textu pre Internet Explorer"} %>
+        </div>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-Vo výsledku by to malo vyzerať asi takto
-
-<%= image_tag "ie/regedit.png", {:alt => "Nastavenie User Agent textu pre Internet Explorer"} %>
-
-
-<h3>Firefox</h3>
-
-<ul>
-  <li>Do poľa pre zadávanie adresy vlož adresu <%= link_to "about:config", "about:config" %></li>
-  <li>Ak sa zobrazí varovanie, sľúb že budeš opatrný</li>
-  <li>Vytvor novú premennú typu <em>String</em> s menom <em>general.useragent.extra.adaptiveproxy</em> a ako hodnotu
-    zadaj svoj identifikátor
-  </li>
-  <li>Reštartuj Firefox</li>
-</ul>
-
-Vo výsledku by to malo vyzerať asi takto
-
-<%= image_tag "ff/config.png", {:alt => "Nastavenie User Agent textu pre Firefox"} %>
-
-<h3>Google Chrome</h3>
-
-<ul>
-  <li>Na ploche si vytvor nový odkaz na Google Chrome skopírovaním už existujúceho odkazu</li>
-  <li>Klikni na nový odkaz pravým tlačidlom a zvoľ Vlastnosti</li>
-  <li>Do poľa <em>Cieľ</em> doplň k existujúcej ceste parameter
-    <em>--user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/530.5 (KHTML, like Gecko)
-      Chrome/2.0.172.28 Safari/530.5"</em> a na koniec doplň svoj identifikátor
-  </li>
-  <li>Ak už máš Google Chrome otvorený, zavri ho</li>
-  <li>Spusti Google Chrome novovytvoreným odkazom</li>
-  <li><strong>Pozor, User Agent text bude nastavený len pri spúštaní týmto odkazom</strong></li>
-</ul>
-
-Vo výsledku by to malo vyzerať asi takto
-
-<%= image_tag "chrome/shortcut.png", {:alt => "Nastavenie User Agent textu pre Google Chrome"} %>
-
-<h3>Opera</h3>
-<p>
-  Nastavenie User Agent textu pre Operu je manuálne veľmi komplikované, pretože vyžaduje modifikáciu binárneho kódu
-  knižnice <em>opera.dll</em>.
-</p>
-
-<h3>Ostatné</h3>
-<p>
-  Ak si tu nenašiel svoj prehľadávač, <%= link_to "napíš nám", "http://nimbus.fiit.stuba.sk/redmine/projects/proxy/issues" %>, pridáme ho.
-</p>
+<%= link_to '&lt;&lt; Nastavenie proxy', { :action => 'settings' }, :class => 'back_button' %>
+<a href="http://www.google.com" class="next_button">Surfuj! &gt;&gt;</a>

@@ -11,8 +11,9 @@
   logov surfovania na webe (zaznamenávame čas, URLku a kľúčové slová). V tom nám môžeš pomôcť aj Ty.
 </p>
 
-<%= link_to "Prečítaj si o spôsobe identifikácie používateľa v proxy serveri na základe nastavenia user-agent reťazca", {:controller => :info, :action => :user_agent} %><br/>
-<%= link_to "stiahni si browser patcher (prípadne si prenes identifikátor na iný počítač)", {:controller => :patcher, :action => :download} %><br/>
-<%= link_to "nastav a zapni si proxy server", {:controller => :info, :action => :settings} %><br/>
-<%= link_to "surfuj", "http://www.google.com" %><br/>
-<%= link_to "oznám nám chyby v správaní proxy servera, ak nejaké zaznamenáš", "http://nimbus.fiit.stuba.sk/redmine/projects/proxy/issues" %>.
+<ol class="steps">
+  <li><p><%= link_to "Nastav si proxy server", {:controller => :info, :action => :settings} %></li></p>
+  <li><p><%= link_to "Nastav si svoj identifikátor", {:controller => :info, :action => :user_agent} %></li></p>
+  <li><p><%= link_to "Surfuj", "http://www.google.com" %></li></p>
+  <li><p><%= link_to "Oznám nám chyby v správaní proxy servera, ak nejaké zaznamenáš", "http://nimbus.fiit.stuba.sk/redmine/projects/proxy/issues" %>.</li></p>
+</ol>

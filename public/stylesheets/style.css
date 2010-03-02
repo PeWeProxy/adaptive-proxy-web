@@ -1,0 +1,190 @@
+body {
+  font-family: georgia, serif;
+  font-size: 16px;
+  line-height: 1.4em;
+}
+
+h1 {
+  font-size: 150%;
+  margin: 1.3em 0;
+}
+
+h2 {
+  font-size: 130%;
+  margin: 1em 0 1em 0;
+}
+
+p {
+  text-align: justify;
+  margin-top: 0.5em;
+}
+
+a {
+  color: #2E4B73;
+}
+
+img {
+  margin: 2em auto;
+  display: block;
+}
+
+header, article {
+  margin:0.5em 1em 1em 0.5em;
+}
+
+header {
+  display: block;
+  border-bottom:1px solid black;
+  font-size:3em;
+  padding-bottom:0.7em;
+}
+
+header a {
+  text-decoration: none;
+  color: #000;
+}
+
+article {
+  padding: 0 3em;
+  display: block;
+  margin-bottom: 2em;
+}
+
+aside {
+  margin: 0.5em 0.5em 0.5em 2em;
+  display: block;
+  float: right;
+  width: 30%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: 2em;
+}
+
+ol li {
+  list-style: inherit;
+}
+
+ol.steps {
+  margin: 20px 0;
+  padding: 0 0 0 35px;
+  width: 80%;
+}
+
+ol.steps li {
+  font-size: 130%;
+  color: #666;
+}
+
+ol.steps li p {
+  color: #000;
+  border-left: 1px #666 solid;
+  margin: 0;
+  padding: 0 0 1em 1em;
+}
+
+ol.steps li a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul.browsers {
+  margin-top: 1em;
+}
+
+ul.browsers h2 {
+  font-size: 150%;
+  padding-top: 0.5em;
+  height: 70px;
+  color:#807970;
+  width: 9em;
+  display: block;
+  margin: 0pt auto;
+}
+
+ul.browsers h2.left {
+  padding-left: 90px;
+}
+
+ul.browsers h2.right {
+  padding-right: 70px;
+}
+
+h2.firefox {
+  background: url('../images/browsers/firefox.png') top right no-repeat;
+}
+
+h2.chrome {
+  background: url('../images/browsers/chrome.png') top left no-repeat;
+}
+
+h2.opera {
+  background: url('../images/browsers/opera.png') top right no-repeat;
+}
+
+h2.ie {
+  background: url('../images/browsers/ie.png') top left no-repeat;
+}
+
+input.pac {
+  width: 20.3em;
+}
+
+img.pac {
+  margin: 2em auto;
+  width: 70%;
+  display: block;
+}
+
+a.back_button, a.next_button {
+  font-size: 130%;
+}
+
+a.back_button {
+  text-align: left;
+  float: left;
+}
+
+a.next_button {
+  text-align: right;
+  float: right;
+}
+
+a.button {
+  font-size: 120%;
+  display: block;
+  text-align: center;
+  width: 30em;
+  margin: 1em auto;
+  padding: 0.5em;
+  border: 1px solid #152f5f;
+  background-color: #2E4B73;
+  color: #fff;
+}
+
+a.button em {
+  font-style: normal;
+  font-size: 70%;
+}
+
+.foldable {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.fold {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+em.uid {
+  border: 1px dashed #ccc;
+  background-color: #eee;
+  padding: 0.1em;
+  font-weight: bold;
+}
