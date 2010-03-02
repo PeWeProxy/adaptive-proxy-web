@@ -1,8 +1,8 @@
 class PatcherController < ApplicationController
   @@uid_label = "APUID="
   @@uid = "$replace_this$"
-  PATCHER_BUTTON_LABEL = "download browser patcher"
-  PATCHER_FF_EXT_LABEL = "download firefox extension only"
+  PATCHER_BUTTON_LABEL = "Stiahni BrowserPatcher"
+  PATCHER_FF_EXT_LABEL = "Stiahni Firefox addon"
 
   def download
     @uid = session[:uid]
