@@ -9,6 +9,11 @@ class PatcherController < ApplicationController
     @new_uid = session[:new_uid]
     @patcher_button_label = PATCHER_BUTTON_LABEL
     @patcher_ff_ext_label = PATCHER_FF_EXT_LABEL
+<<<<<<< HEAD
+=======
+
+    redirect_to :action => :download_browser_patcher if @new_uid
+>>>>>>> 943d3c1... Redirect to browser-patcher download if no uid is present
   end
 
   def store
