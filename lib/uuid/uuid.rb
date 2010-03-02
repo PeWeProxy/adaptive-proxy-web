@@ -1,284 +1,312 @@
+#!/usr/bin/env ruby
+# Copyright(c) 2005 URABE, Shyouhei.
 #
-# = uuid.rb - UUID generator
+# Permission is hereby granted, free of  charge, to any person obtaining a copy
+# of  this code, to  deal in  the code  without restriction,  including without
+# limitation  the rights  to  use, copy,  modify,  merge, publish,  distribute,
+# sublicense, and/or sell copies of the code, and to permit persons to whom the
+# code is furnished to do so, subject to the following conditions:
 #
-# Author:: Assaf Arkin assaf@labnotes.org
-# Eric Hodel drbrain@segment7.net
-# Copyright:: Copyright (c) 2005-2008 Assaf Arkin, Eric Hodel
-# License:: MIT and/or Creative Commons Attribution-ShareAlike
-
-require 'fileutils'
-require 'thread'
-require 'tmpdir'
-
-
-##
-# = Generating UUIDs
+#        The above copyright notice and this permission notice shall be
+#        included in all copies or substantial portions of the code.
 #
-# Call #generate to generate a new UUID. The method returns a string in one of
-# three formats. The default format is 36 characters long, and contains the 32
-# hexadecimal octets and hyphens separating the various value parts. The
-# <tt>:compact</tt> format omits the hyphens, while the <tt>:urn</tt> format
-# adds the <tt>:urn:uuid</tt> prefix.
-#
-# For example:
-#
-# uuid = UUID.new
-#
-# 10.times do
-# p uuid.generate
-# end
-#
-# = UUIDs in Brief
-#
-# UUID (universally unique identifier) are guaranteed to be unique across time
-# and space.
-#
-# A UUID is 128 bit long, and consists of a 60-bit time value, a 16-bit
-# sequence number and a 48-bit node identifier.
-#
-# The time value is taken from the system clock, and is monotonically
-# incrementing. However, since it is possible to set the system clock
-# backward, a sequence number is added. The sequence number is incremented
-# each time the UUID generator is started. The combination guarantees that
-# identifiers created on the same machine are unique with a high degree of
-# probability.
-#
-# Note that due to the structure of the UUID and the use of sequence number,
-# there is no guarantee that UUID values themselves are monotonically
-# incrementing. The UUID value cannot itself be used to sort based on order
-# of creation.
-#
-# To guarantee that UUIDs are unique across all machines in the network,
-# the IEEE 802 MAC address of the machine's network interface card is used as
-# the node identifier.
-#
-# For more information see {RFC 4122}[http://www.ietf.org/rfc/rfc4122.txt].
+# THE  CODE IS  PROVIDED "AS  IS",  WITHOUT WARRANTY  OF ANY  KIND, EXPRESS  OR
+# IMPLIED,  INCLUDING BUT  NOT LIMITED  TO THE  WARRANTIES  OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE  AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+# AUTHOR  OR  COPYRIGHT  HOLDER BE  LIABLE  FOR  ANY  CLAIM, DAMAGES  OR  OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF  OR IN CONNECTION WITH  THE CODE OR THE  USE OR OTHER  DEALINGS IN THE
+# CODE.
 
-class Uuid
-
-  VERSION = '2.0.1'
-
-  ##
-  # Clock multiplier. Converts Time (resolution: seconds) to UUID clock
-  # (resolution: 10ns)
-  CLOCK_MULTIPLIER = 10000000
-
-  ##
-  # Clock gap is the number of ticks (resolution: 10ns) between two Ruby Time
-  # ticks.
-  CLOCK_GAPS = 100000
-
-  ##
-  # Version number stamped into the UUID to identify it as time-based.
-  VERSION_CLOCK = 0x0100
-
-  ##
-  # Formats supported by the UUID generator.
-  #
-  # <tt>:default</tt>:: Produces 36 characters, including hyphens separating
-  # the UUID value parts
-  # <tt>:compact</tt>:: Produces a 32 digits (hexadecimal) value with no
-  # hyphens
-  # <tt>:urn</tt>:: Adds the prefix <tt>urn:uuid:</tt> to the default format
-  FORMATS = {
-    :compact => '%08x%04x%04x%04x%012x',
-    :default => '%08x-%04x-%04x-%04x-%012x',
-    :urn => 'urn:uuid:%08x-%04x-%04x-%04x-%012x',
-  }
-
-  ##
-  # MAC address (48 bits), sequence number and last clock
-  STATE_FILE_FORMAT = 'SLLQ'
-
-  @state_file = nil
-  @mode = nil
-  @uuid = nil
-
-  ##
-  # The access mode of the state file. Set it with state_file.
-
-  def self.mode
-    @mode
-  end
-
-  ##
-  # Generates a new UUID string using +format+. See FORMATS for a list of
-  # supported formats.
-
-  def self.generate(format = :default)
-    @uuid ||= new
-    @uuid.generate format
-  end
-
-  ##
-  # Creates an empty state file in /var/tmp/ruby-uuid or the windows common
-  # application data directory using mode 0644. Call with a different mode
-  # before creating a UUID generator if you want to open access beyond your
-  # user by default.
-  #
-  # If the default state dir is not writable, UUID falls back to ~/.ruby-uuid.
-  #
-  # State files are not portable across machines.
-  def self.state_file(mode = 0644)
-    return @state_file if @state_file
-
-    @mode = mode
-
-    begin
-      require 'Win32API'
-
-      csidl_common_appdata = 0x0023
-      path = 0.chr * 260
-      get_folder_path = Win32API.new('shell32', 'SHGetFolderPath', 'LLLLP', 'L')
-      get_folder_path.call 0, csidl_common_appdata, 0, 1, path
-
-      state_dir = File.join(path.strip)
-    rescue LoadError
-      state_dir = File.join('', 'var', 'tmp')
-    end
-
-    if File.writable?(state_dir) then
-      @state_file = File.join(state_dir, 'ruby-uuid')
-    else
-      @state_file = File.expand_path(File.join('~', '.ruby-uuid'))
-    end
-
-    @state_file
-  end
-
-  ##
-  # Specify the path of the state file.
-  def self.state_file=(path)
-    @state_file = path
-  end
-
-  ##
-  # Create a new UUID generator. You really only need to do this once.
-  def initialize
-    @drift = 0
-    @last_clock = (Time.now.to_f * CLOCK_MULTIPLIER).to_i
-    @mutex = Mutex.new
-
-    if File.exist?(self.class.state_file) then
-      next_sequence
-    else
-      @mac = Mac.addr.gsub(/:|-/, '').hex & 0x7FFFFFFFFFFF
-      fail "Cannot determine MAC address from any available interface, tried with #{Mac.addr}" if @mac == 0
-      @sequence = rand 0x10000
-
-      open_lock 'w' do |io|
-        write_state io
-      end
-    end
-  end
-
-  ##
-  # Generates a new UUID string using +format+. See FORMATS for a list of
-  # supported formats.
-  def generate(format = :default)
-    template = FORMATS[format]
-
-    raise ArgumentError, "invalid UUID format #{format.inspect}" unless template
-
-    # The clock must be monotonically increasing. The clock resolution is at
-    # best 100 ns (UUID spec), but practically may be lower (on my setup,
-    # around 1ms). If this method is called too fast, we don't have a
-    # monotonically increasing clock, so the solution is to just wait.
-    #
-    # It is possible for the clock to be adjusted backwards, in which case we
-    # would end up blocking for a long time. When backward clock is detected,
-    # we prevent duplicates by asking for a new sequence number and continue
-    # with the new clock.
-
-    clock = @mutex.synchronize do
-      clock = (Time.new.to_f * CLOCK_MULTIPLIER).to_i & 0xFFFFFFFFFFFFFFF0
-
-      if clock > @last_clock then
-        @drift = 0
-        @last_clock = clock
-      elsif clock == @last_clock then
-        drift = @drift += 1
-
-        if drift < 10000 then
-          @last_clock += 1
-        else
-          Thread.pass
-          nil
-        end
-      else
-        next_sequence
-        @last_clock = clock
-      end
-    end until clock
-
-    template % [
-        clock & 0xFFFFFFFF,
-       (clock >> 32) & 0xFFFF,
-      ((clock >> 48) & 0xFFFF | VERSION_CLOCK),
-      @sequence & 0xFFFF,
-      @mac & 0xFFFFFFFFFFFF
-    ]
-  end
-
-  ##
-  # Updates the state file with a new sequence number.
-  def next_sequence
-    open_lock 'r+' do |io|
-      @mac, @sequence, @last_clock = read_state(io)
-
-      io.rewind
-      io.truncate 0
-
-      @sequence += 1
-
-      write_state io
-    end
-  rescue Errno::ENOENT
-    open_lock 'w' do |io|
-      write_state io
-    end
-  ensure
-    @last_clock = (Time.now.to_f * CLOCK_MULTIPLIER).to_i
-    @drift = 0
-  end
-
-  def inspect
-    mac = ("%012x" % @mac).scan(/[0-9a-f]{2}/).join(':')
-    "MAC: #{mac} Sequence: #{@sequence}"
-  end
-
-protected
-
-  ##
-  # Open the state file with an exclusive lock and access mode +mode+.
-  def open_lock(mode)
-    File.open self.class.state_file, mode, self.class.mode do |io|
-      begin
-        io.flock File::LOCK_EX
-        yield io
-      ensure
-        io.flock File::LOCK_UN
-      end
-    end
-  end
-
-  ##
-  # Read the state from +io+
-  def read_state(io)
-    mac1, mac2, seq, last_clock = io.read(32).unpack(STATE_FILE_FORMAT)
-    mac = (mac1 << 32) + mac2
-
-    return mac, seq, last_clock
-  end
-
-
-  ##
-  # Write that state to +io+
-  def write_state(io)
-    mac2 = @mac & 0xffffffff
-    mac1 = (@mac >> 32) & 0xffff
-
-    io.write [mac1, mac2, @sequence, @last_clock].pack(STATE_FILE_FORMAT)
-  end
-
+%w[
+	digest/md5
+	digest/sha1
+	tmpdir
+].each do |f|
+	require f
 end
+
+# Pure ruby UUID generator, which is compatible with RFC4122
+class UUID
+	# UUID epoch is 15th Oct. 1582
+	UNIXEpoch = 0x01B21DD213814000 # in 100-nanoseconds resolution
+
+	private_class_method :new
+
+	private
+	def initialize str
+		tmp = str.unpack "C*"
+		@num = tmp.inject do |r, i|
+			r * 256 | i
+		end
+		@num.freeze
+		self.freeze
+	end
+
+	public
+
+	def raw_bytes
+		ret = String.new
+		tmp = @num
+		16.times do |i|
+			x, y = tmp.divmod 256
+			ret << y
+			tmp = x
+		end
+		ret.reverse!
+		ret
+	end
+
+	class << self
+		def mask ver, str # :nodoc
+			ver = ver & 15
+			v = str[6]
+			v &= 0b0000_1111
+			v |= ver << 4
+			str[6] = v
+			r = str[8]
+			r &= 0b0011_1111
+			r |= 0b1000_0000
+			str[8] = r
+			str
+		end
+
+		def prand # :nodoc:
+			rand 0x100000000
+		end
+
+		private :mask, :prand
+
+		# UUID generation using SHA1. Recommended over create_md5.
+		# Namespace object is another UUID, some of them are pre-defined below.
+		def create_sha1 str, namespace
+			sha1 = Digest::SHA1.new
+			sha1.update namespace.raw_bytes
+			sha1.update str
+			sum = sha1.digest
+			raw = mask 5, sum[0..15]
+			new raw
+		end
+
+		# UUID generation using MD5 (for backward compat.)
+		def create_md5 str, namespace
+			md5 = Digest::MD5.new
+			md5.update namespace.raw_bytes
+			md5.update str
+			sum = md5.digest
+			raw = mask 3, sum[0..16]
+			new raw
+		end
+
+		# UUID  generation  using  random-number  generator.   From  it's  random
+		# nature, there's  no warranty that  the created ID is  really universaly
+		# unique.
+		def create_random
+			rnd = [prand, prand, prand, prand].pack "N4"
+			raw = mask 4, rnd
+			new raw
+		end
+
+		def read_state fp			  # :nodoc:
+			fp.rewind
+			Marshal.load fp.read
+		end
+
+		def write_state fp, c, m  # :nodoc:
+			fp.rewind
+			str = Marshal.dump [c, m]
+			fp.write str
+		end
+
+		private :read_state, :write_state
+		STATE_FILE = 'ruby-uuid'
+
+		# create  the "version  1" UUID  with current  system clock,  current UTC
+		# timestamp, and the IEEE 802 address (so-called MAC address).
+		#
+		# Speed notice: it's slow.  It writes  some data into hard drive on every
+		# invokation. If you want to speed  this up, try remounting tmpdir with a
+		# memory based filesystem  (such as tmpfs).  STILL slow?  then no way but
+		# rewrite it with c :)
+		def create clock=nil, time=Time.now, mac_addr=nil
+			c = t = m = nil
+			Dir.chdir Dir.tmpdir do
+				unless FileTest.exist? STATE_FILE then
+					# Generate a pseudo MAC address because we have no pure-ruby way
+					# to know  the MAC  address of the  NIC this system  uses.  Note
+					# that cheating  with pseudo arresses here  is completely legal:
+					# see Section 4.5 of RFC4122 for details.
+					sha1 = Digest::SHA1.new
+					256.times do
+						r = [prand].pack "N"
+						sha1.update r
+					end
+					str = sha1.digest
+					r = rand 34 # 40-6
+					node = str[r, 6] || str
+					node[0] |= 0x01 # multicast bit
+					k = rand 0x40000
+					open STATE_FILE, 'w' do |fp|
+						fp.flock IO::LOCK_EX
+						write_state fp, k, node
+						fp.chmod 0o777 # must be world writable
+					end
+				end
+				open STATE_FILE, 'r+' do |fp|
+					fp.flock IO::LOCK_EX
+					c, m = read_state fp
+					c += 1 # important; increment here
+					write_state fp, c, m
+				end
+			end
+			c = clock & 0b11_1111_1111_1111 if clock
+			m = mac_addr if mac_addr
+			time = Time.at time if time.is_a? Float
+			case time
+			when Time
+				t = time.to_i * 10_000_000 + time.tv_usec * 10 + UNIXEpoch
+			when Integer
+				t = time + UNIXEpoch
+			else
+				raise TypeError, "cannot convert ``#{time}'' into Time."
+			end
+
+			tl = t & 0xFFFF_FFFF
+			tm = t >> 32
+			tm = tm & 0xFFFF
+			th = t >> 48
+			th = th & 0b0000_1111_1111_1111
+			th = th | 0b0001_0000_0000_0000
+			cl = c & 0b0000_0000_1111_1111
+			ch = c & 0b0011_1111_0000_0000
+			ch = ch >> 8
+			ch = ch | 0b1000_0000
+			pack tl, tm, th, ch, cl, m
+		end
+
+		# A  simple GUID  parser:  just ignores  unknown  characters and  convert
+		# hexadecimal dump into 16-octet object.
+		def parse obj
+			str = obj.to_s.sub %r/\Aurn:uuid:/, ''
+			str.gsub! %r/[^0-9A-Fa-f]/, ''
+			raw = str[0..31].to_a.pack 'H*'
+			new raw
+		end
+
+		# The 'primitive constructor' of this class
+		# Note UUID.pack(uuid.unpack) == uuid
+		def pack tl, tm, th, ch, cl, n
+			raw = [tl, tm, th, ch, cl, n].pack "NnnCCa6"
+			new raw
+		end
+	end
+
+	# The 'primitive deconstructor', or the dual to pack.
+	# Note UUID.pack(uuid.unpack) == uuid
+	def unpack
+		raw_bytes.unpack "NnnCCa6"
+	end
+
+	# The timestamp of this UUID.
+	# Throws RageError if that time exceeds UNIX time range
+	def time
+		a = unpack
+		tl = a[0]
+		tm = a[1]
+		th = a[2] & 0x0FFF
+		t = tl
+		t += tm << 32
+		t += th << 48
+		t -= UNIXEpoch
+		tv_sec = t / 10_000_000
+		t -= tv_sec * 10_000_000
+		tv_usec = t / 10
+		Time.at tv_sec, tv_usec
+	end
+
+	# The version of this UUID
+	def version
+		v = unpack[2] & 0b1111_0000_0000_0000
+		v >> 12
+	end
+
+	# The clock sequence of this UUID
+	def clock
+		a = unpack
+		ch = a[3] & 0b0001_1111
+		cl = a[4]
+		c = cl
+		c += ch << 8
+		c
+	end
+
+	# The IEEE 802 address in a hexadecimal format
+	def node
+		m = unpack[5].unpack 'C*'
+		'%02x%02x%02x%02x%02x%02x' % m
+	end
+	alias mac_address node
+	alias ieee802 node
+
+	# Generate the string representation (a.k.a GUID) of this UUID
+	def to_s
+		a = unpack
+		a[-1] = mac_address
+		"%08x-%04x-%04x-%02x%02x-%s" % a
+	end
+	alias guid to_s
+
+	# Convert into a RFC4122-comforming URN representation
+	def to_uri
+		"urn:uuid:" + self.to_s
+	end
+	alias urn to_uri
+	alias inspect to_uri
+
+	# Convert into 128-bit unsigned integer
+	# Typically a Bignum instance, but can be a Fixnum.
+	def to_int
+		@num
+	end
+	alias to_i to_int
+
+	# Two  UUIDs  are  said  to  be  equal if  and  only  if  their  (byte-order
+	# canonicalized) integer representations are equivallent.  Refer RFC4122 for
+	# details.
+	def == other
+		to_i == other.to_i
+	end
+	alias eql? ==
+
+	# Two identical UUIDs should have same hash
+	def hash
+		to_i
+	end
+
+	include Comparable
+	# UUIDs are comparable (don't know what benefits are there, though).
+	def <=> other
+		to_s <=> other.to_s
+	end
+
+	# Pre-defined UUID Namespaces described in RFC4122 Appendix C.
+	NameSpace_DNS = parse "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+	NameSpace_URL = parse "6ba7b811-9dad-11d1-80b4-00c04fd430c8"
+	NameSpace_OID = parse "6ba7b812-9dad-11d1-80b4-00c04fd430c8"
+	NameSpace_X500 = parse "6ba7b814-9dad-11d1-80b4-00c04fd430c8"
+
+	# The Nil UUID in RFC4122 Section 4.1.7
+	Nil = parse "00000000-0000-0000-0000-000000000000"
+end
+
+
+# Local Variables:
+# mode: ruby
+# coding: utf-8
+# indent-tabs-mode: t
+# tab-width: 3
+# ruby-indent-level: 3
+# fill-column: 79
+# default-justification: full
+# End:
+# vi: ts=3 sw=3

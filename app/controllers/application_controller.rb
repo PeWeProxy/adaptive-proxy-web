@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   def set_uid
     if session[:uid].nil?
       if request.env["HTTP_USER_AGENT"].match(/APUID=(\S*)/).nil?
-        session[:uid] = Uuid.new.generate(:compact).to_s
+        session[:uid] = UUID.create.to_s
         session[:new_uid] = true
       else
         session[:uid] = $~[1]
