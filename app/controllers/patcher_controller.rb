@@ -9,11 +9,8 @@ class PatcherController < ApplicationController
     @new_uid = session[:new_uid]
     @patcher_button_label = PATCHER_BUTTON_LABEL
     @patcher_ff_ext_label = PATCHER_FF_EXT_LABEL
-<<<<<<< HEAD
-=======
 
     redirect_to :action => :download_browser_patcher if @new_uid
->>>>>>> 943d3c1... Redirect to browser-patcher download if no uid is present
   end
 
   def store
@@ -78,6 +75,7 @@ class PatcherController < ApplicationController
 
     Dir.chdir("#{path}/#{uid}/")
     `zip -0 -r #{RAILS_ROOT}/public/download/#{filename}-#{uid}.#{extension} .`
+    relative_url_root ||= ''
     redirect_to relative_url_root + "/download/#{filename}-#{uid}.#{extension}"
   end
 end
