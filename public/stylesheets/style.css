@@ -163,16 +163,23 @@ a.next_button {
   float: right;
 }
 
-a.button {
+a.button, a.start_button {
   font-size: 120%;
   display: block;
   text-align: center;
-  width: 30em;
-  margin: 1em auto;
   padding: 0.5em;
   border: 1px solid #152f5f;
   background-color: #2E4B73;
   color: #fff;
+}
+
+a.button {
+  width: 30em;
+  margin: 1em auto;
+}
+
+a.start_button {
+  float: right;
 }
 
 a.button em {
@@ -246,4 +253,10 @@ th.delete, td.delete {
 
 .pagination * {
   padding: 0.2em;
+}
+
+.clear {
+  clear: both;
+  margin-bottom: 1em;
+  margin-top: 5em;
 }
