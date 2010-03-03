@@ -46,10 +46,10 @@ všetky alebo len niektoré záznamy o sebe", {:controller => :logs, :action => 
         <h2 id="firefox" class="firefox right handle">Mozilla Firefox</h2>
         <div class="fold" id="firefox-fold">
           <ol>
-            <li>Do poľa pre zadávanie adresy vlož adresu <%= link_to "about:config", "about:config" %></li>
+            <li>Do poľa pre zadávanie adresy vlož adresu <em class="code">about:config</em></li>
             <li>Ak sa zobrazí varovanie, sľúb že budeš opatrný</li>
-            <li>Vytvor novú premennú typu <em>String</em> s menom <em>general.useragent.extra.adaptiveproxy</em> a ako hodnotu
-              zadaj svoj identifikátor
+            <li>Vytvor novú premennú typu <em>String</em> s menom <em class="code">general.useragent.extra.adaptiveproxy</em> a ako hodnotu
+              zadaj svoj identifikátor: <em class="uid"><%= @uid %></em>
             </li>
             <li>Reštartuj Firefox</li>
           </ol>
@@ -68,7 +68,7 @@ všetky alebo len niektoré záznamy o sebe", {:controller => :logs, :action => 
             <li>Klikni na nový odkaz pravým tlačidlom a zvoľ Vlastnosti</li>
             <li>Do poľa <em>Cieľ</em> doplň k existujúcej ceste parameter
               <em>--user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/530.5 (KHTML, like Gecko)
-                Chrome/2.0.172.28 Safari/530.5"</em> a na koniec doplň svoj identifikátor
+                Chrome/2.0.172.28 Safari/530.5"</em> a na koniec doplň svoj identifikátor <em class="uid"><%= @uid %></em>
             </li>
             <li>Ak už máš Google Chrome otvorený, zavri ho</li>
             <li>Spusti Google Chrome novovytvoreným odkazom</li>
@@ -85,8 +85,8 @@ všetky alebo len niektoré záznamy o sebe", {:controller => :logs, :action => 
         <h2 id="opera" class="opera right handle">Opera</h2>
         <div id="opera-fold" class="fold">
           <p>
-            Nastavenie User Agent textu pre Operu je manuálne veľmi komplikované, pretože vyžaduje modifikáciu binárneho kódu
-            knižnice <em>opera.dll</em>.
+            Manuálne nastavenie User Agent textu pre Operu je veľmi komplikované, pretože vyžaduje modifikáciu binárneho kódu
+            knižnice <em>opera.dll</em>. Skúste použiť náš <%= link_to 'browser patcher', {:controller => :patcher, :action => :download} %>.
           </p>
         </div>
       </li>
@@ -99,7 +99,7 @@ všetky alebo len niektoré záznamy o sebe", {:controller => :logs, :action => 
             <li>Nájdi vetvu
               <em>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\User Agent\Post Platform</em>
             </li>
-            <li>V tejto vetve vytvor nový reťazec do ktorého vlož svoj identifikátor</li>
+            <li>V tejto vetve vytvor nový reťazec do ktorého vlož svoj identifikátor <em class="uid"><%= @uid %></em></li>
           </ol>
 
           <p>Vo výsledku by to malo vyzerať asi takto</p>

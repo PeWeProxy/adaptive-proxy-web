@@ -197,7 +197,7 @@ a.button em {
   margin-bottom: 2em;
 }
 
-em.uid {
+em.uid,em.code {
   border: 1px dashed #ccc;
   background-color: #eee;
   padding: 0.1em;
