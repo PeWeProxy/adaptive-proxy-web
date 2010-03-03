@@ -131,8 +131,16 @@ h2.ie {
   background: url('../images/browsers/ie.png') top left no-repeat;
 }
 
+h2.unknown {
+  background: url('../images/browsers/unknown.png') top right no-repeat;
+}
+
 input.pac {
-  width: 20.3em;
+  width: 23em;
+  border: 1px dashed #ccc;
+  background-color: #eee;
+  padding: 0.1em;
+  font-weight: bold;
 }
 
 img.pac {
