@@ -188,3 +188,54 @@ em.uid {
   padding: 0.1em;
   font-weight: bold;
 }
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th {
+  font-weight: bold;
+  background-color: #2E4B73;
+  color: #fff;
+}
+
+td, th {
+  border-bottom: 1px solid #ddd;
+  padding: 0.1em;
+}
+
+th.timestamp, td.timestamp {
+  width: 10%;
+}
+
+th.url, td.url {
+  width: 40%;
+}
+
+th.keywords, td.keywords {
+  width: 40%
+}
+
+th.delete, td.delete {
+  width: 10%;
+  text-align: right;
+}
+
+.pagination {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: 120%;
+}
+
+.pagination .disabled {
+  color: #ccc;
+}
+
+.pagination a, .gap, .current {
+  border-left: 1px solid #aaa;
+}
+
+.pagination * {
+  padding: 0.2em;
+}
