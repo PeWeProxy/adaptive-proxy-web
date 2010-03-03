@@ -1,5 +1,5 @@
 set :application, "proxy"
-set :repository,  "gitosis@nimbus.fiit.stuba.sk:adaptive-proxy-user-reg.git"
+set :repository,  "gitosis@nimbus.fiit.stuba.sk:adaptive-proxy-web.git"
 set :deploy_to, "/var/rails/#{application}"
 
 set :scm, :git
