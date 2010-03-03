@@ -12,6 +12,6 @@ class LogsController < ApplicationController
 
   private
   def retrieve_logs
-    @logs = AccessLog.paginate_by_userid session[:uid], :page => params[:page], :order => 'timestamp DESC'
+    @logs = AccessLog.paginate_by_userid(session[:uid], :page => params[:page], :order => 'timestamp DESC', :include => 'page')
   end
 end
