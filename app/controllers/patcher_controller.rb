@@ -78,7 +78,8 @@ class PatcherController < ApplicationController
       `zip -0 -r #{RAILS_ROOT}/public/download/#{filename}-#{uid}.#{extension} .`
     end
 
-    prefix = relative_url_root || ''
+    prefix = relative_url_root
+    prefix = '' if prefix.nil?
     redirect_to prefix + "/download/#{filename}-#{uid}.#{extension}"
   end
 end
