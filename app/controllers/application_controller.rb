@@ -16,6 +16,12 @@ class ApplicationController < ActionController::Base
     elsif session[:uid].nil?
       session[:uid] = generate_uid
     end
+
+    if uid
+      session[:has_uid] = true
+    else
+      session[:has_uid] = false
+    end
   end
 
   def generate_uid

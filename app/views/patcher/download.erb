@@ -1,41 +1,32 @@
-<% if @new_uid.nil? %>
-  <p>Tvoj prehliadač je už správne nastavený. Ak by si chcel používať proxy server aj na inom počítači, je pre nás dôležité aby si všade používal rovnaké ID.</p>
-  <p>Tvoje aktuálne ID je <em class="uid"><%= @uid %></em></p>
-  <p>Aby si toto ID nemusel pamätať, môžeš si ho tu uložiť pod nejakým kódom a neskôr stiahnuť.</p>
+<p>Tvoj prehliadač je už správne nastavený. Ak by si chcel používať proxy server aj na inom počítači, je pre nás dôležité aby si všade používal rovnaké ID.</p>
+<p>Tvoje aktuálne ID je <em class="uid"><%= @uid %></em></p>
+<p>Aby si toto ID nemusel pamätať, môžeš si ho tu uložiť pod nejakým kódom a neskôr stiahnuť.</p>
 
-  <h2 class="handle" id="uid-store">Chcem si svoje ID uložiť</h2>
-  <div id="uid-store-fold" class="fold">
-    <% form_tag(:action => "store", :method => :post) do %>
-      <p>
-        <%= label_tag(:identifier, "Tvoj kód (napríklad tvoje meno)") %>
-        <%= text_field_tag(:identifier) %>
-      </p>
-      <p><%= submit_tag("Store") %></p>
-    <% end %>
-  </div>
-
-  <h2 class="handle" id="uid-retrieve">ID mám už uložené, chcem si stiahnuť BrowserPatcher</h2>
-  <div id="uid-retrieve-fold" class="fold">
-    <% form_tag(:action => "retrieve", :method => :post) do %>
-      <p>
-        <%= label_tag(:identifier, "Tvoj kód") %>
-        <%= text_field_tag(:identifier) %>
-      </p>
-      <p>
-        <%= label_tag(:leave_apuid, "Nemaž môj kód, ešte si chcem nastaviť proxy na inom PC") %>
-        <%= check_box_tag :leave_apuid, "1", false %>
-      </p>
-      <p>
-        <%= submit_tag(@patcher_button_label) %>
-        <%= submit_tag(@patcher_ff_ext_label) %>
-      </p>
-    <% end %>
-  </div>
-
-<% else %>
-    <p>Download <%= link_to "browser patcher (multiple browsers)", {:controller => "patcher", :action => "download_browser_patcher"} %>
-
-      <br/>
-      Download <%= link_to "download firefox extension (if you have firefox only)", {:controller => "patcher", :action => "download_ff_extension"} %>
+<h2 class="handle" id="uid-store">Chcem si svoje ID uložiť</h2>
+<div id="uid-store-fold" class="fold">
+  <% form_tag(:action => "store", :method => :post) do %>
+    <p>
+    <%= label_tag(:identifier, "Tvoj kód (napríklad tvoje meno)") %>
+    <%= text_field_tag(:identifier) %>
     </p>
-<% end %>
+    <p><%= submit_tag("Store") %></p>
+  <% end %>
+</div>
+
+<h2 class="handle" id="uid-retrieve">ID mám už uložené, chcem si stiahnuť BrowserPatcher</h2>
+<div id="uid-retrieve-fold" class="fold">
+  <% form_tag(:action => "retrieve", :method => :post) do %>
+    <p>
+    <%= label_tag(:identifier, "Tvoj kód") %>
+    <%= text_field_tag(:identifier) %>
+    </p>
+    <p>
+    <%= label_tag(:leave_apuid, "Nemaž môj kód, ešte si chcem nastaviť proxy na inom PC") %>
+    <%= check_box_tag :leave_apuid, "1", false %>
+    </p>
+    <p>
+    <%= submit_tag(@patcher_button_label) %>
+    <%= submit_tag(@patcher_ff_ext_label) %>
+    </p>
+  <% end %>
+</div>

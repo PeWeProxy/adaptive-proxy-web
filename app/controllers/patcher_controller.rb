@@ -6,11 +6,10 @@ class PatcherController < ApplicationController
 
   def download
     @uid = session[:uid]
-    @new_uid = session[:new_uid]
     @patcher_button_label = PATCHER_BUTTON_LABEL
     @patcher_ff_ext_label = PATCHER_FF_EXT_LABEL
 
-    redirect_to :action => :download_browser_patcher if @new_uid
+    redirect_to :action => :download_browser_patcher unless session[:has_uid]
   end
 
   def store
