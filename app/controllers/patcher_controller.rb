@@ -67,15 +67,19 @@ class PatcherController < ApplicationController
 
     path = "#{RAILS_ROOT}/templates"
 
-    FileUtils.cp_r "#{path}/#{filename}", "#{path}/#{uid}"
+    FileUtils.mkdir_p "#{path}/#{uid}/#{filename}" unless File.exists? "#{path}/#{uid}/#{filename}"
 
-    f = File.open("#{path}/#{uid}/#{edit_path}", "w")
+    FileUtils.cp_r "#{path}/#{filename}", "#{path}/#{uid}/"
+
+    f = File.open("#{path}/#{uid}/#{filename}/#{edit_path}", "w")
     f.puts string.gsub('$replace_this$', uid_to_print)
     f.close
 
-    Dir.chdir("#{path}/#{uid}/")
-    `zip -0 -r #{RAILS_ROOT}/public/download/#{filename}-#{uid}.#{extension} .`
-    relative_url_root ||= ''
-    redirect_to relative_url_root + "/download/#{filename}-#{uid}.#{extension}"
+    Dir.chdir("#{path}/#{uid}/#{filename}/") do
+      `zip -0 -r #{RAILS_ROOT}/public/download/#{filename}-#{uid}.#{extension} .`
+    end
+
+    prefix = relative_url_root || ''
+    redirect_to prefix + "/download/#{filename}-#{uid}.#{extension}"
   end
 end
