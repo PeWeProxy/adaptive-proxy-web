@@ -10,11 +10,23 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   def set_uid
-    if request.env["HTTP_USER_AGENT"].match(/(APUID=\S*)/).nil?
-      session[:uid] = "APUID=" + UUID.create.to_s.gsub(/-/, '')
-      session[:new_uid] = true
+    uid = get_uid_from_user_agent
+    if uid
+      session[:uid] = uid
+    elsif session[:uid].nil?
+      session[:uid] = generate_uid
+    end
+  end
+
+  def generate_uid
+      "APUID=#{UUID.create.to_s.gsub(/-/, '')}"
+  end
+
+  def get_uid_from_user_agent
+    if request.env["HTTP_USER_AGENT"].match(/(APUID=\S*)/)
+      $1
     else
-      session[:uid] = $~[1]
+      nil
     end
   end
 end
