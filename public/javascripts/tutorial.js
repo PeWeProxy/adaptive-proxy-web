@@ -6,4 +6,4 @@ foldable = function($) {
       $(section_id).toggle();
     }).css('cursor', 'pointer');
   });
-} (jQuery);
+} (adaptiveProxyJQuery);
