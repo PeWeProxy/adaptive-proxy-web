@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
     uid = get_uid_from_user_agent
     if uid
       session[:uid] = uid
+      session[:apuid] = uid.split('=')[1]
     elsif session[:uid].nil?
       session[:uid] = generate_uid
     end
