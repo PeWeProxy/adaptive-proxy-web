@@ -10,31 +10,58 @@
       <li>V sekcii <strong>Pripojenie (Connection)</strong> klikni na tlačidlo <strong>Nastavenia (Settings)</strong></li>
       <li>V okne <strong>Nastavenia pripojenia (Connection settings)</strong> zvoľ možnosť <strong>Automatická konfigurácia proxy (Automatic proxy configuration URL)</strong></li>
       <li>Do poľa označeného číslom 7 vlož túto adresu: <input type="text" class="pac" value="http://nimbus.fiit.stuba.sk/proxy/proxy.pac"/></li>
-      <li>Klikni na tlačidlo <strong>OK</strong> v okne <strong>Nastavenia pripojenia (Connection settings)</strong></li>
-      <li>Klikni na tlačidlo <strong>OK</strong> v okne <strong>Nastavenia (Options)</strong></li>
     </ol>
 
     <a href="/images/pac/firefox.png" alt="Obrázkový návod na nastavenie proxy vo Firefoxe" title="Obrázkový návod na nastavenie proxy vo Firefoxe">
       <%= image_tag "pac/firefox.png", :class => "pac" %>
-  </a>
+    </a>
   </div>
   </li>
   <li>
-  <h2 class="chrome left handle">Google Chrome</h2>
-  <p>
-  </p>
-  </li>
-  <li>
-  <h2 class="opera right handle">Opera</h2>
-  <p>
-  </p>
-  </li>
-  <li>
-  <h2 class="ie left handle">Internet Explorer</h2>
-  <p>
-  </p>
-  </li>
-  <li>
+  <h2 id="chrome" class="chrome left handle">Google Chrome</h2>
+  <div id="chrome-fold" class="fold">
+    <ol>
+      <li>Klikni na ikonu <strong>Nastavení</strong></li>
+      <li>V menu klikni na voľbu <strong>Nastavenia</strong></li>
+      <li>Klikni na tlačidlo <strong>Nastavenia proxy</strong> v záložke <strong>Pod kapotou</strong></li>
+      <li>Zvoľ záložku <strong>Pripojenie</strong></li>
+      <li>Klikni na tlačidlo <strong>Nastavenia LAN</strong></li>
+      <li>Zvoľ možnosť <strong>Použiť skript na automatické nastavenie proxy</strong></li>
+      <li>Do poľa zadaj adresu <input type="text" class="pac" value="http://nimbus.fiit.stuba.sk/proxy/proxy.pac"/></li>
+    </ol>
+    <a href="/images/pac/chrome.png" alt="Obrázkový návod na nastavenie proxy v Chrome" title="Obrázkový návod na nastavenie proxy v Chrome">
+      <%= image_tag "pac/chrome.png", :class => "pac" %>
+    </a>
+  </div>
+  <h2 id="opera" class="opera right handle">Opera</h2>
+  <div id="opera-fold" class="fold">
+    <ol>
+      <li>V hlavnom menu klikni na <strong>Nástroje</strong></li>
+      <li>Zvoľ položku <strong>Nastavenia</strong></li>
+      <li>Klikni na záložku <strong>Pokročilé</strong></li>
+      <li>V zozname v ľave časti vyber záložku <strong>Sieť</strong></li>
+      <li>Klikni na tlačidlo <strong>Proxy servery</strong></li>
+      <li>Do poľa zadaj adresu <input type="text" class="pac" value="http://nimbus.fiit.stuba.sk/proxy/proxy.pac"/></li>
+    </ol>
+    <a href="/images/pac/opera.png" alt="Obrázkový návod na nastavenie proxy v Opere" title="Obrázkový návod na nastavenie proxy v Opere">
+      <%= image_tag "pac/opera.png", :class => "pac" %>
+    </a>
+  </div>
+  <h2 id="ie" class="ie left handle">Internet Explorer</h2>
+  <div id="ie-fold" class="fold">
+    <ol>
+      <li>Ak sa nezobrazuje pruh s menu, podrž klávesu <strong>Alt</strong></li>
+      <li>V hlavnom menu klikni na <strong>Nástroje</strong></li>
+      <li>Zvoľ položku <strong>Nastavenia Internetu</strong></li>
+      <li>Zvoľ záložku <strong>Pripojenie</strong></li>
+      <li>Klikni na tlačidlo <strong>Nastavenia LAN</strong></li>
+      <li>Zvoľ možnosť <strong>Použiť skript na automatické nastavenie proxy</strong></li>
+      <li>Do poľa zadaj adresu <input type="text" class="pac" value="http://nimbus.fiit.stuba.sk/proxy/proxy.pac"/></li>
+    </ol>
+    <a href="/images/pac/ie.png" alt="Obrázkový návod na nastavenie proxy v Internet Exploreri" title="Obrázkový návod na nastavenie proxy v Internet Exploreri">
+      <%= image_tag "pac/ie.png", :class => "pac" %>
+    </a>
+  </div>
   <h2 class="unknown right handle" id="unknown">Ostatné</h2>
   <div id="unknown-fold" class="fold">
     <p>Odporúčame Ti nastaviť proxy server pomocou .pac súboru. Skopíruj adresu z tohto textového poľa <input type="text" value="http://nimbus.fiit.stuba.sk/proxy/proxy.pac" class="pac"/> a v nastaveniach svojho prehliadača nakonfiguruj proxy. Ak tvoj prehliadač nepodporuje konfiguráciu pomocou .pac súborov, môžeš použiť priame nastavenie proxy: <input type="text" class="pac" value="http://nimbus.fiit.stuba.sk:9666"/></p>
