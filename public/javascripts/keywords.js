@@ -7,10 +7,10 @@ kw = function($) {
   var retries = 0;
 
   function fetchKeywords() {
-    jQuery.get('http://' + base + '/keywords/load', {'checksum': _ap_checksum}, function(data) {
+    $.get('http://' + base + '/keywords/load', {'checksum': _ap_checksum}, function(data) {
       if(!/^\s*$/.test(data)) {
         clearTimeout(timer);
-        jQuery('#_ap_messagebox').html(data);
+        $('#_ap_messagebox').html(data);
       }
 
       retries++;
@@ -35,4 +35,4 @@ kw = function($) {
     timer = setInterval(fetchKeywords, 5000);
   });
 
-}(jQuery);
+}(adaptiveProxyJQuery);

@@ -26,4 +26,4 @@ timelog = function($) {
 
   setInterval(upload_activity, period * 1000)
 
-}(jQuery);
+}(adaptiveProxyJQuery);
