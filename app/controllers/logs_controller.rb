@@ -2,7 +2,7 @@ class LogsController < ApplicationController
   before_filter :retrieve_logs
 
   def list
-    @uid = session[:uid]
+    @uid = session[:apuid]
   end
 
   def delete
@@ -12,6 +12,6 @@ class LogsController < ApplicationController
 
   private
   def retrieve_logs
-    @logs = AccessLog.paginate_by_userid(session[:uid], :page => params[:page], :order => 'timestamp DESC', :include => 'page')
+    @logs = AccessLog.paginate_by_userid(session[:apuid], :page => params[:page], :order => 'timestamp DESC', :include => 'page')
   end
 end
