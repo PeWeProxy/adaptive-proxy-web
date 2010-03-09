@@ -10,18 +10,16 @@ function FindProxyForURL(url,host) {
     return PROXY;
   }
 
-/*
   if ((host == "localhost") ||
       (shExpMatch(host, "localhost.*")) ||
       (host == "127.0.0.1")) {
         return "DIRECT";
   }
-*/
 
   if (shExpMatch(url, "*.css") ||
       shExpMatch(url, "*.css?*") ||
-  //    shExpMatch(url, "*.js") ||
-  //    shExpMatch(url, "*.js?*") ||
+      shExpMatch(url, "*.js") ||
+      shExpMatch(url, "*.js?*") ||
       shExpMatch(url, "*.jpg") ||
       shExpMatch(url, "*.jpg?*") ||
       shExpMatch(url, "*.jpeg") ||
