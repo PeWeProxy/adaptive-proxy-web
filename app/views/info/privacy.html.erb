@@ -1,0 +1,37 @@
+Ak nechceš, aby sme zaznamenávali Tvoje návštevy na niektorých stránkach, môžeš použiť rozšírenie Firefoxu <a href="https://addons.mozilla.org/en-US/firefox/addon/2464" title="FoxyProxy addon">FoxyProxy</a>.
+
+Proxy pri štandardnom nastavení (ak použiješ nastavenie pomocou automatického .pac súboru) nie je použitá pri prístupe na zabezpečené stránky (http<strong>s</strong>://) &mdash; teda väčšina prihlasovacích formulárov, internet banking a podobné.
+
+Po nainštalovaní FoxyProxy klikni na ikonu FoxyProxy v pravom dolnom rohu okna prehliadača a zvoľ možnosť <strong>Nastavenia (Options)</strong>.
+
+<a href="/images/foxyproxy/foxyproxy.png" alt="Hlavné okno FoxyProxy" title="Hlavné okno FoxyProxy">
+  <%= image_tag "foxyproxy/foxyproxy.png", :class => "pac" %>
+</a>
+
+V zobrazenom okne klikni na tlačidlo <strong>Add New Proxy</strong>. 
+
+<a href="/images/foxyproxy/newproxy.png" alt="Vytvorenie nového proxy vo FoxyProxy" title="Vytvorenie nového proxy vo FoxyProxy">
+  <%= image_tag "foxyproxy/newproxy.png", :class => "pac" %>
+</a>
+
+V záložke <strong>Proxy details</strong> zaškrtni možnosť <strong>Automatic proxy configuration URL</strong> a do poľa zadaj hodnotu <input type="text" class="pac" value="http://nimbus.fiit.stuba.sk/proxy/proxy.pac"/>. Klikni na záložku <strong>URL patterns</strong>.
+
+<a href="/images/foxyproxy/urlpatterns.png" alt="Pridanie URL vzorov" title="Pridanie URL vzorov">
+  <%= image_tag "foxyproxy/urlpatterns.png", :class => "pac" %>
+</a>
+
+Klikni na tlačidlo <strong>Add New Pattern</strong>.
+
+V ďalšom kroku je potrené proxy server aktivovať. V okne <strong>Add New Pattern</strong> vytvor nové pravidlo podľa nasledujúceho obrázka. Dôležité je vybrať hodnotu <strong>Whitelist</strong>.
+
+<a href="/images/foxyproxy/whitelist.png" alt="Aktivovanie proxy" title="Aktivovanie proxy">
+  <%= image_tag "foxyproxy/whitelist.png" %>
+</a>
+
+Ďalší krok zopakuj pre každú adresu, ktorú nechceš načítavať cez proxy a teda umožniť nám zaznamenávať Tvoju aktivitu. Ak napríklad chceš zakázať spracovávanie (teda ukladanie záznamov o Tvojej aktivite) pre Facebook, vytvor si pravidlo podľa nasledujúceho obrázka. Dôležité je vybrať hodnotu <strong>Blacklist</strong>
+
+<a href="/images/foxyproxy/blacklist.png" alt="Zakázanie URL" title="Zakázanie URL">
+  <%= image_tag "foxyproxy/blacklist.png" %>
+</a>
+
+Posledným krokom je spustenie FoxyProxy. Klikni pravým tlačidlom na ikonu FoxyProxy v pravej spodnej časti prehliadača. Z ponuky vyber možnosť <strong>Use proxies based on their pre-defined patterns and priorities</strong>.
