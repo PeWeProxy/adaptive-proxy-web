@@ -13,4 +13,7 @@ class InfoController < ApplicationController
 
   def privacy
   end
+
+  def projects
+  end
 end
