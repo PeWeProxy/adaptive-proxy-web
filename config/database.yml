@@ -18,8 +18,8 @@ common: &common
    adapter: mysql
    host: localhost
    port: 3306
-   username: proxy
-   password: rabbit
+   username: RoR
+   password: RoRatAleF
 
 development:
    <<: *common
