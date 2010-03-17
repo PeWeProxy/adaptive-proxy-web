@@ -10,4 +10,7 @@ class InfoController < ApplicationController
   def settings
     @uid = session[:uid]    
   end
+
+  def privacy
+  end
 end

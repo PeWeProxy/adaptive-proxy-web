@@ -4,9 +4,8 @@
   <p>
     V pilotnej prevádzke je jedinou informáciou, ktorú o Tebe vieme, číslo (ktoré sme Ti priradili a ktoré nám posielaš
     v User Agent texte) a stránky na ktoré pod týmto číslom chodíš. Ak nechceš aby sme zaznamenávali Tvoje
-    návštevy na niektorých stránkach, môžeš si to samozrejme <%= link_to "nastaviť", {:controller => :info, :action => :settings, :anchor => "privacy"} %>
-    (aktuálne iba pre prehliadač <%= link_to "firefox", "http://www.mozilla.com/firefox"  %>). Rovnako môžeš <%= link_to "nenávratne zmazať
-všetky alebo len niektoré záznamy o sebe", {:controller => :logs, :action => :list} %> z našej databázy.
+    návštevy na niektorých stránkach, môžeš si to samozrejme <%= link_to "nastaviť", {:controller => :info, :action => :privacy} %>
+      (aktuálne iba pre prehliadač <%= link_to "firefox", "http://www.mozilla.com/firefox"  %>). Rovnako môžeš <%= link_to "nenávratne zmazať všetky alebo len niektoré záznamy o sebe", {:controller => :logs, :action => :list} %> z našej databázy.
   </p>
 </aside>
 
