@@ -1,12 +1,12 @@
 set :application, "proxy"
-set :repository,  "gitosis@nimbus.fiit.stuba.sk:adaptive-proxy-web.git"
+set :repository,  "gitosis@relax.fiit.stuba.sk:adaptive-proxy-web.git"
 set :deploy_to, "/var/rails/#{application}"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-server "nimbus.fiit.stuba.sk", :app, :web, :db, :primary => true
-set :user, "proxy-user"
+server "peweproxy.fiit.stuba.sk", :app, :web, :db, :primary => true
+set :user, "peweproxy"
 set :use_sudo, false
 
 
