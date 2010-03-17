@@ -27,6 +27,7 @@
   <li><p><%= link_to "Nastav si proxy server", {:controller => :info, :action => :settings} %></li></p>
   <li><p><%= link_to "Nastav si svoj identifikátor", {:controller => :info, :action => :user_agent} %></li></p>
   <li><p><%= link_to "Surfuj", "http://www.google.com" %></li></p>
+  <li><p><%= link_to "Nechaj si posielať mailom novinky", {:controller => :emails, :action => :register}, :class => 'voluntary' %></li></p>
 </ol>
 
 <%= link_to 'Začni nastavením proxy &gt;&gt;', { :action => 'settings' }, :class => 'start_button' %>
