@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>PeWe Proxy News</title>
+  <subtitle></subtitle>
+  <link href="http://peweproxy.fiit.stuba.sk/news.xml" rel="self"/>
+  <link href="http://peweproxy.fiit.stuba.sk"/>
+  <updated>2010-03-17T23:19:00Z</updated>
+  <author>
+    <name>proxy</name>
+  </author>
+  <id>urn:uuid:90c7bc89-da99-13d9-b91C-0003939e0af6</id>
+  <entry>
+    <title>Spustenie RSS</title>
+    <link href="http://peweproxy.fiit.stuba.sk/"/>
+    <id>urn:uuid:3225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+    <updated>2010-03-17T23:19:00Z</updated>
+    <summary>Spustenie RSS kanála</summary>
+  </entry>
+</feed>
