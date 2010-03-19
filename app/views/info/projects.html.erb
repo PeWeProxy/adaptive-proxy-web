@@ -1,8 +1,17 @@
+<p>
+  Na tejto podstránke nájdeš stručný opis projektov, ktoré sú nasadené na našom proxy serveri alebo ich plánujeme spustiť v dohľadnej dobe. O ich spustení a ďalších novinkách Ťa môžeme informovať, stačí ak si pridáš naše <a href="/news.xml" title="news feed">RSS</a> do čítačky, alebo si necháš <%= link_to 'posielať novinky na email', :controller => :emails, :action => :register %>. Pre úspešné doladenie našich metód však potrebujeme dostatok testovacích dát. Pomôž nám ich získať. Dúfame, že Ti za to potom na oplátku poskytneme zaujímavé vylepšenia webu.
+</p>
+
+<h1>Spustené</h1>
+
+<h2 class="project">Identifikácia virtuálnych komunít (pretože človek je tvor sociálny)</h2>
+<p>Tento projekt má za cieľ extrahovať zo zaznamenaných dát virtuálne komunity, teda spájať ľudí s podobnými záujmami. Virtuálne komunity samé o sebe nie sú veľmi užitočné, ale predstavujú dôležitý základ pre ďalšie metódy, ktoré pracujú so sociálnymi väzbami (napr. odporúčanie).</p>
+<p>Navrhli sme teda metódu, ktorá sleduje rôzne aspekty interakcií používateľov s (v zásade hocijakým) webovým systémom (čo človek hľadá, kedy to hľadá). Na základe týchto údajov následne vypočítavam podobnosti resp. súvislosti interakcií, čo umožňuje odhaľovať skupiny veľmi podobných interakcií rôznych ľudí, a v konečnom dôsledku aj skupiny ľudí čo "vyhľadávajú podobne".</p>
+<p>Momentálne potrebujeme overiť, či naša metóda "rozdeľuje správnych ľudí do správnych škatuliek". Používaj proxy server, surfuj na webe tak ako doteraz a my sa Ťa v istom okamihu (ale iba raz, sľubujeme) spýtame, či sme sa trafili dobre. Dobre identifikované virtuálne komunity využijeme pre zlepšenie vyhľadávania v ďalšom pripravonam projekte, o ktorom sa dočítaš nižšie.</p> 
+
+
 <h1>Pripravujeme</h1>
 
-<p>
-  Tu sa nachádza zoznam projektov, ktoré plánujeme spustiť. O ich spustení Ťa môžeme informovať, stačí ak si pridáš naše <a href="/news.xml" title="news feed">RSS</a> do čítačky, alebo si necháš <%= link_to 'posielať novinky na email', :controller => :emails, :action => :register %>. Spustenie týchto projektov však závisí na dostatku dát. Pomôž nám ich získať.
-</p>
 
 <h2 class="project">Zlepšenie vyhľadávania (rýchlejšie nájdeš to čo hľadáš) <em class="launchDate">19. apríl 2010</em> </h2>
 <p>
@@ -14,3 +23,13 @@
 <p>
   Pomôž nám pomôcť Ti. Používaj proxy server a dovoľ nám tým zaradiť Ťa do sociálnej siete. Odporúčanie kľúčových slov plánujeme spustiť 19. apríla.
 </p>
+
+<h2 class="project">Vylepšenie navigácie na webovom sídle našej fakulty (využi to, že niekto to už našiel pred Tebou) <em class="launchDate">(dátum spustenia oznámime čoskoro)</em> </h2>
+<p>
+  Poznáme len málo ľudí, ktorí by boli spokojní s našim fakultným webom. Naopak, veľa ľudí má problém nájsť rýchlo a efektívne tie správne informácie o tom, ako sa má odovzdávať záverečný projekt, kedy začína skúškové obdobie a v ktorý utorok sa učí ako vo štvrtok. Informácie o rôznych akciách a udalostiach sú na webe roztrieštené a človek sa v nich ľahko stratí.
+</p>
+<p>
+  Myslíme si, že máme riešenie tohto problému. Metódu, ktorá analyzuje používanie fakultného webu, zisťuje trendy (sú informácie, ktoré hľadajú takmer všetci v rovnakom časovom období) a dokáže návštevníkom naservírovať také navigačné menu, ktoré im skrátka "sadne".
+</p>
+
+

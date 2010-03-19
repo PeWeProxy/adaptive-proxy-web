@@ -14,8 +14,13 @@ class InfoController < ApplicationController
   end
 
   def privacy
+    @proxy_pac = "http://peweproxy.fiit.stuba.sk/proxy.pac"
   end
 
   def projects
+  end
+
+  def technologies
+    @repositories_url = "http://relax.fiit.stuba.sk/gitweb"
   end
 end

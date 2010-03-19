@@ -14,7 +14,7 @@ V zobrazenom okne klikni na tlačidlo <strong>Add New Proxy</strong>.
   <%= image_tag "foxyproxy/newproxy.png", :class => "pac" %>
 </a>
 
-V záložke <strong>Proxy details</strong> zaškrtni možnosť <strong>Automatic proxy configuration URL</strong> a do poľa zadaj hodnotu <input type="text" class="pac" value="http://nimbus.fiit.stuba.sk/proxy/proxy.pac"/>. Klikni na záložku <strong>URL patterns</strong>.
+V záložke <strong>Proxy details</strong> zaškrtni možnosť <strong>Automatic proxy configuration URL</strong> a do poľa zadaj hodnotu <input type="text" class="pac" value="<%=@proxy_pac%>"/>. Klikni na záložku <strong>URL patterns</strong>.
 
 <a href="/images/foxyproxy/urlpatterns.png" alt="Pridanie URL vzorov" title="Pridanie URL vzorov">
   <%= image_tag "foxyproxy/urlpatterns.png", :class => "pac" %>

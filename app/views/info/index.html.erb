@@ -3,10 +3,21 @@
   <h2>Prečo by som to mal používať?</h2>
 
   <p>
-    V súčasnosti <%= link_to 'pripravujeme niekoľko projektov', { :action => 'projects' } %>, ktoré Ti pomôžu zlepšiť Tvoju prácu z Webom. Prvý z projektov Ti pomôže pri vyhľadávaní tak, že Ti pomôže použiť tie správne kľúčové slová, aby si to, čo hľadáš, našiel rýchlejšie. Druhý projekt Ti zasa pomôže lorem ipsum dolor.
+    V súčasnosti <%= link_to 'pripravujeme niekoľko projektov', { :action => 'projects' } %>, ktoré Ti pomôžu zlepšiť Tvoju prácu s webom (zefektívnia vyhľadávanie, sprehľadnia navigáciu...). Napr. jeden z projektov Ti pomôže pri vyhľadávaní tak, že Ti pomôže použiť tie správne kľúčové slová, aby si to, čo hľadáš, našiel rýchlejšie.
+  </p>
+
+  <h2>A čo moje súkromie?</h2>
+
+  <p>
+    O svoje súkromie sa báť nemusíš. Aby nami navrhované vylepšené surfovanie na webe mohlo fungovať, potrebujeme vedieť kúsok viac o Tebe a o Tvojich záujmoch. Preto zaznamenávame časť Tvojej aktivity na Webe
+    &mdash; adresu stránky na ktorej si bol spolu s časom návštevy. Tieto informácie spojíme s Tvojim náhodne vygenerovaným identifikátorom. Údaje sú anonymné, Tvoj číselný identifikátor k Tvojej osobe priradiť bez Tvojej pomoci nedokážeme.
   </p>
   <p>
-    O svoje súkromie sa báť nemusíš. Aby tu popísané projekty mohli fungovať, potrebujeme vedieť viac o Tebe a o Tvojich záujmoch. Preto zaznamenávame Tvoju aktivitu na Webe &mdash; jediná citlivá informácia ktorú zapisujeme je adresa stránky na ktorej si bol a Tvoj náhodne vygenerovaný kód. Údaje sú anonymné, Tvoj číselný kód k Tvojej osobe priradiť nedokážeme. Ak si nastavíš proxy podľa našich inštrukcií, tak <strong>nebude použitá na prístup k zabezpečeným strákam (https), teda k prihlasovacím formulárom alebo internet bankingu</strong>. Ak používaš prehliadač Firefox, môžeš si dokonca <%= link_to 'nastaviť stránky na ktorých sa proxy nemá použiť', { :action => :privacy } %>.
+    Proxy zaznamenáva iba navštívenú URL adresu, <strong>nezaznamenávame</strong> si samotný obsah správ, ktoré Tvoj prehliadač posiela do Internetu (napr. obsah formulárov). Ak si nastavíš proxy podľa našich inštrukcií, tak <strong>sa nikdy nepoužije</strong> na prístup k stránkam zabezpečeným protokolom https, teda k prihlasovacím formulárom alebo internet bankingu - na takéto stránky sa Tvoj prehliadač pripojí vždy priamo. Ak používaš prehliadač Firefox, môžeš si dokonca <%= link_to 'nastaviť stránky na ktorých sa proxy nemá použiť', { :action => :privacy } %>.
+  </p>
+  <p>
+    Ak máš chuť, <%= link_to "tu", {:action => :technologies} %> sa môžeš dočítať viac o technológiách, na ktorých to celé beží a dostať sa až ku zdrojovým kódom všetkých aplikácií, ktoré zabezpečujú náš špeciál
+    ny proxy.
   </p>
 </aside>
 
