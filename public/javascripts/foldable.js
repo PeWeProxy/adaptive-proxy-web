@@ -4,6 +4,7 @@ foldable = function($) {
     $('.handle').click(function() {
       var section_id = '#' + $(this).attr('id') + '-fold';
       $(section_id).toggle();
+      this.scrollIntoView();
     }).css('cursor', 'pointer');
   });
 } (adaptiveProxyJQuery);
