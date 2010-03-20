@@ -1,5 +1,4 @@
-body {
-  font-family: georgia, serif;
+body { font-family: georgia, serif;
   font-size: 14px;
   line-height: 1.4em;
   width: 990px;
@@ -11,15 +10,21 @@ h1 {
   margin: 1.3em 0;
 }
 
+h1.project {
+  border-bottom: 2px solid #2E4B73;
+  padding-bottom: 0.1em;
+}
+
 h2 {
   font-size: 130%;
   margin: 1em 0 1em 0;
 }
 
 h2.project {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px dashed #2E4B73;
   padding-bottom: 0.1em;
   margin-top: 1.3em;
+  clear: both;
 }
 
 p {
@@ -38,6 +43,19 @@ img {
 
 img.feed {
   margin: 0px;
+  float: right;
+}
+
+img.project {
+  width: 300px;
+  margin: 0.1em 1em 0.1em 1em;
+}
+
+.left {
+  float: left;
+}
+
+.right {
   float: right;
 }
 
@@ -229,9 +247,10 @@ em.uid,em.code {
   font-weight: bold;
 }
 
-em.launchDate {
+.launchDate {
   background: url('../images/calendar.png') transparent center left no-repeat;
-  padding-left: 30px
+  padding-left: 30px;
+  display: inline;
 }
 
 table {
@@ -286,6 +305,11 @@ th.delete, td.delete {
 }
 
 .clear {
+  clear: both;
+}
+
+.lower {
   margin-bottom: 1em;
   margin-top: 5em;
 }
+
