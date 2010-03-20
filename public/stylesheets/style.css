@@ -313,3 +313,6 @@ th.delete, td.delete {
   margin-top: 5em;
 }
 
+form {
+  margin-top: 2em;
+}
