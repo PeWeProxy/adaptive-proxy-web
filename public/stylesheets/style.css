@@ -51,11 +51,11 @@ img.project {
   margin: 0.1em 1em 0.1em 1em;
 }
 
-.left {
+.float-left {
   float: left;
 }
 
-.right {
+.float-right {
   float: right;
 }
 
