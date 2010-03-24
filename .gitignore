@@ -2,5 +2,5 @@ log/*.log
 tmp/**/*
 doc/api
 doc/app
-templates/*
 public/download/*
+templates/APUID*
