@@ -37,6 +37,7 @@
 <ul class="foldable">
   <li>
   <%= link_to 'Chcem to nastaviť automaticky<br/><em>Stiahni Browser Patcher (potrebná Java 1.6)', { :controller => 'patcher', :action => 'download' }, :class => 'button handle' %>
+  <%= link_to 'Chcem to nastaviť automaticky, ale len pre Firefox<br/><em>Stiahni AdaptiveProxy extension', { :controller => 'patcher', :action => 'download_ff_extension' }, :class => 'button handle' %>
   </li>
   <li>
     <a href="#" id="browsers" class="button handle">Nastavím si to ručne</a>
