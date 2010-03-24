@@ -25,8 +25,12 @@
   </header>
 
   <section>
-    <% unless session[:has_uid] %>
-      <div class="setup-warning">
+    <% if session[:has_uid] %>
+      <div class="setup info">
+        Tvoje nastavenie proxy je kompletné. Môžeš začať <a href="http://www.google.com" title="Google">surfovať</a>
+      </div>
+    <% else %>
+      <div class="setup warning">
         Nastavenie Proxy nie je kompletné - chýba Ti User-Agent identifikátor. Uisti sa že máš <%= link_to 'proxy zapnuté', :controller => :info, :action => :settings %> a potom si <%= link_to 'identifikátor nastav', :controller => :info, :action => :user_agent %>.
       </div>
     <% end %>
