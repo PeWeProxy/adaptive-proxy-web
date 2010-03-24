@@ -11,8 +11,8 @@
   <% @logs.each_with_index do |log, index| %>
       <tr>
         <td class="timestamp" title="<%= log.timestamp %>"><%= time_ago_in_words(log.timestamp) %></td>
-        <td class="url"><a href="<%= log.page.url %>" title="<%= log.page.url %>"><%= log.page.url[1..50] %></a></td>
-        <td class="keywords"><%= log.page.keywords.gsub(/,(?=\S+?)/, ', ') %></td>
+        <td class="url"><a href="<%= log.page.url %>" title="<%= log.page.url %>"><%= shorten log.page.url %></a></td>
+        <td class="keywords" title="<%= log.page.keywords %>"><%= shorten log.page.keywords.gsub(/,(?=\S+?)/, ', ') %></td>
         <td class="delete"><%= link_to "zmaž", {:action => :delete, :id => index}, {:confirm => "Zmazať", :method => :post} %>
       </tr>
   <% end %>
