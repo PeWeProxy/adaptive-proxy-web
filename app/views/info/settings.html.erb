@@ -10,11 +10,13 @@
       <li>V sekcii <strong>Pripojenie (Connection)</strong> klikni na tlačidlo <strong>Nastavenia (Settings)</strong></li>
       <li>V okne <strong>Nastavenia pripojenia (Connection settings)</strong> zvoľ možnosť <strong>Automatická konfigurácia proxy (Automatic proxy configuration URL)</strong></li>
       <li>Do poľa označeného číslom 7 vlož túto adresu: <input type="text" class="pac" value="<%= @proxy_pac %>"/></li>
+      <li>Nezabudni si <%= link_to 'nastaviť User Agent', { :action => 'user_agent' }  %></li>
     </ol>
 
     <a href="/images/pac/firefox.png" alt="Obrázkový návod na nastavenie proxy vo Firefoxe" title="Obrázkový návod na nastavenie proxy vo Firefoxe">
       <%= image_tag "pac/firefox.png", :class => "pac" %>
     </a>
+<%= link_to 'Nastavenie User Agent &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
   </div>
   </li>
   <li>
@@ -28,10 +30,12 @@
       <li>Klikni na tlačidlo <strong>Nastavenia LAN</strong></li>
       <li>Zvoľ možnosť <strong>Použiť skript na automatické nastavenie proxy</strong></li>
       <li>Do poľa zadaj adresu <input type="text" class="pac" value="<%= @proxy_pac %>"/></li>
+      <li>Nezabudni si <%= link_to 'nastaviť User Agent', { :action => 'user_agent' }  %></li>
     </ol>
     <a href="/images/pac/chrome.png" alt="Obrázkový návod na nastavenie proxy v Chrome" title="Obrázkový návod na nastavenie proxy v Chrome">
       <%= image_tag "pac/chrome.png", :class => "pac" %>
     </a>
+<%= link_to 'Nastavenie User Agent &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
   </div>
   <h2 id="opera" class="opera right handle">Opera</h2>
   <div id="opera-fold" class="fold">
@@ -42,10 +46,12 @@
       <li>V zozname v ľave časti vyber záložku <strong>Sieť</strong></li>
       <li>Klikni na tlačidlo <strong>Proxy servery</strong></li>
       <li>Do poľa zadaj adresu <input type="text" class="pac" value="<%= @proxy_pac %>"/></li>
+      <li>Nezabudni si <%= link_to 'nastaviť User Agent', { :action => 'user_agent' }  %></li>
     </ol>
     <a href="/images/pac/opera.png" alt="Obrázkový návod na nastavenie proxy v Opere" title="Obrázkový návod na nastavenie proxy v Opere">
       <%= image_tag "pac/opera.png", :class => "pac" %>
     </a>
+ <%= link_to 'Nastavenie User Agent &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
   </div>
   <h2 id="ie" class="ie left handle">Internet Explorer</h2>
   <div id="ie-fold" class="fold">
@@ -57,9 +63,11 @@
       <li>Klikni na tlačidlo <strong>Nastavenia LAN</strong></li>
       <li>Zvoľ možnosť <strong>Použiť skript na automatické nastavenie proxy</strong></li>
       <li>Do poľa zadaj adresu <input type="text" class="pac" value="<%= @proxy_pac %>"/></li> </ol>
-    <a href="/images/pac/ie.png" alt="Obrázkový návod na nastavenie proxy v Internet Exploreri" title="Obrázkový návod na nastavenie proxy v Internet Exploreri">
+      <li>Nezabudni si <%= link_to 'nastaviť User Agent', { :action => 'user_agent' }  %></li> 
+   <a href="/images/pac/ie.png" alt="Obrázkový návod na nastavenie proxy v Internet Exploreri" title="Obrázkový návod na nastavenie proxy v Internet Exploreri">
       <%= image_tag "pac/ie.png", :class => "pac" %>
     </a>
+ <%= link_to 'Nastavenie User Agent &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
   </div>
   <h2 class="unknown right handle" id="unknown">Ostatné</h2>
   <div id="unknown-fold" class="fold">
