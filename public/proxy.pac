@@ -16,6 +16,10 @@ function FindProxyForURL(url,host) {
         return "DIRECT";
   }
 
+  if (host == "lase.ynet.sk") {
+    return "DIRECT";
+  }
+
   if (shExpMatch(url, "*.css") ||
       shExpMatch(url, "*.css?*") ||
       shExpMatch(url, "*.js") ||
