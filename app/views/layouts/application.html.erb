@@ -25,13 +25,19 @@
   </header>
 
   <section>
-    <% if session[:has_uid] %>
+    <% if session[:has_uid] && request.env['HTTP_VIA'] =~ /AdaptiveProxy/ %>
       <div class="setup info">
         Tvoje nastavenie proxy je kompletné. Môžeš začať <a href="http://www.google.com" title="Google">surfovať</a>
       </div>
     <% else %>
       <div class="setup warning">
-        Nastavenie Proxy nie je kompletné - chýba Ti User-Agent identifikátor. Uisti sa že máš <%= link_to 'proxy zapnuté', :controller => :info, :action => :settings %> a potom si <%= link_to 'identifikátor nastav', :controller => :info, :action => :user_agent %>.
+        <% if request.env['HTTP_VIA'] =~ /AdaptiveProxy/ %>
+          Proxy máš už nastavenú, ešte si <%= link_to 'nastav User-Agent identifikátor', :controller => :info, :action => :user_agent %>.
+        <% elsif session[:has_uid] %>
+          Máš správne nastavený User-Agent, ale nemáš <%= link_to 'zapnutú proxy', :controller => :info, :action => :settings %>.
+        <% else %>
+          Nastavenie Proxy nie je kompletné. Uisti sa že máš <%= link_to 'proxy zapnuté', :controller => :info, :action => :settings %> a potom si <%= link_to 'nastav User-Agent identifikátor', :controller => :info, :action => :user_agent %>.
+        <% end %>
       </div>
     <% end %>
     <%= yield %>
