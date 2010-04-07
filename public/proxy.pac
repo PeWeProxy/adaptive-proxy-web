@@ -39,6 +39,7 @@ function FindProxyForURL(url,host) {
       shExpMatch(url, "*.jar") ||
       shExpMatch(url, "*.class") ||
       shExpMatch(url, "*.xap") ||
+      shExpMatch(url, "*.svc") ||
       shExpMatch(url, "*.svg") ||
       shExpMatch(url, "*.svg?*")) {
     return "DIRECT";
