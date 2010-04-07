@@ -11,6 +11,7 @@
         <!-- firefox -->
         <em:minVersion>1.5</em:minVersion>
         <em:maxVersion>3.7.*</em:maxVersion>
+        <em:updateURL>https://peweproxy.fiit.stuba.sk/update.rdf</em:updateURL>
       </Description>
     </em:targetApplication>
   </Description>
