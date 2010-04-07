@@ -4,3 +4,4 @@ doc/api
 doc/app
 public/download/*
 templates/APUID*
+.idea/*

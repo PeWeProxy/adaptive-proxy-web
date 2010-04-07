@@ -16,7 +16,7 @@ function FindProxyForURL(url,host) {
         return "DIRECT";
   }
 
-  if (host == "lase.ynet.sk") {
+  if (shExpMatch(host,"*.ynet.sk")) {
     return "DIRECT";
   }
 
@@ -38,6 +38,7 @@ function FindProxyForURL(url,host) {
       shExpMatch(url, "*.swf?*") ||
       shExpMatch(url, "*.jar") ||
       shExpMatch(url, "*.class") ||
+      shExpMatch(url, "*.xap") ||
       shExpMatch(url, "*.svg") ||
       shExpMatch(url, "*.svg?*")) {
     return "DIRECT";
