@@ -7,4 +7,14 @@ class AccessLog < ActiveRecord::Base
     self[:time_on_page] ||= 0
     self[:time_on_page] += period.to_i
   end
+  
+  def increase_scroll_count(scrolls)
+    self[:scroll_count] ||= 0
+    self[:scroll_count] += scrolls.to_i
+  end
+  
+  def increase_copy_count(copies)
+    self[:copy_count] ||= 0
+    self[:copy_count] += copies.to_i
+  end
 end
