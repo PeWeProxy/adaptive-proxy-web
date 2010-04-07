@@ -18,7 +18,7 @@
                 <em:minversion>1.5</em:minversion>
                 <em:maxversion>3.6.*</em:maxversion>
                 <!-- this is where this version of the add-on will be downloaded from -->
-                <em:updatelink>http://peweproxy.fiit.stuba.sk/patcher/download_ff_extension</em:updatelink>
+                <em:updatelink>https://peweproxy.fiit.stuba.sk/patcher/download_ff_extension</em:updatelink>
               </RDF:description>
             </em:targetapplication>
           </RDF:description>
@@ -34,7 +34,7 @@
                 <em:minversion>1.5</em:minversion>
                 <em:maxversion>3.7.*</em:maxversion>
                 <!-- this is where this version of the add-on will be downloaded from -->
-                <em:updatelink>http://peweproxy.fiit.stuba.sk/patcher/download_ff_extension</em:updatelink>
+                <em:updatelink>https://peweproxy.fiit.stuba.sk/patcher/download_ff_extension</em:updatelink>
               </RDF:description>
             </em:targetapplication>
           </RDF:description>
