@@ -41,7 +41,13 @@ function FindProxyForURL(url,host) {
       shExpMatch(url, "*.xap") ||
       shExpMatch(url, "*.svc") ||
       shExpMatch(url, "*.svg") ||
-      shExpMatch(url, "*.svg?*")) {
+      shExpMatch(url, "*.svg?*")) ||
+      shExpMatch(url, "*.zip") ||
+      shExpMatch(url, "*.pdf") ||
+      shExpMatch(url, "*.doc") ||
+      shExpMatch(url, "*.ppt") ||
+      shExpMatch(url, "*.xls") ||
+      shExpMatch(url, "*.exe") {
     return "DIRECT";
   }
 
