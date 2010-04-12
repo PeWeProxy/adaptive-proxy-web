@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_uid_from_user_agent
-    if request.env["HTTP_USER_AGENT"].match(/(APUID=\S*)/)
+    if request.env["HTTP_USER_AGENT"].match(/(APUID=[0-9a-zA-Z]*)/)
       $1
     else
       nil
