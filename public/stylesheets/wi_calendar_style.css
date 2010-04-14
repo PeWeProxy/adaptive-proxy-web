@@ -1,0 +1,109 @@
+/*
+ * Model Based Improvement of Website Structure
+ * Master Thesis
+ * Michal Holub
+ * 2009 / 2010  
+ */
+
+/*
+ * This style controls visual display of personalised calendar. It is modified code of Google Calendar.
+ * Source: calendar.google.com
+ */ 
+
+.dp-monthtable {
+	border-bottom:1px solid #A2BBDD;
+	padding:0;
+	width: 180px;
+}
+
+.dp-cell {
+	color:#000000;
+	font-family:Verdana,sans-serif;
+	font-size:11px;
+	font-weight:normal;
+	padding:2px;
+	text-align:center;
+}
+
+.dp-heading {
+	font-weight:bold;
+	vertical-align:middle;
+}
+
+.dp-cur {
+	color:#2200CC;
+	font-size:100%;
+	font-weight:bold;
+	padding-bottom:4px;
+	text-align:center;
+	white-space:nowrap;
+}
+
+.dp-prev, .dp-next {
+	color:#2200CC;
+	cursor:pointer;
+	font-size:100%;
+	padding-bottom:6px;
+}
+
+.dp-prev {
+	text-align:right;
+}
+
+.dp-next {
+	text-align:left;
+}
+
+.dp-dayh {
+	font-size:78%;
+}
+
+.dp-weekday {	
+	background:#FFFFFF none repeat scroll 0 0;
+}
+
+.dp-weekend {
+	background:#EEEEEE none repeat scroll 0 0;
+}
+
+.dp-offmonth {
+	color:#888888;
+}
+
+.dp-onmonth {
+	color:#000000;
+}
+
+.dp-today, .dp-today-selected {
+	border:1px solid;
+	color:#FFFFFF;
+	padding:1px;
+}
+
+.dp-today {
+	background:#99AABB none repeat scroll 0 0;
+	border-color:#556677 #AABBCC #AABBCC #556677;
+}
+
+.dp-today-selected {
+	background:#557799 none repeat scroll 0 0;
+	border-color:#224466 #99BBDD #99BBDD #224466;
+}
+
+.dp-weekday:hover, .dp-weekend:hover, .dp-prev:hover, .dp-next:hover {
+	background-color:#DDEEFF;
+	border-color:#DDEEFF;
+	color:black
+}
+
+.dp-event-my {
+	border:1px solid;
+	background:#FFFF66 none repeat scroll 0 0;
+	border-color:#FFCC33 #FFFFCC #FFFFCC #FFCC33;
+}
+
+.dp-event-recommended {
+	border:1px solid;
+	background:#99CC33 none repeat scroll 0 0;
+	border-color:#999900 #FFFFCC #FFFFCC #999900;
+}
