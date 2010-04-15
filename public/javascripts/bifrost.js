@@ -4,7 +4,13 @@ kw = function($) {
   // when HTML base tag changes the relative URLs
   var base = window.location.host;
 
-  var retries = 0;
+  var oldLocation = location.href;
+  setInterval(function() {
+    if(location.href != oldLocation) {
+      loadResults()
+      oldLocation = location.href
+    }
+  }, 500);
 
   function loadResults() {
     match = /[?&]q=(.*?)($|&.*)/.exec(window.location.href)
