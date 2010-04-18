@@ -6,7 +6,7 @@ class LogsController < ApplicationController
   end
 
   def delete
-    @logs[params[:id].to_i].destroy
+    AccessLog.find_by_id(params[:id]).destroy
     redirect_to :action => :list
   end
 
