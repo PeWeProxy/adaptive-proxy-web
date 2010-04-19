@@ -74,8 +74,12 @@
         <h2 id="opera" class="opera right handle">Opera</h2>
         <div id="opera-fold" class="fold">
           <p>
-            Manuálne nastavenie User Agent textu pre Operu je veľmi komplikované, pretože vyžaduje modifikáciu binárneho kódu
-            knižnice <em>opera.dll</em>. Skúste použiť náš <%= link_to 'browser patcher', {:controller => :patcher, :action => :download} %>.
+            <ol>
+              <li>Do poľa pre zadávanie adresy vlož adresu <em class="code">about:config</em></li>
+              <li>Vyhľadaj kategóriu <em>ISP</em></li>
+              <li>Do poľa s názvom <em>ID</em> vlož svoj identifikátor <em class="uid"><%= @uid %></em>
+              <li>Reštartuj Operu</li>
+            </ol>
           </p>
         </div>
       </li>
