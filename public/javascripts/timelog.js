@@ -2,7 +2,7 @@ timelog = function($) {
 
   period = 4
 
-  active_in_last_period = true;
+  active_in_last_period = false;
   num_of_scrolls = 0;
   num_of_copies = 0;
 
