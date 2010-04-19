@@ -30,7 +30,8 @@ timelog = function($) {
     			isCtrlPressed = true;
     		}		
     		if ((event.which == 99) || (event.which == 67) && (isCtrlPressed == true)) {
-    			num_of_copies += 1;		
+    			active_in_last_period = true;
+          num_of_copies += 1;		
     		}
     	});
       
