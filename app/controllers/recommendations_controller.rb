@@ -19,4 +19,15 @@ class RecommendationsController < ApplicationController
 
     redirect_to("http://www.google.com/search?q=" + CGI::escape(params[:q]) + "#dontrecommend")
   end
+
+  def negative
+    group = RecommendationGroup.find_by_id(params[:id])
+    group.negative = true
+    group.negative_at = Time.new
+    group.clicked_query = params[:q]
+
+    group.save
+
+    redirect_to :back
+  end
 end
