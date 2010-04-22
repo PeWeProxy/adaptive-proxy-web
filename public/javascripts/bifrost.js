@@ -13,6 +13,8 @@ kw = function($) {
   }, 500);
 
   function loadResults() {
+    if(window.location.href.indexOf("dontrecommend") != -1) return;
+
     match = /[?&]q=(.*?)($|&.*)/.exec(window.location.href)
     query = match[1]
 
