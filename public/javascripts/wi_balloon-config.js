@@ -34,7 +34,7 @@ BalloonConfig = function(balloon, set) {
     balloon.vOffset            = 10;                            //
     balloon.hOffset            = 10;                            //
     balloon.stem               = true;                          //
-    balloon.images             = '/images/GBubble';             //
+    //balloon.images             = '/images/GBubble';             //
     balloon.ieImage            = 'balloon_ie.png';              //
     balloon.balloonImage       = 'balloon.png';                 //
     balloon.upLeftStem         = 'up_left.png';                 //
@@ -47,7 +47,7 @@ BalloonConfig = function(balloon, set) {
     balloon.allowIframes       = true;                          //
     balloon.trackCursor        = true;                          //
     balloon.shadow             = 20;                            //
-    balloon.padding            = 10;                            //
+    balloon.padding            = 15;                            //
     balloon.stemHeight         = 32;                            //
     balloon.stemOverlap        = 3;                             //
     balloon.vOffset            = 1;                             //
@@ -97,3 +97,6 @@ BalloonConfig = function(balloon, set) {
   }
 }
 
+var balloon = new Balloon;
+balloon.images = 'http://miho.mine.nu/WebImp/images/balloons';
+BalloonConfig(balloon,'GBubble');
