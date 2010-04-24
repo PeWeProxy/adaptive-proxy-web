@@ -98,5 +98,5 @@ BalloonConfig = function(balloon, set) {
 }
 
 var balloon = new Balloon;
-balloon.images = 'http://miho.mine.nu/WebImp/images/balloons';
+balloon.images = 'http://peweproxy.fiit.stuba.sk/images/webimp/balloons';
 BalloonConfig(balloon,'GBubble');
