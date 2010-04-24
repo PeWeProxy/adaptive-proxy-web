@@ -1,4 +1,4 @@
-wiFeedback = function(value) {
+wiFeedback = function($) {
   
   feedback_sent = false;
   
@@ -6,7 +6,7 @@ wiFeedback = function(value) {
   // when HTML base tag changes the relative URLs
   var base = window.location.host
 
-  function sendFeedback(value){  
+  function wiSendFeedback(value){  
   	if (!feedback_sent) {
   		$.post('http://' + base + '/webimp/feedback?nologging', {
 			'checksum': _ap_checksum,
