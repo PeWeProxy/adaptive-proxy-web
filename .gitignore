@@ -5,3 +5,5 @@ doc/app
 public/download/*
 templates/APUID*
 .idea/*
+.classpath
+.project
