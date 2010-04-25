@@ -1,5 +1,3 @@
-wiFeedback = function($) {
-  
   feedback_sent = false;
   
   // This is required to get around XSS restrictions in browsers
@@ -15,6 +13,4 @@ wiFeedback = function($) {
   		});
   		feedback_sent = true;
   	}
-  }
-  
-}(adaptiveProxyJQuery);
+  }(adaptiveProxyJQuery);
