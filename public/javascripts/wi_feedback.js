@@ -1,24 +1,20 @@
-var WebImp = function($) {
+var webimp = {
 
-  feedback_sent = false;
+  feedback_sent : false,
   
   // This is required to get around XSS restrictions in browsers
   // when HTML base tag changes the relative URLs
-  var base = window.location.host
+  base : window.location.host,
   
-  return {
-    wiSendFeedback : function(value) {  
-    	if (!feedback_sent) {
-    		$.post('http://' + base + '/webimp/feedback?nologging', {
-  			'checksum': _ap_checksum,
-    			'value': value,
-    			'nologging': 'true'
-    		});
-    		feedback_sent = true;
-    	}  	
-    }
-  };
+  wiSendFeedback : function(value) {  
+  	if (!feedback_sent) {
+  		$.post('http://' + base + '/webimp/feedback?nologging', {
+  		  'checksum': _ap_checksum,
+  			'value': value,
+  			'nologging': 'true'
+  		});
+  		feedback_sent = true;
+  	}  	
+  }  
 
 }(adaptiveProxyJQuery);
-
-var wi = new WebImp();
