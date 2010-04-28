@@ -4,6 +4,10 @@ require "net/http"
 class WordleController < ApplicationController
   def index
     user_id = session[:apuid]
+    if user_id.nil?
+      flash[:error] = "Však Ty nemáš ani APUID, tak aké tagy by si chcel? :)"
+      redirect_to :root and return
+    end
     keywords = Hash.new(0)
     dataset = AccessLog.find_by_sql(["SELECT keywords FROM access_logs a inner join pages p on a.page_id = p.id where userid = ?",user_id])
 
