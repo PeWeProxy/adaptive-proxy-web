@@ -13,8 +13,9 @@ wi = function($) {
   			'value': value,
   			'nologging': 'true'
   		});
-  		feedback_sent = true;		
-  	}  	
+  		feedback_sent = true;
+		document.getElementById('wiFeedback').style.display = 'none';		
+  	}	
   }  
   
   $(document).ready(function() {
