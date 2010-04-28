@@ -13,7 +13,8 @@ class WordleController < ApplicationController
 
     dataset.each do |r|
         r[:keywords].split(',').each do |item|
-            keywords[item.strip] = keywords[item.strip] + 1 unless item.starts_with?('http://')
+           word = item.split.join(' ') 
+ 	   keywords[word] = keywords[word] + 1 unless item.starts_with?('http://')
         end
     end
 
