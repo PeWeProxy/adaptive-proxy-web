@@ -1,3 +1,5 @@
+require 'cgi'
+
 class RecommendationsController < ApplicationController
   def show
     recommendation = Recommendation.find_by_id(params[:id])
@@ -13,7 +15,7 @@ class RecommendationsController < ApplicationController
     group = RecommendationGroup.find_by_id(params[:id])
     group.clicked = true
     group.clicked_at = Time.new
-    group.clicked_query = params[:q]
+    group.clicked_query = CGI::unescape(params[:q])
 
     group.save
 
@@ -24,7 +26,7 @@ class RecommendationsController < ApplicationController
     group = RecommendationGroup.find_by_id(params[:id])
     group.negative = true
     group.negative_at = Time.new
-    group.clicked_query = params[:q]
+    group.clicked_query = CGI::unescape(params[:q])
 
     group.save
 
