@@ -41,11 +41,11 @@ wi = function($) {
   });
   
   function animate(filename) {
-  	return filename.replace('.png', '_anim.png');
+  	return filename.replace('like.png', 'like_anim.png');
   }
   
   function normal(filename) {
-  	return filename.replace('_anim.png', '.png');
+  	return filename.replace('like_anim.png', 'like.png');
   }
 
 }(adaptiveProxyJQuery);
