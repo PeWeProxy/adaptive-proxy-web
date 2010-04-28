@@ -1,51 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
   <title><%= @title or 'Adaptive Proxy' %></title>
-  <link rel="alternate" type="application/atom+xml" title="PeWe Proxy News" href="news.xml" />
+  <link rel="alternate" type="application/atom+xml" title="PeWe Proxy News" href="news.xml"/>
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css">
   <%= stylesheet_link_tag 'style' %>
   <%= javascript_include_tag 'jquery-1.3.2.min.js' %>
   <%= javascript_include_tag 'foldable.js' %>
   <script>
-    document.createElement("header");
-    document.createElement("section");
-    document.createElement("footer");
-    document.createElement("aside");
+      document.createElement("header");
+      document.createElement("section");
+      document.createElement("footer");
+      document.createElement("aside");
   </script>
 </head>
 <body>
 
-  <header>
-    <p style="color: green"><%= flash[:notice] %></p>
-    <p style="color: red"><%= flash[:error] %></p>
-    <%= link_to 'Adaptive Proxy &beta;', root_url %>
-    <a href="/news.xml" title="Prihlásiť sa na odber noviniek"><img src="/images/feed.png" title="Atom feed" class="feed"/></a>
-  </header>
+<header>
+  <%= link_to 'Adaptive Proxy &beta;', root_url %>
+  <a href="/news.xml" title="Prihlásiť sa na odber noviniek"><img src="/images/feed.png" title="Atom feed" class="feed"/></a>
+</header>
 
-  <section>
-    <% if session[:has_uid] && request.env['HTTP_VIA'] =~ /AdaptiveProxy/ %>
+<section>
+  <% if session[:has_uid] && request.env['HTTP_VIA'] =~ /AdaptiveProxy/ %>
       <div class="setup info">
         Tvoje nastavenie proxy je kompletné. Môžeš začať <a href="http://www.google.com" title="Google">surfovať</a>
       </div>
-    <% else %>
+  <% else %>
       <div class="setup warning">
         <% if request.env['HTTP_VIA'] =~ /AdaptiveProxy/ %>
-          Proxy máš už nastavenú, ešte si <%= link_to 'nastav User-Agent identifikátor', :controller => :info, :action => :user_agent %>.
+            Proxy máš už nastavenú, ešte
+            si <%= link_to 'nastav User-Agent identifikátor', :controller => :info, :action => :user_agent %>.
         <% elsif session[:has_uid] %>
-          Máš správne nastavený User-Agent, ale nemáš <%= link_to 'zapnutú proxy', :controller => :info, :action => :settings %>.
+            Máš správne nastavený User-Agent, ale
+            nemáš <%= link_to 'zapnutú proxy', :controller => :info, :action => :settings %>.
         <% else %>
-          Nastavenie Proxy nie je kompletné. Uisti sa že máš <%= link_to 'proxy zapnuté', :controller => :info, :action => :settings %> a potom si <%= link_to 'nastav User-Agent identifikátor', :controller => :info, :action => :user_agent %>.
+            Nastavenie Proxy nie je kompletné. Uisti sa že
+            máš <%= link_to 'proxy zapnuté', :controller => :info, :action => :settings %> a potom
+            si <%= link_to 'nastav User-Agent identifikátor', :controller => :info, :action => :user_agent %>.
         <% end %>
       </div>
-    <% end %>
-    <%= yield %>
-  </section>
+  <% end %>
 
-  <footer>
-    &nbsp;
-  </footer>
+  <% if flash[:notice] %>
+      <div class="setup info">
+        <%= flash[:notice] %>
+      </div>
+  <% end %>
+  <% if flash[:error] %>
+      <div class="setup warning">
+        <%= flash[:error] %>
+      </div>
+  <% end %>
+
+  <%= yield %>
+</section>
+
+<footer>
+  &nbsp;
+</footer>
 
 </body>
 </html>
