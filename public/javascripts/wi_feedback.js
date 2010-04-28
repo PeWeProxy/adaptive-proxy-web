@@ -21,11 +21,31 @@ wi = function($) {
   $(document).ready(function() {
 	  $('#wiLike').click(function() {
 	  	wiSendFeedback(1);
-	  });
-	  
+	  });	  
 	  $('#wiDislike').click(function() {
 	  	wiSendFeedback(-1);
-	  });
+	  });	   
+	  
+	  $('#wiLike').hover(
+	  	function() {
+	  		$(this).attr('src', animate($(this).attr('src')));},
+		function() {
+			$(this).attr('src', normal($(this).attr('src')));	
+		});
+	  $('#wiDislike').hover(
+	  	function() {
+	  		$(this).attr('src', animate($(this).attr('src')));},
+		function() {
+			$(this).attr('src', normal($(this).attr('src')));	
+		});	
   });
+  
+  function animate(filename) {
+  	return filename.replace('.png', '_anim.png');
+  }
+  
+  function normal(filename) {
+  	return filename.replace('_anim.png', '.png');
+  }
 
 }(adaptiveProxyJQuery);
