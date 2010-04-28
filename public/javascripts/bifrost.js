@@ -1,4 +1,6 @@
-kw = function($) {
+bifrost = function(jQuery) {
+
+  if(jQuery) var $ = jQuery
 
   // This is required to get around XSS restrictions in browsers
   // when HTML base tag changes the relative URLs
@@ -27,4 +29,17 @@ kw = function($) {
       loadResults();
   });
 
+  bifrost = new Object();
+
+  bifrost.negativeFeedback = function(recommendationId, groupId, query) {
+    $(".recommendation-" + recommendationId).hide()
+    $.get('http://' + base + '/bifrost/negativefeedback', {'id': groupId, 'q': query})
+  }
+
+  bifrost.negativeGroupFeedback = function(recommendationGroupId, groupId, query) {
+    $(".recommendation-group-title-" + recommendationGroupId).hide()
+    $(".recommendation-group-" + recommendationGroupId).hide()
+    $.get('http://' + base + '/bifrost/negativefeedback', {'id': groupId, 'q': query})
+  }
+  return bifrost;
 }(adaptiveProxyJQuery);
