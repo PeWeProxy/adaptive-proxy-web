@@ -1,6 +1,6 @@
 timelog = function($) {
 
-  period = 4
+  period = 8
 
   active_in_last_period = false;
   num_of_scrolls = 0;
