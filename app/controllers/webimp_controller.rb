@@ -7,7 +7,8 @@ class WebimpController < ApplicationController
       
     if wi_feedback.nil? then
       id = Page.find_by_checksum(params[:checksum])
-      wi_feedback = WiFeedback.new(id, session[:apuid])
+      wi_feedback = WiFeedback.new({:page_id = > id, :user_id => session[:apuid], :timestamp => Time.now})
+      wi_feedback.save!
     end
       
     # if :value == 0, no feedback was sent  
