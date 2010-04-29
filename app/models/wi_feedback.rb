@@ -4,6 +4,12 @@ class WiFeedback < ActiveRecord::Base
   
   named_scope :by_checksum, lambda { |checksum, userid| { :select => "wi_feedbacks.id,wi_feedbacks.positive_feedback,wi_feedbacks.negative_feedback", :include => :page, :conditions => ["pages.checksum = ? AND userid = ?", checksum, userid], :order => 'timestamp DESC', :limit => 1}}
   
+  def initialize(page_id, user_id)
+    self[:page_id] = page_id
+    self[:user_id] = user_id
+    self[:timestamp] = Time.now
+  end
+  
   def increase_positive_feedback()
     self[:positive_feedback] ||= 0
     self[:positive_feedback] += 1
