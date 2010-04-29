@@ -1,7 +1,7 @@
 class AccessLog < ActiveRecord::Base
   belongs_to :page
 
-  named_scope :by_checksum, lambda { |checksum, userid| { :include => :page, :conditions => [ "pages.checksum = ? AND userid = ?", checksum, userid ], :order => 'timestamp DESC', :limit => 1 } }
+  named_scope :by_checksum, lambda { |checksum, userid| { :select => "access_logs.id,access_logs.time_on_page,access_logs.scroll_count,access_logs.copy_count", :include => :page, :conditions => [ "pages.checksum = ? AND userid = ?", checksum, userid ], :order => 'timestamp DESC', :limit => 1 } }
 
   def increase_time_on_page(period)
     self[:time_on_page] ||= 0
