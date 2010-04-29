@@ -4,7 +4,7 @@ class WebimpController < ApplicationController
     return unless params[:checksum] and params[:value]
     wi_feedback = WiFeedback.by_checksum(params[:checksum], session[:apuid]).first
     
-    if not feedback.nil? then
+    if not wi_feedback.nil? then
       # if :value == 0, no feedback was sent  
       if (params[:value].to_i > 0) then
         wi_feedback.increase_positive_feedback
