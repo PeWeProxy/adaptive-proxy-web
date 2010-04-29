@@ -1,4 +1,4 @@
-class WiFeedbackController < ApplicationController
+class WebimpController < ApplicationController
   
   def feedback
     return unless params[:checksum] and params [:value]
