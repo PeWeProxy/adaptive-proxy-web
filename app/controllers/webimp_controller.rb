@@ -1,7 +1,7 @@
 class WebimpController < ApplicationController
   
   def feedback
-    return unless params[:checksum] and params [:value]
+    return unless params[:checksum] and params[:value]
     wi_feedback = WiFeedback.by_checksum(params[:checksum], session[:apuid]).first
     
     if not feedback.nil? then
