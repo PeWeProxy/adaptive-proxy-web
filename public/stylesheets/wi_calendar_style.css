@@ -1,8 +1,12 @@
 /*
- * Model Based Improvement of Website Structure
+ * Website Navigation Adaptation Based on Behavior of Users
+ * 
  * Master Thesis
- * Michal Holub
- * 2009 / 2010  
+ * Bc. Michal Holub
+ * 
+ * Faculty of Informatics and Information Technologies
+ * Slovak University of Technology
+ * Bratislava, 2008 - 2010  
  */
 
 /*
@@ -106,4 +110,5 @@
 	border:1px solid;
 	background:#99CC33 none repeat scroll 0 0;
 	border-color:#999900 #FFFFCC #FFFFCC #999900;
+	cursor: pointer;
 }
