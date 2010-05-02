@@ -9,7 +9,7 @@ wi = function($) {
   function wiSendFeedback(value) {  	
 	if (!feedback_sent) {
   		$.post('http://' + base + '/webimp/feedback?nologging', {
-  		  	'value': location.href,
+  		  	'url': location.href,
   			'value': value,
   			'nologging': 'true'
   		});
