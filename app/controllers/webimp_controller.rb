@@ -3,10 +3,11 @@ class WebimpController < ApplicationController
   def feedback
     return unless params[:checksum] and params[:value]
     
-    wi_feedback = WiFeedback.by_checksum(params[:checksum], session[:apuid]).first
+    #wi_feedback = WiFeedback.by_checksum(params[:checksum], session[:apuid]).first
+    wi_feedback = WiFeedback.by_url(params[:url], session[:apuid]).first
       
     if wi_feedback.nil? then
-      pageid = Page.find_by_checksum(params[:checksum]).id
+      pageid = Page.find_by_url(params[:url]).id
       wi_feedback = WiFeedback.new({:page_id => pageid, :userid => session[:apuid], :timestamp => Time.now})
       wi_feedback.save
     end
