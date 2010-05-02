@@ -12,16 +12,20 @@ class WordleController < ApplicationController
     dataset = AccessLog.find_by_sql(["SELECT keywords FROM access_logs a inner join pages p on a.page_id = p.id where userid = ?",user_id])
 
     dataset.each do |r|
+      unless r[:keywords].nil?
         r[:keywords].split(',').each do |item|
-           word = item.split.join(' ') 
- 	   keywords[word] = keywords[word] + 1 unless item.starts_with?('http://')
+          word = item.split.join(' ')
+          keywords[word] = keywords[word] + 1 unless word == ''
         end
+      end
     end
 
     keywords_parameter=""
     keywords.each do |key,value|
-      keywords_parameter << key + ":" + value.to_s + "\n"             
+      keywords_parameter << key + ":" + value.to_s + "\n"
     end
+
+    render :inline => keywords_parameter and return if params[:raw]
 
     wordle_params = {'wordcounts' => keywords_parameter}
 
