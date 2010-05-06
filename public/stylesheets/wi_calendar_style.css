@@ -44,7 +44,7 @@
 }
 
 .dp-prev, .dp-next {
-	color:#2200CC;
+	color:#0099cc;
 	cursor:pointer;
 	font-size:100%;
 	padding-bottom:6px;
@@ -71,6 +71,7 @@
 }
 
 .dp-offmonth {
+	background:#FFFFFF none repeat scroll 0 0;
 	color:#888888;
 }
 
