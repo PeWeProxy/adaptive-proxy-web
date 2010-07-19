@@ -10,7 +10,13 @@ kw = function($) {
     $.get('http://' + base + '/keywords/load', {'checksum': _ap_checksum}, function(data) {
       if(!/^\s*$/.test(data)) {
         clearTimeout(timer);
-        $('#_ap_messagebox').html(data);
+        $.notifyBar({
+          html: data,
+          delay: 5000,
+          animationSpeed: "normal",
+          close: true
+        });
+
       }
 
       retries++;
@@ -21,16 +27,7 @@ kw = function($) {
     });
   }
 
-  $(window).scroll(function() {
-    $('#_ap_messagebox').css('top', $(window).scrollTop()+"px");
-  });
-
   $(document).ready(function() {
-
-    $('#_ap_messagebox').click(function() {
-      $(this).hide();
-    });
-
     setTimeout(fetchKeywords, 1000);
     timer = setInterval(fetchKeywords, 5000);
   });
