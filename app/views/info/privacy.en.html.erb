@@ -1,0 +1,37 @@
+If you don't want us to store som of your webpage visits, you may use the Firefox browser extension <a href="https://addons.mozilla.org/en-US/firefox/addon/2464" title="FoxyProxy extension">FoxyProxy</a>.
+
+Proxy in its default configuration (if you use our guides) is not used to access secure pages (http<strong>s</strong>) &mdash; most of the login forms, internet banking etc/
+
+After FoxyProxy installation, click the FoxyProxy icon in the right lower edge of the browser window and select <strong>Options</strong>
+
+<a href="/images/foxyproxy/foxyproxy.png" alt="Main FoxyProxy window" title="Main FoxyProxy window">
+  <%= image_tag "foxyproxy/foxyproxy.png", :class => "pac" %>
+</a>
+
+Click <strong>Add New Proxy</strong>.
+
+<a href="/images/foxyproxy/newproxy.png" alt="New proxy creation in FoxyProxy" title="New proxy creation in FoxyProxy">
+  <%= image_tag "foxyproxy/newproxy.png", :class => "pac" %>
+</a>
+
+In the tab <strong>Proxy details</strong> click the option <strong>Automatic proxy configuration URL</strong> and enter <input type="text" class="pac" value="<%=@proxy_pac%>"/>. Click on the tab <strong>URL patterns</strong>.
+
+<a href="/images/foxyproxy/urlpatterns.png" alt="URL patterns creation" title="URL patterns creation">
+  <%= image_tag "foxyproxy/urlpatterns.png", :class => "pac" %>
+</a>
+
+Click <strong>Add New Pattern</strong>.
+
+It is neccessary to activate the proxy server. In the window <strong>Add New Pattern</strong> create a new rule using the following picture. It is important that you select the option <strong>Whitelist</strong>.
+
+<a href="/images/foxyproxy/whitelist.png" alt="Proxy activation" title="Proxy activation">
+  <%= image_tag "foxyproxy/whitelist.png" %>
+</a>
+
+Repeat the next step for each address which you don't want to load through proxy. If for example, you don't want us to log you page views on Facebook, create the rule using the following picture. It is important that you select <strong>Blacklist</strong> in this step.
+
+<a href="/images/foxyproxy/blacklist.png" alt="URL blacklisting" title="URL blacklisting">
+  <%= image_tag "foxyproxy/blacklist.png" %>
+</a>
+
+The final step is running FoxyProxy. Right-click the FoxyProxy icon and select the option <strong>Use proxies based on their pre-defined patterns and priorities</strong>.

@@ -1,0 +1,83 @@
+<ul class="foldable browsers">
+  <li>
+  <h2 id="firefox" class="right handle firefox">Mozilla Firefox</h2>
+  <div id="firefox-fold" class="fold">
+    <ol>
+      <li>In the menu click <strong>Tools</strong></li>
+      <li>Click <strong>Options</strong></li>
+      <li>Click the tab <strong>Advanced</strong></li>
+      <li>Click the tab <strong>Network</strong></li>
+      <li>In the section <strong>Connection</strong> click the button <strong>Settings</strong></li>
+      <li>In the window <strong>Connection settings</strong> choose the option <strong>Automatic proxy configuration URL</strong></li>
+      <li>In the field marked with 7, enter the following address: <input type="text" class="pac" value="<%= @proxy_pac %>"/></li>
+      <li>Continue with the <%= link_to 'User-Agent setup', { :action => 'user_agent' }  %></li>
+    </ol>
+
+    <a href="/images/pac/firefox.png" alt="Image guide to proxy configuration in Firefox" title="Image guide to proxy configuration in Firefox">
+      <%= image_tag "pac/firefox.png", :class => "pac" %>
+    </a>
+<%= link_to 'User-Agent configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
+  </div>
+  </li>
+  <li>
+  <h2 id="chrome" class="chrome left handle">Google Chrome</h2>
+  <div id="chrome-fold" class="fold">
+    <ol>
+      <li>Click on the <strong>Settings</strong> icon</li>
+      <li>Click <strong>Options</strong></li>
+      <li>Click on the button <strong>Proxy settings</strong> in the tab <strong>Under the hood</strong></li>
+      <li>Click tab <strong>Connections</strong></li>
+      <li>Click the button <strong>LAN settings</strong></li>
+      <li>Choose the option <strong>Use automatic configuration script</strong></li>
+      <li>In the field marked with 7, enter the following address: <input type="text" class="pac" value="<%= @proxy_pac %>"/></li>
+      <li>Continue with the <%= link_to 'User-Agent setup', { :action => 'user_agent' }  %></li>
+    </ol>
+    <a href="/images/pac/chrome.png" alt="Image guide to proxy configuration in Chrome" title="Image guide to proxy configuration in Chrome">
+      <%= image_tag "pac/chrome.png", :class => "pac" %>
+    </a>
+<%= link_to 'User-Agent configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
+  </div>
+  <h2 id="opera" class="opera right handle">Opera</h2>
+  <div id="opera-fold" class="fold">
+    <ol>
+      <li>In the menu click <strong>Tools</strong></li>
+      <li>Click <strong>Preferences</strong></li>
+      <li>Click the tab <strong>Advanced</strong></li>
+      <li>In the left sidebar click <strong>Network</strong></li>
+      <li>Click <strong>Proxy servers</strong></li>
+      <li>In the field marked with 7, enter the following address: <input type="text" class="pac" value="<%= @proxy_pac %>"/></li>
+      <li>Continue with the <%= link_to 'User-Agent setup', { :action => 'user_agent' }  %></li>
+    </ol>
+    <a href="/images/pac/opera.png" alt="Image guide to proxy configuration in Opera" title="Image guide to proxy configuration in Opera">
+      <%= image_tag "pac/opera.png", :class => "pac" %>
+    </a>
+ <%= link_to 'User-Agent configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
+  </div>
+  <h2 id="ie" class="ie left handle">Internet Explorer</h2>
+  <div id="ie-fold" class="fold">
+    <ol>
+      <li>If the menu bar is not visible, hold the <strong>Alt</strong> button</li>
+      <li>In the main menu, click <strong>Tools</strong></li>
+      <li>Click <strong>Internet Options</strong></li>
+      <li>Click tab <strong>Connections</strong></li>
+      <li>Click the button <strong>LAN settings</strong></li>
+      <li>Choose the option <strong>Use automatic configuration script</strong></li>
+      <li>In the field marked with 7, enter the following address: <input type="text" class="pac" value="<%= @proxy_pac %>"/></li>
+      <li>Continue with the <%= link_to 'User-Agent setup', { :action => 'user_agent' }  %></li>
+   <a href="/images/pac/ie.png" alt="Image guide to proxy configuration in Internet Explorer" title="Image guide to proxy configuration in Internet Explorer">
+      <%= image_tag "pac/ie.png", :class => "pac" %>
+    </a>
+ <%= link_to 'User-Agent configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
+  </div>
+  <h2 class="unknown right handle" id="unknown">Others</h2>
+  <div id="unknown-fold" class="fold">
+    <p>We recommend to configure the proxy using the .pac configuration file. Copy the address from this text field <input type="text" value="<%= @proxy_pac %>" class="pac"/> and use it in your browser settings. If your browser does not support .pac files, us the direct proxy configuration <input type="text" class="pac" value="<%= @proxy_url %>"/></p>
+    <p>If you manage to configure your browser, <a href="http://nimbus.fiit.stuba.sk/redmine/projects/proxy/issues" title="Redmine">send us the guide</a>, we'll add it here.</p>
+  </div>
+  </li>
+</ul>
+
+<%= link_to '&lt;&lt; Introduction', { :action => '' }, :class => 'back_button' %>
+<%= link_to 'User-Agent configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
+
+

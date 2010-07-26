@@ -1,0 +1,6 @@
+<p>If you want to be informed about the news in the Adaptive proxy project, about the launched projects and projects we are preparing, register your email address. If we have something newsworthy, we'll send you an email. The same information will be published also in our <a href='/news.xml' title='feed'>feed</a></p>
+<% form_tag :action => :create do %>
+  <%= label_tag :email, 'Email:' %>
+  <%= text_field_tag :email %>
+  <%= submit_tag 'Subscribe to email news' %>
+<% end %>

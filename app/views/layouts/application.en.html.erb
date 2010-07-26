@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+  <title><%= @title or 'Adaptive Proxy' %></title>
+  <link rel="alternate" type="application/atom+xml" title="PeWe Proxy News" href="news.xml"/>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css">
+  <%= stylesheet_link_tag 'style' %>
+  <%= javascript_include_tag 'jquery-1.3.2.min.js' %>
+  <%= javascript_include_tag 'foldable.js' %>
+  <script>
+      document.createElement("header");
+      document.createElement("section");
+      document.createElement("footer");
+      document.createElement("aside");
+  </script>
+</head>
+<body>
+
+<header>
+  <%= link_to 'Adaptive Proxy &beta;', root_url(:locale => I18n.locale) %>
+  <a href="/news.xml" title="Subscribe to Atom news"><img src="/images/feed.png" title="Atom feed" class="feed"/></a>
+</header>
+
+<section>
+  <% if session[:has_uid] && request.env['HTTP_VIA'] =~ /AdaptiveProxy/ %>
+      <div class="setup info">
+        Your proxy setup is complete. Happy <a href="http://www.google.com" title="Google">browsing</a>
+      </div>
+  <% else %>
+      <div class="setup warning">
+        <% if request.env['HTTP_VIA'] =~ /AdaptiveProxy/ %>
+            Your proxy setup is complete, but you also need to
+            <%= link_to 'setup a User-Agent identifier', :controller => :info, :action => :user_agent %>.
+        <% elsif session[:has_uid] %>
+            Your User-Agent configuration is complete, but you are not
+            <%= link_to 'browsing via proxy', :controller => :info, :action => :settings %>.
+        <% else %>
+            Your proxy configuration is not complete.
+            Make sure <%= link_to 'you are browsing via proxy', :controller => :info, :action => :settings %> a potom
+            abd <%= link_to 'configure User-Agent', :controller => :info, :action => :user_agent %>.
+        <% end %>
+      </div>
+  <% end %>
+
+  <% if flash[:notice] %>
+      <div class="setup info">
+        <%= flash[:notice] %>
+      </div>
+  <% end %>
+  <% if flash[:error] %>
+      <div class="setup warning">
+        <%= flash[:error] %>
+      </div>
+  <% end %>
+
+  <%= yield %>
+</section>
+
+<footer>
+  &nbsp;
+</footer>
+
+</body>
+</html>

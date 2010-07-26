@@ -5,7 +5,7 @@ set :deploy_to, "/var/rails/#{application}"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-server "peweproxy.fiit.stuba.sk", :app, :web, :db, :primary => true
+server "147.175.146.24", :app, :web, :db, :primary => true
 set :user, "peweproxy"
 set :use_sudo, false
 

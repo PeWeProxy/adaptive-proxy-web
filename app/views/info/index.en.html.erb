@@ -1,0 +1,51 @@
+<aside>
+  <h2>Why should I use it?</h2>
+
+  <p>
+    There are <%= link_to 'several projects', {:action => 'projects'} %> currently running on proxy, that will help you to improve your Web experience. One of the projects will simplify your navigation on the faculty website, the other will help you use the right keywords when searching.
+  </p>
+
+  <h2>Privacy</h2>
+
+  <p>
+    You don't need to worry about your privacy. We need to know a little bit about you in order to improve and personalize your Web experience, so we log part of your activity on the Web &mdash; the Web page address and time of your visit. This information is linked with your randomly generated identifier. Your data is completely anonymous, we cannot link your random identifier back to you (at least not without your help)
+  </p>
+  <p>
+    Proxy logs just the visited URL address, we <strong>don't</strong> store the actual Web site content or the messages your browser is sending (like the content of the forms). If you setup the proxy using our guide, then it will <strong>never be used</strong> to access secure (https) websites, like login forms or Internet Banking - your browser will always connect directly to these pages. If you are browsing through Firefox, you can setup your own <%= link_to 'customized list of pages', {:action => 'privacy'} %> where proxy will never be used.
+  </p>
+
+  <h2>How does it work?</h2>
+  <p>
+    You can read <%= link_to 'more about the technologies', {:action => :technologies} %> we are using and browse the source codes of all applications supporting the proxy server and source codes of the proxy server itself.
+  </p>
+</aside>
+
+<h1>Welcome to the Adaptive Proxy project</h1>
+
+<p>
+  Adaptive proxy is a project which aims to create a platform for personalized and collaborative surfing on the Web and thus a platform for evaluating bachelor, diploma and dissertation projects (mainly, but not limited to) from the <%= link_to 'PeWe group', 'http://pewe.fiit.stuba.sk' %>.
+</p>
+
+<p>
+  Our goal in this first stage is to create the first dataset of users' activity on the Web. You can help us with this. In turn, we will help you to <%= link_to 'improve your search', :action => :projects, :anchor => "bifrost" %>, or <%= link_to 'simplify faculty website navigation', :action => :projects, :anchor => "webimp" %>
+</p>
+
+<ol class="steps">
+  <li><p><%= link_to "Configure your browser to use the proxy", {:controller => :info, :action => :settings} %></p></li>
+  <li><p><%= link_to "Configure your anonymous, random identifier", {:controller => :info, :action => :user_agent} %></p></li>
+  <li><p><%= link_to "Browse the Web", "http://www.google.com" %></p></li>
+  <li><p><%= link_to "Subscribe to email news", {:controller => :emails, :action => :register}, :class => 'voluntary' %></p></li>
+</ol>
+
+<%= link_to 'Start with proxy configuration &gt;&gt;', { :action => 'settings' }, :class => 'start_button' %>
+
+<p class="lower">
+  And then if you like
+</p>
+
+<ol class="steps">
+  <li><p><%= link_to "Send us a bug report", "http://nimbus.fiit.stuba.sk/redmine/projects/proxy/issues" %>.</p></li>
+  <li><p><%= link_to "Configure your identifier on multiple computers (at work, home or school)", { :controller => :patcher, :action => :download } %></p></li>
+  <li><p><%= link_to "View what we know about you and delete what you don't like", { :controller => :logs, :action => :list }%></p></li>
+  <li><p><%= link_to "View your tagcloud profile", { :controller => :wordle, :action => :index }%></p></li>
+</ol>

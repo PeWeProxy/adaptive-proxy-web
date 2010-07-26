@@ -1,0 +1,26 @@
+<table>
+  <thead>
+  <tr>
+    <th class="timestamp">When</th>
+    <th class="url">URL</th>
+    <th class="keywords">Keywords</th>
+    <th class="delete"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @logs.each_with_index do |log, index| %>
+      <tr>
+        <td class="timestamp" title="<%= log.timestamp %>"><%= time_ago_in_words(log.timestamp) %></td>
+        <td class="url"><a href="<%= log.page.url %>" title="<%= log.page.url %>"><%= shorten log.page.url %></a></td>
+        <td class="keywords" title="<%= log.page.keywords %>">
+	<% unless log.page.keywords.nil? %>
+		<%= shorten log.page.keywords.gsub(/,(?=\S+?)/, ', ') %>
+	<% end %>
+	</td>
+        <td class="delete"><%= link_to "zmaž", {:action => :delete, :id => log.id}, {:confirm => "Zmazať", :method => :post} %>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @logs %>

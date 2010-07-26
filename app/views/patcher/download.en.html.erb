@@ -1,0 +1,32 @@
+<p>Your browser is properly configured. If you want to use proxy on another computer, it's important for us that you use the same ID.</p>
+<p>Your current ID is <em class="uid"><%= @uid %></em></p>
+<p>You can save this ID under some code and download it later so you don't have to remember it</p>
+
+<h2 class="handle" id="uid-store">I want to store my ID</h2>
+<div id="uid-store-fold" class="fold">
+  <% form_tag(:action => "store", :method => :post) do %>
+    <p>
+    <%= label_tag(:identifier, "Your code (name for example)") %>
+    <%= text_field_tag(:identifier) %>
+    </p>
+    <p><%= submit_tag("Store") %></p>
+  <% end %>
+</div>
+
+<h2 class="handle" id="uid-retrieve">My ID is already stored, I want to download Browser Patcher</h2>
+<div id="uid-retrieve-fold" class="fold">
+  <% form_tag(:action => "retrieve", :method => :post) do %>
+    <p>
+    <%= label_tag(:identifier, "Your code") %>
+    <%= text_field_tag(:identifier) %>
+    </p>
+    <p>
+    <%= label_tag(:leave_apuid, "Don't remove my code, I will use it on another computer") %>
+    <%= check_box_tag :leave_apuid, "1", false %>
+    </p>
+    <p>
+    <%= submit_tag(@patcher_button_label) %>
+    <%= submit_tag(@patcher_ff_ext_label) %>
+    </p>
+  <% end %>
+</div>

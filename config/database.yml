@@ -19,8 +19,8 @@ common: &common
    host: localhost
    port: 3306
    encoding: utf8
-   username: RoR
-   password: RoRatAleF
+   username: proxy
+   password: rabbit
 
 development:
    <<: *common
