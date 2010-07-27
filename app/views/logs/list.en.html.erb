@@ -17,7 +17,7 @@
 		<%= shorten log.page.keywords.gsub(/,(?=\S+?)/, ', ') %>
 	<% end %>
 	</td>
-        <td class="delete"><%= link_to "zmaž", {:action => :delete, :id => log.id}, {:confirm => "Zmazať", :method => :post} %>
+        <td class="delete"><%= link_to "zmaž", {:action => :delete, :id => log.id}, {:confirm => "Delete", :method => :post} %>
       </tr>
   <% end %>
   </tbody>
