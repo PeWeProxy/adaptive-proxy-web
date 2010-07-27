@@ -19,7 +19,12 @@
 
 <header>
   <%= link_to 'Adaptive Proxy &beta;', root_url(:locale => I18n.locale) %>
-  <a href="/news.xml" title="Subscribe to Atom news"><img src="/images/feed.png" title="Atom feed" class="feed"/></a>
+  <div id="rsslang">
+    <div id="lang">
+      <a href="/en" title="English">en</a> | <a href="sk" title="Slovensky">sk</a>
+    </div>
+    <a href="/news.xml" title="Subscribe to Atom news"><img src="/images/feed.png" title="Atom feed" class="feed"/></a>
+  </div>
 </header>
 
 <section>

@@ -332,3 +332,14 @@ form {
   border: 4px solid #368314;
   background-color: #c4f8ad;
 }
+
+#rsslang {
+  float: right;
+}
+
+#lang {
+  font-size: 50%;
+  float: left;
+  margin-right: 0.5em;
+  margin-top: 1.2em;
+}

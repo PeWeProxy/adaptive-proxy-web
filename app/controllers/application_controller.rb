@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_uid, :set_locale
 
   def set_locale
-    I18n.locale = params[:locale]
+    I18n.locale = params[:locale] || request.preferred_language_from(I18n.available_locales)
   end
 
   # Scrub sensitive parameters from your log

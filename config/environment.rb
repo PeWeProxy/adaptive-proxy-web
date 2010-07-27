@@ -19,6 +19,7 @@ Rails::Initializer.run do |config|
     require 'uuid/uuid'
     config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
     config.gem 'routing-filter'
+    config.gem 'http_accept_language'
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
