@@ -189,7 +189,9 @@ class UUID
 		def parse obj
 			str = obj.to_s.sub %r/\Aurn:uuid:/, ''
 			str.gsub! %r/[^0-9A-Fa-f]/, ''
-			raw = str[0..31].to_a.pack 'H*'
+         raw_arr = []
+         str[0..31].each_char { |c| raw_arr << c }
+         raw = raw_arr.pack 'H*'
 			new raw
 		end
 
