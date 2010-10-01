@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+### http://mput.dip.jp/mput/uuid.txt
+
 # Copyright(c) 2005 URABE, Shyouhei.
 #
 # Permission is hereby granted, free of  charge, to any person obtaining a copy
@@ -17,65 +19,55 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF  OR IN CONNECTION WITH  THE CODE OR THE  USE OR OTHER  DEALINGS IN THE
 # CODE.
+#
+# 2009-02-20:  Modified by Pablo Lorenzoni <pablo@propus.com.br>  to  correctly
+# include the version in the raw_bytes.
 
-%w[
-	digest/md5
-	digest/sha1
-	tmpdir
-].each do |f|
-	require f
-end
+
+require 'digest/md5'
+require 'digest/sha1'
+require 'tmpdir'
 
 # Pure ruby UUID generator, which is compatible with RFC4122
-class UUID
-	# UUID epoch is 15th Oct. 1582
-	UNIXEpoch = 0x01B21DD213814000 # in 100-nanoseconds resolution
+UUID = Struct.new :raw_bytes
 
+class UUID
 	private_class_method :new
 
-	private
-	def initialize str
-		tmp = str.unpack "C*"
-		@num = tmp.inject do |r, i|
-			r * 256 | i
-		end
-		@num.freeze
-		self.freeze
-	end
-
-	public
-
-	def raw_bytes
-		ret = String.new
-		tmp = @num
-		16.times do |i|
-			x, y = tmp.divmod 256
-			ret << y
-			tmp = x
-		end
-		ret.reverse!
-		ret
-	end
-
 	class << self
-		def mask ver, str # :nodoc
-			ver = ver & 15
-			v = str[6]
-			v &= 0b0000_1111
-			v |= ver << 4
-			str[6] = v
-			r = str[8]
-			r &= 0b0011_1111
-			r |= 0b1000_0000
-			str[8] = r
+		def mask19 v, str # :nodoc
+			nstr = str.bytes.to_a
+			version = [0, 16, 32, 48, 64, 80][v]
+			nstr[6] &= 0b00001111
+			nstr[6] |= version
+#			nstr[7] &= 0b00001111
+#			nstr[7] |= 0b01010000
+			nstr[8] &= 0b00111111
+			nstr[8] |= 0b10000000
+			str = ''
+			nstr.each { |s| str << s.chr }
 			str
 		end
 
-		def prand # :nodoc:
-			rand 0x100000000
+		def mask18 v, str # :nodoc
+			version = [0, 16, 32, 48, 64, 80][v]
+			str[6] &= 0b00001111
+			str[6] |= version
+#			str[7] &= 0b00001111
+#			str[7] |= 0b01010000
+			str[8] &= 0b00111111
+			str[8] |= 0b10000000
+			str
 		end
 
-		private :mask, :prand
+		def mask v, str
+			if RUBY_VERSION >= "1.9.0"
+				return mask19 v, str
+			else
+				return mask18 v, str
+			end
+		end
+		private :mask, :mask18, :mask19
 
 		# UUID generation using SHA1. Recommended over create_md5.
 		# Namespace object is another UUID, some of them are pre-defined below.
@@ -85,8 +77,11 @@ class UUID
 			sha1.update str
 			sum = sha1.digest
 			raw = mask 5, sum[0..15]
-			new raw
+			ret = new raw
+			ret.freeze
+			ret
 		end
+		alias :create_v5 :create_sha1
 
 		# UUID generation using MD5 (for backward compat.)
 		def create_md5 str, namespace
@@ -95,17 +90,28 @@ class UUID
 			md5.update str
 			sum = md5.digest
 			raw = mask 3, sum[0..16]
-			new raw
+			ret = new raw
+			ret.freeze
+			ret
 		end
+		alias :create_v3 :create_md5
 
 		# UUID  generation  using  random-number  generator.   From  it's  random
 		# nature, there's  no warranty that  the created ID is  really universaly
 		# unique.
 		def create_random
-			rnd = [prand, prand, prand, prand].pack "N4"
+			rnd = [
+				rand(0x100000000),
+				rand(0x100000000),
+				rand(0x100000000),
+				rand(0x100000000),
+			].pack "N4"
 			raw = mask 4, rnd
-			new raw
+			ret = new raw
+			ret.freeze
+			ret
 		end
+		alias :create_v4 :create_random
 
 		def read_state fp			  # :nodoc:
 			fp.rewind
@@ -128,7 +134,7 @@ class UUID
 		# invokation. If you want to speed  this up, try remounting tmpdir with a
 		# memory based filesystem  (such as tmpfs).  STILL slow?  then no way but
 		# rewrite it with c :)
-		def create clock=nil, time=Time.now, mac_addr=nil
+		def create clock=nil, time=nil, mac_addr=nil
 			c = t = m = nil
 			Dir.chdir Dir.tmpdir do
 				unless FileTest.exist? STATE_FILE then
@@ -138,13 +144,20 @@ class UUID
 					# see Section 4.5 of RFC4122 for details.
 					sha1 = Digest::SHA1.new
 					256.times do
-						r = [prand].pack "N"
+						r = [rand(0x100000000)].pack "N"
 						sha1.update r
 					end
 					str = sha1.digest
-					r = rand 34 # 40-6
+					r = rand 14 # 20-6
 					node = str[r, 6] || str
-					node[0] |= 0x01 # multicast bit
+					if RUBY_VERSION >= "1.9.0"
+						nnode = node.bytes.to_a
+						nnode[0] |= 0x01
+						node = ''
+						nnode.each { |s| node << s.chr }
+					else
+						node[0] |= 0x01 # multicast bit
+					end
 					k = rand 0x40000
 					open STATE_FILE, 'w:ASCII-8BIT:ASCII-8BIT' do |fp|
 						fp.flock IO::LOCK_EX
@@ -155,51 +168,51 @@ class UUID
 				open STATE_FILE, 'r+:ASCII-8BIT:ASCII-8BIT' do |fp|
 					fp.flock IO::LOCK_EX
 					c, m = read_state fp
-					c += 1 # important; increment here
+					c = clock % 0x4000 if clock
+					m = mac_addr if mac_addr
+					t = time
+					if t.nil? then
+						# UUID epoch is 1582/Oct/15
+						tt = Time.now
+						t = tt.to_i*10000000 + tt.tv_usec*10 + 0x01B21DD213814000
+					end
+					c = c.succ # important; increment here
 					write_state fp, c, m
 				end
-			end
-			c = clock & 0b11_1111_1111_1111 if clock
-			m = mac_addr if mac_addr
-			time = Time.at time if time.is_a? Float
-			case time
-			when Time
-				t = time.to_i * 10_000_000 + time.tv_usec * 10 + UNIXEpoch
-			when Integer
-				t = time + UNIXEpoch
-			else
-				raise TypeError, "cannot convert ``#{time}'' into Time."
 			end
 
 			tl = t & 0xFFFF_FFFF
 			tm = t >> 32
 			tm = tm & 0xFFFF
 			th = t >> 48
-			th = th & 0b0000_1111_1111_1111
-			th = th | 0b0001_0000_0000_0000
-			cl = c & 0b0000_0000_1111_1111
-			ch = c & 0b0011_1111_0000_0000
+			th = th & 0x0FFF
+			th = th | 0x1000
+			cl = c & 0xFF
+			ch = c & 0x3F00
 			ch = ch >> 8
-			ch = ch | 0b1000_0000
-			pack tl, tm, th, ch, cl, m
+			ch = ch | 0x80
+			pack tl, tm, th, cl, ch, m
 		end
+		alias :create_v1 :create
 
 		# A  simple GUID  parser:  just ignores  unknown  characters and  convert
 		# hexadecimal dump into 16-octet object.
 		def parse obj
 			str = obj.to_s.sub %r/\Aurn:uuid:/, ''
 			str.gsub! %r/[^0-9A-Fa-f]/, ''
-         raw_arr = []
-         str[0..31].each_char { |c| raw_arr << c }
-         raw = raw_arr.pack 'H*'
-			new raw
+			raw = str[0..31].lines.to_a.pack 'H*'
+			ret = new raw
+			ret.freeze
+			ret
 		end
 
 		# The 'primitive constructor' of this class
 		# Note UUID.pack(uuid.unpack) == uuid
 		def pack tl, tm, th, ch, cl, n
 			raw = [tl, tm, th, ch, cl, n].pack "NnnCCa6"
-			new raw
+			ret = new raw
+			ret.freeze
+			ret
 		end
 	end
 
@@ -209,51 +222,11 @@ class UUID
 		raw_bytes.unpack "NnnCCa6"
 	end
 
-	# The timestamp of this UUID.
-	# Throws RageError if that time exceeds UNIX time range
-	def time
-		a = unpack
-		tl = a[0]
-		tm = a[1]
-		th = a[2] & 0x0FFF
-		t = tl
-		t += tm << 32
-		t += th << 48
-		t -= UNIXEpoch
-		tv_sec = t / 10_000_000
-		t -= tv_sec * 10_000_000
-		tv_usec = t / 10
-		Time.at tv_sec, tv_usec
-	end
-
-	# The version of this UUID
-	def version
-		v = unpack[2] & 0b1111_0000_0000_0000
-		v >> 12
-	end
-
-	# The clock sequence of this UUID
-	def clock
-		a = unpack
-		ch = a[3] & 0b0001_1111
-		cl = a[4]
-		c = cl
-		c += ch << 8
-		c
-	end
-
-	# The IEEE 802 address in a hexadecimal format
-	def node
-		m = unpack[5].unpack 'C*'
-		'%02x%02x%02x%02x%02x%02x' % m
-	end
-	alias mac_address node
-	alias ieee802 node
-
 	# Generate the string representation (a.k.a GUID) of this UUID
 	def to_s
 		a = unpack
-		a[-1] = mac_address
+		tmp = a[-1].unpack 'C*'
+		a[-1] = sprintf '%02x%02x%02x%02x%02x%02x', *tmp
 		"%08x-%04x-%04x-%02x%02x-%s" % a
 	end
 	alias guid to_s
@@ -263,26 +236,31 @@ class UUID
 		"urn:uuid:" + self.to_s
 	end
 	alias urn to_uri
-	alias inspect to_uri
 
 	# Convert into 128-bit unsigned integer
 	# Typically a Bignum instance, but can be a Fixnum.
 	def to_int
-		@num
+		tmp = self.raw_bytes.unpack "C*"
+		tmp.inject do |r, i|
+			r * 256 | i
+		end
 	end
 	alias to_i to_int
+
+	# Gets the version of this UUID
+	# returns nil if bad version
+	def version
+		a = unpack
+		v = (a[2] & 0xF000).to_s(16)[0].chr.to_i
+		return v if (1..5).include? v
+		return nil
+	end
 
 	# Two  UUIDs  are  said  to  be  equal if  and  only  if  their  (byte-order
 	# canonicalized) integer representations are equivallent.  Refer RFC4122 for
 	# details.
 	def == other
 		to_i == other.to_i
-	end
-	alias eql? ==
-
-	# Two identical UUIDs should have same hash
-	def hash
-		to_i
 	end
 
 	include Comparable
@@ -301,10 +279,105 @@ class UUID
 	Nil = parse "00000000-0000-0000-0000-000000000000"
 end
 
+__END__
+if __FILE__ == $0 then
+	require 'test/unit'
+
+	class TC_UUID < Test::Unit::TestCase
+		def test_v1
+			u1 = UUID.create
+			u2 = UUID.create
+			assert_not_equal u1, u2
+		end
+
+		def test_v1_repeatability
+			u1 = UUID.create 1, 2, "345678"
+			u2 = UUID.create 1, 2, "345678"
+			assert_equal u1, u2
+		end
+
+		def test_v3
+			u1 = UUID.create_md5 "foo", UUID::NameSpace_DNS
+			u2 = UUID.create_md5 "foo", UUID::NameSpace_DNS
+			u3 = UUID.create_md5 "foo", UUID::NameSpace_URL
+			assert_equal u1, u2
+			assert_not_equal u1, u3
+		end
+
+		def test_v5
+			u1 = UUID.create_sha1 "foo", UUID::NameSpace_DNS
+			u2 = UUID.create_sha1 "foo", UUID::NameSpace_DNS
+			u3 = UUID.create_sha1 "foo", UUID::NameSpace_URL
+			assert_equal u1, u2
+			assert_not_equal u1, u3
+		end
+
+		def test_v4
+			# This test  is not  perfect, because the  random nature of  version 4
+			# UUID  it is  not always  true that  the three  objects  below really
+			# differ.  But  in real  life it's  enough to say  we're OK  when this
+			# passes.
+			u1 = UUID.create_random
+			u2 = UUID.create_random
+			u3 = UUID.create_random
+			assert_not_equal u1.raw_bytes, u2.raw_bytes
+			assert_not_equal u1.raw_bytes, u3.raw_bytes
+			assert_not_equal u2.raw_bytes, u3.raw_bytes
+		end
+
+		def test_pack
+			u1 = UUID.pack 0x6ba7b810, 0x9dad, 0x11d1, 0x80, 0xb4,
+			               "\000\300O\3240\310"
+			assert_equal UUID::NameSpace_DNS, u1
+		end
+
+		def test_unpack
+			tl, tm, th, cl, ch, m = UUID::NameSpace_DNS.unpack
+			assert_equal 0x6ba7b810, tl
+			assert_equal 0x9dad, tm
+			assert_equal 0x11d1, th
+			assert_equal 0x80, cl
+			assert_equal 0xb4, ch
+			assert_equal "\000\300O\3240\310", m
+		end
+
+		def test_parse
+			u1 = UUID.pack 0x6ba7b810, 0x9dad, 0x11d1, 0x80, 0xb4,
+			               "\000\300O\3240\310"
+			u2 = UUID.parse "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+			u3 = UUID.parse "urn:uuid:6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+			assert_equal u1, u2
+			assert_equal u1, u3
+		end
+
+		def test_to_s
+			u1 = UUID.parse "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+			assert_equal "6ba7b810-9dad-11d1-80b4-00c04fd430c8", u1.to_s
+		end
+
+		def test_to_i
+			u1 = UUID.parse "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+			assert_equal 0x6ba7b8109dad11d180b400c04fd430c8, u1.to_i
+		end
+
+		def test_version
+			u1 = UUID.create_v1
+			assert_equal 1, u1.version
+			u3 = UUID.create_v3 "foo", UUID::NameSpace_DNS
+			assert_equal 3, u3.version
+			u4 = UUID.create_v4
+			assert_equal 4, u4.version
+			u5 = UUID.create_v5 "foo", UUID::NameSpace_DNS
+			assert_equal 5, u5.version
+		end
+	end
+end
+
+
 
 # Local Variables:
 # mode: ruby
-# coding: utf-8
+# code: utf-8
 # indent-tabs-mode: t
 # tab-width: 3
 # ruby-indent-level: 3
