@@ -20,7 +20,7 @@ common: &common
    port: 3306
    encoding: utf8
    username: proxy
-   password: rabbit
+   password: peweproxy
 
 development:
    <<: *common
