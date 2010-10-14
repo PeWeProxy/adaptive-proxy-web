@@ -101,7 +101,10 @@ function _evercookie_flash_var(cookie)
 	_global_lso = cookie;
 
 	// remove the flash object now
-	var swf = $('#myswf');
+	var swf;
+	var temp = function ($){
+	swf = $('#myswf');
+	} (adaptiveProxyJQuery);
 	if (swf && swf.parentNode)
 		swf.parentNode.removeChild(swf);
 }
