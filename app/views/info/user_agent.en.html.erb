@@ -2,25 +2,40 @@
   <h2>Privacy</h2>
 
   <p>
-    The only thing we know about you is your random unique identifier which we assigned to you and which you are sending us with each page view in your User-Agent text and the pages which are linked to this identifier (pages you visit). If you don't want us to log some of your activity, you can <%= link_to 'set it up', :action => 'privacy' %> if you are using <%= link_to 'Firefox', 'http://mozilla.com/firefox' %>. You can also <%= link_to 'delete your records', :controller => :logs, :action => :list %> from our database.
+    The only thing we know about you is your random unique identifier which we assigned to you and which you are sending us with each page view and the pages which are linked to this identifier (pages you visit). If you don't want us to log some of your activity, you can <%= link_to 'set it up', :action => 'privacy' %> if you are using <%= link_to 'Firefox', 'http://mozilla.com/firefox' %>. You can also <%= link_to 'delete your records', :controller => :logs, :action => :list %> from our database.
   </p>
 </aside>
 
 <p>
-  User Agent is a text, which your browser is sending everytime you visit a webpage. The webpage (or the server, more precisely) uses this text to learn about your browser, operating system or another useful information. Our proxy server uses this text to know which page views belong to which person. That's why we need you to setup your User-Agent to contain a special code.
+  Our proxy server uses technology called <i>Evercookie</i> to store your anonymous, random identifier in your computer, so we can link pages you visit to this identifier. This helps us to optimalize your browsing requests and finally allows us to make your browsing more comfortable.
 </p>
 
+<!--
 <p>
   The easiest way to setup a User-Agent is to download our tool, <%= link_to 'browser_patcher', :controller => :patcher, :action => :download %>. It will configure everything automatically. If you cannot or don't want to download browser_patcher, you can configure User-Agent using these guides. The configuration depends on your browser.
 </p>
+-->
+
 
 <div class="clear"/>
 
+<script type="text/javascript">
+  function setEverCookie(uid){
+    var ec = new evercookie();
+    ec.set('__peweproxy_uid',uid.split('=')[1]);
+    location.reload(true);
+  }
+</script>
+
+<a href="#" onclick="setEverCookie('<%= @uid %>'); return false" class="button handle">generate and store my identifier</a>
+
+<!--
 <ul class="foldable">
   <li>
   <%= link_to 'Automatic configuration<br/><em>Download Browser Patcher(Java 1.6 required)', { :controller => 'patcher', :action => 'download' }, :class => 'button handle' %>
   <%= link_to 'Automatic configuration for Firefox only<br/><em>Download Adaptive Proxy extension', { :controller => 'patcher', :action => 'download_ff_extension' }, :class => 'button handle' %>
   </li>
+  
   <li>
     <a href="#" id="browsers" class="button handle">Manual setup</a>
     <ul id="browsers-fold" class="browsers foldable fold">
@@ -48,8 +63,8 @@
             <li>Copy your existing Google Chrome shortcut on your desktop to create a new shortcut</li>
             <li>Right click the new shortcut and select Properties</li>
             <li>Find the field <em>Target</em> and append
-              <em class="uid">--user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/530.5 (KHTML, like Gecko)
-                Chrome/2.0.172.28 Safari/530.5 <%= @uid %>"</em></li>
+              <em class="uid">&#45&#45user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/530.5 (KHTML, like Gecko)
+                Chrome/2.0.172.28 Safari/530.5 <%= @uid %>"</em>
             </li>
             <li>Close Google Chrome if it is opened</li>
             <li>Run Google Chrome using your new shortcut</li>
@@ -101,9 +116,10 @@
           </p>
         </div>
       </li>
-    </ul>
+    </ul> 
   </li>
 </ul>
+-->
 
 <%= link_to '&lt;&lt; Proxy configuration', { :action => 'settings' }, :class => 'back_button' %>
 <a href="http://www.google.com" class="next_button">Browse! &gt;&gt;</a>

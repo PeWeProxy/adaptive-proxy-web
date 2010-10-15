@@ -38,14 +38,14 @@
       <div class="setup warning">
         <% if request.env['HTTP_VIA'] =~ /AdaptiveProxy/ %>
             Proxy máš už nastavenú, ešte
-            si <%= link_to 'nastav User-Agent identifikátor', :controller => :info, :action => :user_agent %>.
+            si <%= link_to 'vygeneruj anonymný identifikátor', :controller => :info, :action => :user_agent %>.
         <% elsif session[:has_uid] %>
-            Máš správne nastavený User-Agent, ale
+            Máš správne nastavený identifikátor, ale
             nemáš <%= link_to 'zapnutú proxy', :controller => :info, :action => :settings %>.
         <% else %>
             Nastavenie Proxy nie je kompletné. Uisti sa že
             máš <%= link_to 'proxy zapnuté', :controller => :info, :action => :settings %> a potom
-            si <%= link_to 'nastav User-Agent identifikátor', :controller => :info, :action => :user_agent %>.
+            si <%= link_to 'vygeneruj anonymný identifikátor', :controller => :info, :action => :user_agent %>.
         <% end %>
       </div>
   <% end %>

@@ -10,13 +10,13 @@
       <li>In the section <strong>Connection</strong> click the button <strong>Settings</strong></li>
       <li>In the window <strong>Connection settings</strong> choose the option <strong>Automatic proxy configuration URL</strong></li>
       <li>In the field marked with 7, enter the following address: <input type="text" class="pac" value="<%= @proxy_pac %>"/></li>
-      <li>Continue with the <%= link_to 'User-Agent setup', { :action => 'user_agent' }  %></li>
+      <li>Continue with the <%= link_to 'identifier setup', { :action => 'user_agent' }  %></li>
     </ol>
 
     <a href="/images/pac/firefox.png" alt="Image guide to proxy configuration in Firefox" title="Image guide to proxy configuration in Firefox">
       <%= image_tag "pac/firefox.png", :class => "pac" %>
     </a>
-<%= link_to 'User-Agent configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
+<%= link_to 'identifier configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
   </div>
   </li>
   <li>
@@ -30,12 +30,12 @@
       <li>Click the button <strong>LAN settings</strong></li>
       <li>Choose the option <strong>Use automatic configuration script</strong></li>
       <li>In the field marked with 7, enter the following address: <input type="text" class="pac" value="<%= @proxy_pac %>"/></li>
-      <li>Continue with the <%= link_to 'User-Agent setup', { :action => 'user_agent' }  %></li>
+      <li>Continue with the <%= link_to 'identifier setup', { :action => 'user_agent' }  %></li>
     </ol>
     <a href="/images/pac/chrome.png" alt="Image guide to proxy configuration in Chrome" title="Image guide to proxy configuration in Chrome">
       <%= image_tag "pac/chrome.png", :class => "pac" %>
     </a>
-<%= link_to 'User-Agent configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
+<%= link_to 'identifier configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
   </div>
   <h2 id="opera" class="opera right handle">Opera</h2>
   <div id="opera-fold" class="fold">
@@ -46,12 +46,12 @@
       <li>In the left sidebar click <strong>Network</strong></li>
       <li>Click <strong>Proxy servers</strong></li>
       <li>In the field marked with 7, enter the following address: <input type="text" class="pac" value="<%= @proxy_pac %>"/></li>
-      <li>Continue with the <%= link_to 'User-Agent setup', { :action => 'user_agent' }  %></li>
+      <li>Continue with the <%= link_to 'identifier setup', { :action => 'user_agent' }  %></li>
     </ol>
     <a href="/images/pac/opera.png" alt="Image guide to proxy configuration in Opera" title="Image guide to proxy configuration in Opera">
       <%= image_tag "pac/opera.png", :class => "pac" %>
     </a>
- <%= link_to 'User-Agent configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
+ <%= link_to 'identifier configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
   </div>
   <h2 id="ie" class="ie left handle">Internet Explorer</h2>
   <div id="ie-fold" class="fold">
@@ -63,11 +63,11 @@
       <li>Click the button <strong>LAN settings</strong></li>
       <li>Choose the option <strong>Use automatic configuration script</strong></li>
       <li>In the field marked with 7, enter the following address: <input type="text" class="pac" value="<%= @proxy_pac %>"/></li>
-      <li>Continue with the <%= link_to 'User-Agent setup', { :action => 'user_agent' }  %></li>
+      <li>Continue with the <%= link_to 'identifier setup', { :action => 'user_agent' }  %></li>
    <a href="/images/pac/ie.png" alt="Image guide to proxy configuration in Internet Explorer" title="Image guide to proxy configuration in Internet Explorer">
       <%= image_tag "pac/ie.png", :class => "pac" %>
     </a>
- <%= link_to 'User-Agent configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
+ <%= link_to 'identifier configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
   </div>
   <h2 class="unknown right handle" id="unknown">Others</h2>
   <div id="unknown-fold" class="fold">
@@ -78,6 +78,6 @@
 </ul>
 
 <%= link_to '&lt;&lt; Introduction', { :action => '' }, :class => 'back_button' %>
-<%= link_to 'User-Agent configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
+<%= link_to 'identifier configuration &gt;&gt;', { :action => 'user_agent' }, :class => 'next_button' %>
 
 

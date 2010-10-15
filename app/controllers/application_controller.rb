@@ -14,15 +14,19 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   def set_uid
-    uid = get_uid_from_user_agent
-    if uid
-      session[:uid] = uid
-      session[:apuid] = uid.split('=')[1]
+    agent_uid = get_uid_from_user_agent
+    cookie_uid = get_uid_from_cookie
+    if agent_uid
+      session[:uid] = agent_uid
+      session[:apuid] = agent_uid.split('=')[1]
+    elsif cookie_uid
+      session[:uid] = "APUID=" + cookie_uid
+      session[:apuid] = cookie_uid
     elsif session[:uid].nil?
       session[:uid] = generate_uid
     end
 
-    if uid
+    if agent_uid || cookie_uid
       session[:has_uid] = true
     else
       session[:has_uid] = false
@@ -39,6 +43,11 @@ class ApplicationController < ActionController::Base
     else
       nil
     end
+  end
+
+  def get_uid_from_cookie
+    #TODO: shall we check something?
+    return request.cookies["__peweproxy_uid"]
   end
 end
  
