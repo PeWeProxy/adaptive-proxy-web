@@ -1,13 +1,13 @@
 <h1 style="text-align:center">Prosím počkajte, rozpoznáva sa používateľ</h1>
 <div style="text-align: center"><img src="/images/wait.gif" alt="wait" /></div>
-<div style="text-align: center; color: green">Po dokončení budete presmerovaný na <%= @back %></div>
+<div style="text-align: center; color: green">Po dokončení budete presmerovaný späť na <%= @back %></div>
 <script type="text/javascript">
   // <![CDATA[
   retrieveCookie = function($){
 	$(document).ready(function(){
 	  var ec = new evercookie();
 	  ec.get('__peweproxy_uid',function(){
-		history.back();
+		window.location = '<%= @back %> '
 	  });
 	});
   }(adaptiveProxyJQuery);
