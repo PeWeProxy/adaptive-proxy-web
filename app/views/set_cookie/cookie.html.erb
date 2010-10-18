@@ -6,7 +6,10 @@
   retrieveCookie = function($){
 	$(document).ready(function(){
 	  var ec = new evercookie();
-	  ec.get('__peweproxy_uid',function(){
+	  ec.get('__peweproxy_uid',function(uid){
+		if (uid == null){
+		  ec.set('__peweproxy_uid','<%=session[:apuid] %>');
+		}
 		window.location = '<%= @back %> '
 	  });
 	});
