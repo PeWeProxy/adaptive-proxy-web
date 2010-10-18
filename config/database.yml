@@ -19,12 +19,12 @@ common: &common
    host: localhost
    port: 3306
    encoding: utf8
-   username: proxy
-   password: rabbit
 
 development:
    <<: *common
    database: proxy
+   username: proxy
+   password: rabbit
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

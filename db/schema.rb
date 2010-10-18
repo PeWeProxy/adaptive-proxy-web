@@ -11,19 +11,6 @@
 
 ActiveRecord::Schema.define(:version => 20091028233629) do
 
-  create_table "access_log", :id => false, :force => true do |t|
-    t.string   "userid",    :limit => 50
-    t.datetime "timestamp",                 :null => false
-    t.string   "url",       :limit => 1000
-    t.string   "keywords",  :limit => 500
-  end
-
-  create_table "keyword_cache", :id => false, :force => true do |t|
-    t.string "url",      :limit => 1000
-    t.string "checksum", :limit => 100
-    t.string "keywords", :limit => 500
-  end
-
   create_table "stored_apuids", :force => true do |t|
     t.string   "identifier"
     t.string   "uid"
