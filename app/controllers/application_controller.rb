@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
       session[:apuid] = cookie_uid
     elsif session[:uid].nil?
       session[:uid] = generate_uid
+      session[:apuid] = session[:uid].split('=')[1]
     end
 
     if agent_uid || cookie_uid
