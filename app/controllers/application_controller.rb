@@ -48,7 +48,8 @@ class ApplicationController < ActionController::Base
 
   def get_uid_from_cookie
     #TODO: shall we check something?
-    return request.cookies["__peweproxy_uid"]
+    cookieVal = request.cookies["__peweproxy_uid"]
+    return cookieVal== "" ? nil : cookieVal
   end
 end
  

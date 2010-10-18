@@ -7,3 +7,4 @@ templates/APUID*
 .idea/*
 .classpath
 .project
+/script/server
