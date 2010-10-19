@@ -33,7 +33,7 @@ class PatcherController < ApplicationController
     end
     retrievedApuid = StoredApuid.find_by_identifier(params[:identifier])
     if(retrievedApuid.nil?)
-      flash[:error] = "Did not find an APUID with identifier \'#{params[:identifier]}\' in the database.#{retrievedApuid.uid}"
+      flash[:error] = "Did not find an APUID with identifier \'#{params[:identifier]}\' in the database."
       redirect_to :back and return;
     end
     if(params[:commit] == EVER_COOKIE_DOWNLOAD_LABEL)
