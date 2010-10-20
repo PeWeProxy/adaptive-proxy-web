@@ -48,8 +48,7 @@
             <li>Copy your existing Google Chrome shortcut on your desktop to create a new shortcut</li>
             <li>Right click the new shortcut and select Properties</li>
             <li>Find the field <em>Target</em> and append
-              <em class="uid">--user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/530.5 (KHTML, like Gecko)
-                Chrome/2.0.172.28 Safari/530.5 <%= @uid %>"</em></li>
+	      <em class="uid">--user-agent="<%= @user_agent%> <%= @uid %>"</em>
             </li>
             <li>Close Google Chrome if it is opened</li>
             <li>Run Google Chrome using your new shortcut</li>
