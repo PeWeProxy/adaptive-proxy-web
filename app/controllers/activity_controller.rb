@@ -1,7 +1,7 @@
 class ActivityController < ApplicationController
   def update
     return unless params[:checksum] and params[:period] and params[:scrolls] and params[:copies]
-    access_log = AccessLog.by_checksum(params[:checksum], session[:apuid]).first
+    access_log = AccessLog.by_checksum(params[:checksum], params[:uid]).first
 
     if not access_log.nil? then
       access_log.increase_time_on_page params[:period]
