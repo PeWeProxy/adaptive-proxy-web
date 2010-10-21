@@ -19,6 +19,8 @@ common: &common
    host: localhost
    port: 3306
    encoding: utf8
+   username: proxy
+   password: peweproxy
 
 development:
    <<: *common

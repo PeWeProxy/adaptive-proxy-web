@@ -5,6 +5,7 @@ class InfoController < ApplicationController
 
   def user_agent
     @uid = session[:uid]
+    @user_agent = request.env["HTTP_USER_AGENT"]
   end
 
   def settings

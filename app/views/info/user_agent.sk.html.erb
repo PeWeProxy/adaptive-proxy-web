@@ -68,8 +68,7 @@
             <li>Na ploche si vytvor nový odkaz na Google Chrome skopírovaním už existujúceho odkazu</li>
             <li>Klikni na nový odkaz pravým tlačidlom a zvoľ Vlastnosti</li>
             <li>Do poľa <em>Cieľ</em> doplň k existujúcej ceste parameter
-              <em class="uid">&#45&#45user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/530.5 (KHTML, like Gecko)
-                Chrome/2.0.172.28 Safari/530.5 <%= @uid %>"</em>
+              <em class="uid">--user-agent="<%= @user_agent %> <%= @uid %>"</em>
             </li>
             <li>Ak už máš Google Chrome otvorený, zavri ho</li>
             <li>Spusti Google Chrome novovytvoreným odkazom</li>
