@@ -10,14 +10,7 @@
   Our proxy server uses technology called <i>Evercookie</i> to store your anonymous, random identifier in your computer, so we can link pages you visit to this identifier. This helps us to optimalize your browsing requests and finally allows us to make your browsing more comfortable.
 </p>
 
-<!--
-<p>
-  The easiest way to setup a User-Agent is to download our tool, <%= link_to 'browser_patcher', :controller => :patcher, :action => :download %>. It will configure everything automatically. If you cannot or don't want to download browser_patcher, you can configure User-Agent using these guides. The configuration depends on your browser.
-</p>
--->
 
-
-<div class="clear"/>
 
 <script type="text/javascript">
   function setEverCookie(uid){
@@ -27,99 +20,13 @@
   }
 </script>
 
-<a href="#" onclick="setEverCookie('<%= @uid %>'); return false" class="button handle">generate and store my identifier</a>
-<a href="#" onclick="setEverCookie('='); <% @uid=nil %>return false" class="button handle">remove evercookie from your computer</a>
+<a href="#" onclick="setEverCookie('<%= @uid %>'); return false" class="button handle">Generate and store my identifier</a>
+<a href="#" onclick="setEverCookie('='); <% @uid=nil %>return false" class="button handle">Remove evercookie from my computer</a>
 
-<!--
-<ul class="foldable">
-  <li>
-  <%= link_to 'Automatic configuration<br/><em>Download Browser Patcher(Java 1.6 required)', { :controller => 'patcher', :action => 'download' }, :class => 'button handle' %>
-  <%= link_to 'Automatic configuration for Firefox only<br/><em>Download Adaptive Proxy extension', { :controller => 'patcher', :action => 'download_ff_extension' }, :class => 'button handle' %>
-  </li>
-  
-  <li>
-    <a href="#" id="browsers" class="button handle">Manual setup</a>
-    <ul id="browsers-fold" class="browsers foldable fold">
-      <li>
-        <h2 id="firefox" class="firefox right handle">Mozilla Firefox</h2>
-        <div class="fold" id="firefox-fold">
-          <ol>
-            <li>Enter the address <em class="code">about:config</em> in the location bar</li>
-            <li>If a warning window opens, promise to be careful</li>
-            <li>Create new property of type <em>String</em> with the name <em class="code">general.useragent.extra.adaptiveproxy</em> and use <em class="uid"><%= @uid %></em> as the value
-            </li>
-            <li>Restart Firefox</li>
-          </ol>
 
-          <p>The result should look like this.</p>
+<div class="clear"></div>
 
-          <%= image_tag "ff/config.png", {:alt => "User-Agent configuration for Firefox"} %>
-        </div>
-      </li>
-
-      <li>
-        <h2 id="chrome" class="chrome left handle">Google Chrome</h2>
-        <div id="chrome-fold" class="fold">
-          <ol>
-            <li>Copy your existing Google Chrome shortcut on your desktop to create a new shortcut</li>
-            <li>Right click the new shortcut and select Properties</li>
-            <li>Find the field <em>Target</em> and append
-	      <em class="uid">--user-agent="<%= @user_agent%> <%= @uid %>"</em>
-            </li>
-            <li>Close Google Chrome if it is opened</li>
-            <li>Run Google Chrome using your new shortcut</li>
-            <li><strong>User-Agent will only be configured if you run Chrome using this shortcut</strong></li>
-          </ol>
-
-          <p>The result should look like this.</p>
-
-          <%= image_tag "chrome/shortcut.png", {:alt => "User-Agent configuration for Chrome"} %>
-        </div>
-      </li>
-
-      <li>
-        <h2 id="opera" class="opera right handle">Opera</h2>
-        <div id="opera-fold" class="fold">
-          <p>
-            <ol>
-              <li>Enter <em class="code">about:config</em> in the location bar </li>
-              <li>Find the category <em>ISP</em></li>
-              <li>Find the field <em>ID</em> and insert your identifier</li><em class="uid"><%= @uid %></em>
-              <li>Restart Opera</li>
-            </ol>
-          </p>
-        </div>
-      </li>
-
-      <li>
-        <h2 id="ie" class="ie left handle">Internet Explorer</h2>
-          <div id="ie-fold" class="fold">
-          <ol class="tutorial">
-            <li>Run the program <em>regedit.exe</em></li>
-            <li>Find the branch
-              <em>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\User Agent\Post Platform</em>
-            </li>
-            <li>Create a new String key in this branch and insert your identifier <em class="uid"><%= @uid %></em></li>
-          </ol>
-
-          <p>The result should look like this</p>
-
-          <%= image_tag "ie/regedit.png", {:alt => "User-Agent configuration for Internet Explorer"} %>
-        </div>
-      </li>
-
-      <li>
-        <h2 id="unknown" class="unknown right handle">Others</h2>
-        <div id="unknown-fold" class="fold">
-          <p>
-            We don't know how to setup User-Agent for another browsers. If you manage to configure it in your browser, <a href="http://nimbus.fiit.stuba.sk/redmine/projects/proxy/issues" title="Redmine">tell us how</a>
-          </p>
-        </div>
-      </li>
-    </ul> 
-  </li>
-</ul>
--->
-
-<%= link_to '&lt;&lt; Proxy configuration', { :action => 'settings' }, :class => 'back_button' %>
-<a href="http://www.google.com" class="next_button">Browse! &gt;&gt;</a>
+<div class='navigation'>
+  <%= link_to '&lt;&lt; Proxy configuration', { :action => 'settings' }, :class => 'back_button' %>
+  <a href="http://www.google.com" class="next_button">Browse! &gt;&gt;</a>
+</div>
