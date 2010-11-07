@@ -1,0 +1,18 @@
+<h1 style="text-align:center">Please wait, recognizing user...</h1>
+<div style="text-align: center"><img src="/images/wait.gif" alt="wait" /></div>
+<div style="text-align: center; color: green">You will be redirected back to <%= @back %></div>
+<script type="text/javascript">
+  // <![CDATA[
+  retrieveCookie = function($){
+	$(document).ready(function(){
+	  var ec = new evercookie();
+	  ec.get('__peweproxy_uid',function(uid){
+		if (uid == null || uid == ''){
+		  ec.set('__peweproxy_uid','<%=session[:apuid] %>');
+		}
+		window.location = '<%= @back %> '
+	  });
+	});
+  }(adaptiveProxyJQuery);
+  // ]]>
+</script>
