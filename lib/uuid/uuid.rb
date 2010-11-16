@@ -28,7 +28,8 @@ require 'digest/md5'
 require 'digest/sha1'
 require 'tmpdir'
 
-# Pure ruby UUID generator, which is compatible with RFC4122
+module Uuid
+	# Pure ruby UUID generator, which is compatible with RFC4122
 UUID = Struct.new :raw_bytes
 
 class UUID
@@ -278,6 +279,7 @@ class UUID
 	# The Nil UUID in RFC4122 Section 4.1.7
 	Nil = parse "00000000-0000-0000-0000-000000000000"
 end
+end
 
 __END__
 if __FILE__ == $0 then
@@ -385,3 +387,4 @@ end
 # default-justification: full
 # End:
 # vi: ts=3 sw=3
+

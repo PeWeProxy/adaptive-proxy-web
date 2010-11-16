@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   end
 
   def generate_uid
-      "APUID=#{UUID.create.to_s.gsub(/-/, '')}"
+      "APUID=#{::Uuid::UUID.create.to_s.gsub(/-/, '')}"
   end
 
   def get_uid_from_user_agent
