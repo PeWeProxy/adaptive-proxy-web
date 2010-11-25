@@ -1,14 +1,6 @@
 class PatcherController < ApplicationController
-  PATCHER_BUTTON_LABEL = "Stiahni BrowserPatcher"
-  PATCHER_FF_EXT_LABEL = "Stiahni Firefox addon"
-  EVER_COOKIE_DOWNLOAD_LABEL = "Nastav na tomto PC"
-
   def download
     @uid = session[:uid]
-    @patcher_button_label = PATCHER_BUTTON_LABEL
-    @patcher_ff_ext_label = PATCHER_FF_EXT_LABEL
-    @ever_cookie_download_label = EVER_COOKIE_DOWNLOAD_LABEL
-
     # redirect_to :action => :download_browser_patcher unless session[:has_uid]
   end
 
@@ -34,14 +26,12 @@ class PatcherController < ApplicationController
       flash[:error] = "Did not find an APUID with identifier \'#{params[:identifier]}\' in the database."
       redirect_to :back and return;
     end
-    if(params[:commit] == EVER_COOKIE_DOWNLOAD_LABEL)
-      @uid = retrievedApuid.uid.split('=')[1]
-      @back = "/"
-      render('set_cookie/cookie_restore')
 
-      retrievedApuid.destroy unless params[:leave_apuid] == "1"
-    end
+    @uid = retrievedApuid.uid.split('=')[1]
+    @back = "/"
+    render('set_cookie/cookie_restore')
 
+    retrievedApuid.destroy unless params[:leave_apuid] == "1"
   end
 
   def retrieve
