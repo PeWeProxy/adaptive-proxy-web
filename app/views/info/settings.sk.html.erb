@@ -62,9 +62,10 @@
       <li>Zvoľ záložku <strong>Pripojenie</strong></li>
       <li>Klikni na tlačidlo <strong>Nastavenia LAN</strong></li>
       <li>Zvoľ možnosť <strong>Použiť skript na automatické nastavenie proxy</strong></li>
-      <li>Do poľa zadaj adresu <input type="text" class="pac" value="<%= @proxy_pac %>"/></li> </ol>
+      <li>Do poľa zadaj adresu <input type="text" class="pac" value="<%= @proxy_pac %>"/></li>
       <li>Nezabudni si <%= link_to 'nastaviť identifikátor', { :action => 'user_agent' }  %></li>
-   <a href="/images/pac/ie.png" alt="Obrázkový návod na nastavenie proxy v Internet Exploreri" title="Obrázkový návod na nastavenie proxy v Internet Exploreri">
+    </ol>
+    <a href="/images/pac/ie.png" alt="Obrázkový návod na nastavenie proxy v Internet Exploreri" title="Obrázkový návod na nastavenie proxy v Internet Exploreri">
       <%= image_tag "pac/ie.png", :class => "pac" %>
     </a>
  <%= link_to 'Nastavenie identifikátora >>', { :action => 'user_agent' }, :class => 'next_button' %>
