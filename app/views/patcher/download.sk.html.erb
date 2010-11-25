@@ -25,25 +25,7 @@
     <%= check_box_tag :leave_apuid, "1", false %>
     </p>
     <p>
-    <%= submit_tag(@ever_cookie_download_label) %>
+    <%= submit_tag 'Nastav mi môj identifikátor' %>
     </p>
   <% end %>
 </div>
-
-<!--<h2 class="handle" id="uid-retrieve">ID mám už uložené, chcem si stiahnuť BrowserPatcher</h2>-->
-<!--<div id="uid-retrieve-fold" class="fold">-->
-  <!--<% form_tag(:action => "retrieve", :method => :post) do %>-->
-    <!--<p>-->
-    <!--<%= label_tag(:identifier, "Tvoj kód") %>-->
-    <!--<%= text_field_tag(:identifier) %>-->
-    <!--</p>-->
-    <!--<p>-->
-    <!--<%= label_tag(:leave_apuid, "Nemaž môj kód, ešte si chcem nastaviť proxy na inom PC") %>-->
-    <!--<%= check_box_tag :leave_apuid, "1", false %>-->
-    <!--</p>-->
-    <!--<p>-->
-    <!--<%= submit_tag(@patcher_button_label) %>-->
-    <!--<%= submit_tag(@patcher_ff_ext_label) %>-->
-    <!--</p>-->
-  <!--<% end %>-->
-<!--</div>-->

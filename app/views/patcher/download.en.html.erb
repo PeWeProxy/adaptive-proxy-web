@@ -25,25 +25,7 @@
     <%= check_box_tag :leave_apuid, "1", false %>
     </p>
     <p>
-    <%= submit_tag(@ever_cookie_download_label) %>
+    <%= submit_tag 'Set me my proxy identifier' %>
     </p>
   <% end %>
 </div>
-
-<!--<h2 class="handle" id="uid-retrieve">My ID is already stored, I want to download Browser Patcher</h2>-->
-<!--<div id="uid-retrieve-fold" class="fold">-->
-  <!--<% form_tag(:action => "retrieve", :method => :post) do %>-->
-    <!--<p>-->
-    <!--<%= label_tag(:identifier, "Your code") %>-->
-    <!--<%= text_field_tag(:identifier) %>-->
-    <!--</p>-->
-    <!--<p>-->
-    <!--<%= label_tag(:leave_apuid, "Don't remove my code, I will use it on another computer") %>-->
-    <!--<%= check_box_tag :leave_apuid, "1", false %>-->
-    <!--</p>-->
-    <!--<p>-->
-    <!--<%= submit_tag(@patcher_button_label) %>-->
-    <!--<%= submit_tag(@patcher_ff_ext_label) %>-->
-    <!--</p>-->
-  <!--<% end %>-->
-<!--</div>-->
