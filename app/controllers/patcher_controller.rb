@@ -1,6 +1,4 @@
 class PatcherController < ApplicationController
-  @@uid_label = "APUID="
-  @@uid = "$replace_this$"
   PATCHER_BUTTON_LABEL = "Stiahni BrowserPatcher"
   PATCHER_FF_EXT_LABEL = "Stiahni Firefox addon"
   EVER_COOKIE_DOWNLOAD_LABEL = "Nastav na tomto PC"
@@ -64,45 +62,5 @@ class PatcherController < ApplicationController
 
     retrievedApuid.destroy unless params[:leave_apuid] == "1"
 
-  end
-
-  def initialize
-    
-  end
-
-  def download_browser_patcher
-    download_a_file "browser_patcher", "jar", "uadef.txt", @@uid, @@uid_label, params[:uid]
-  end
-
-  def download_ff_extension
-    download_a_file "ff_extension", "xpi", "defaults/preferences/defaults.js", "pref('general.useragent.extra.adaptiveproxy','#{@@uid}');", @@uid_label, params[:uid]
-  end
-
-  def download_a_file filename, extension, edit_path, string, uid_label, uid=nil
-    uid ||= session[:uid]
-
-    if (uid.index(uid_label).nil?)
-      uid_to_print = uid_label + uid
-    else
-      uid_to_print = uid
-    end
-
-    path = "#{RAILS_ROOT}/templates"
-
-    FileUtils.mkdir_p "#{path}/#{uid}/#{filename}" unless File.exists? "#{path}/#{uid}/#{filename}"
-
-    FileUtils.cp_r "#{path}/#{filename}", "#{path}/#{uid}/"
-
-    f = File.open("#{path}/#{uid}/#{filename}/#{edit_path}", "w")
-    f.puts string.gsub('$replace_this$', uid_to_print)
-    f.close
-
-    Dir.chdir("#{path}/#{uid}/#{filename}/") do
-      `zip -0 -r #{RAILS_ROOT}/public/download/#{filename}-#{uid}.#{extension} .`
-    end
-
-    prefix = relative_url_root
-    prefix = '' if prefix.nil?
-    redirect_to prefix + "/download/#{filename}-#{uid}.#{extension}"
   end
 end
