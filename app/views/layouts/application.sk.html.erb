@@ -36,7 +36,7 @@
   <%= link_to raw('Adaptive Proxy &beta;'), root_url(:locale => I18n.locale) %>
   <div id="rsslang">
     <div id="lang">
-      <a href="/en" title="English">en</a> | <a href="sk" title="Slovensky">sk</a>
+      <%= link_to 'en', url_for(:locale => :en) %> | <%= link_to 'sk', url_for(:locale => :sk) %>
     </div>
     <a href="/news.xml" title="Prihlásiť sa na odber noviniek"><img src="/images/feed.png" title="Atom feed" class="feed"/></a>
   </div>
