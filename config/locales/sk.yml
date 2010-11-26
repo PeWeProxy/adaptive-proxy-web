@@ -1,2 +1,37 @@
 sk:
-  hello: "Ahoj svet"
+  datetime:
+    distance_in_words:
+      half_a_minute: "pred pol minútou"
+      less_than_x_seconds:
+        one:   "pred menej ako sekundou"
+        other: "pred menej ako %{count} sekundami"
+      x_seconds:
+        one:   "pred sekundou"
+        other: "pred %{count} sekundami"
+      less_than_x_minutes:
+        one:   "pred menej ako minútou"
+        other: "pred menej ako %{count} minútami"
+      x_minutes: 
+        one: 'pred minútou'
+        other: 'pred %{count} minútami'
+      about_x_hours:
+        one: 'pred hodinou'
+        other: 'pred %{count} hodinami'
+      x_days:
+        one: 'včera'
+        other: 'pred %{count} dňami'
+      about_x_months:
+        one:   "asi pred mesiacom"
+        other: "asi pred %{count} mesiacmi"
+      x_months:
+        one: 'pred mesiacom'
+        other: 'pred %{count} mesiacmi'
+      about_x_years:
+        one: 'asi pred rokom'
+        other: 'asi pred %{count} rokmi'
+      over_x_years:
+        one: 'viac ako pred rokom'
+        other: 'viac ako pred %{count} rokmi'
+      almost_x_years:
+        one: 'skoro pred rokom'
+        other: 'skoro pred %{count} rokmi'
