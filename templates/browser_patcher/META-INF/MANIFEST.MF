@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: ../libs/TableLayout.jar 
- ../libs/jRegistryKey.jar 
- ../libs/jshortcut.jar
-Main-Class: sk.fiit.patcher.BrowserPatcherMain
