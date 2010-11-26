@@ -38,7 +38,7 @@
     <div id="lang">
       <%= link_to 'en', url_for(:locale => :en) %> | <%= link_to 'sk', url_for(:locale => :sk) %>
     </div>
-    <a href="/news.xml" title="Subscribe to Atom news"><img src="/images/feed.png" title="Atom feed" class="feed"/></a>
+    <a href="<%= root_url %>/news.xml" title="Subscribe to Atom news"><img src="<%= root_url %>/images/feed.png" title="Atom feed" class="feed"/></a>
   </div>
 </header>
 
