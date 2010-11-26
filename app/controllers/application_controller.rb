@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || request.preferred_language_from(I18n.available_locales)
   end
 
+  def default_url_options(options = {})
+    { :locale => I18n.locale || request.preferred_language_from(I18n.available_locales) }
+  end
+
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   def set_uid
@@ -52,4 +56,4 @@ class ApplicationController < ActionController::Base
     return cookieVal== "" ? nil : cookieVal
   end
 end
- 
+

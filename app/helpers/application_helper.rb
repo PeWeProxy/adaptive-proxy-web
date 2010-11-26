@@ -9,4 +9,8 @@ module ApplicationHelper
       text[0..MAX_TEXT_LENGTH] + '...'
     end
   end
+
+  def proxy_base_url
+    url_for :controller => :info, :action => :index
+  end
 end

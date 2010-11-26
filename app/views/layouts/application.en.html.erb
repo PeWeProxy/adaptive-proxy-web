@@ -33,12 +33,14 @@
 <body>
 
 <header>
-  <%= link_to raw('Adaptive Proxy &beta;'), root_url(:locale => I18n.locale) %>
+  <%= link_to raw('Adaptive Proxy &beta;'), proxy_base_url %>
   <div id="rsslang">
     <div id="lang">
       <%= link_to 'en', url_for(:locale => :en) %> | <%= link_to 'sk', url_for(:locale => :sk) %>
     </div>
-    <a href="<%= root_url %>/news.xml" title="Subscribe to Atom news"><img src="<%= root_url %>/images/feed.png" title="Atom feed" class="feed"/></a>
+    <a href="/news.xml" title="Subscribe to Atom news">
+      <%= image_tag 'feed.png', :class => 'feed', :title => 'Atom news' %>
+    </a>
   </div>
 </header>
 
