@@ -53,14 +53,14 @@
       <div class="setup warning">
         <% if request.env['HTTP_VIA'] =~ /AdaptiveProxy/ %>
             Your proxy setup is complete, but you also need to
-            <%= link_to 'get your anonymous, random identifier', :controller => :info, :action => :user_agent %>.
+            <%= link_to 'get your anonymous, random identifier', :controller => :info, :action => :identifier %>.
         <% elsif session[:has_uid] %>
             Your identifier configuration is complete, but you are not
             <%= link_to 'browsing via proxy', :controller => :info, :action => :settings %>.
         <% else %>
             Your proxy configuration is not complete.
             Make sure <%= link_to 'you are browsing via proxy', :controller => :info, :action => :settings %>
-            and <%= link_to 'get your anonymous, random identifier', :controller => :info, :action => :user_agent %>.
+            and <%= link_to 'get your anonymous, random identifier', :controller => :info, :action => :identifier %>.
         <% end %>
       </div>
   <% end %>

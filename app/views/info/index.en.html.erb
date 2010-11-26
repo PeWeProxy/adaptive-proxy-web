@@ -32,7 +32,7 @@
 
 <ol class="steps">
   <li><p><%= link_to "Configure your browser to use the proxy", {:controller => :info, :action => :settings} %></p></li>
-  <li><p><%= link_to "Configure your anonymous, random identifier", {:controller => :info, :action => :user_agent} %></p></li>
+  <li><p><%= link_to "Configure your anonymous, random identifier", {:controller => :info, :action => :identifier} %></p></li>
   <li><p><%= link_to "Browse the Web", "http://www.google.com" %></p></li>
   <li><p><%= link_to "Subscribe to email news", {:controller => :emails, :action => :register}, :class => 'voluntary' %></p></li>
 </ol>

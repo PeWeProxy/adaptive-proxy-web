@@ -3,7 +3,7 @@ class InfoController < ApplicationController
   def index
   end
 
-  def user_agent
+  def identifier
     @uid = session[:uid]
     @user_agent = request.env["HTTP_USER_AGENT"]
   end

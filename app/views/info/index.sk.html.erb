@@ -37,7 +37,7 @@
 
 <ol class="steps">
   <li><p><%= link_to "Nastav si proxy server", {:controller => :info, :action => :settings} %></p></li>
-  <li><p><%= link_to "Nastav si svoj identifikátor, aby si mohol surfovať anonymne", {:controller => :info, :action => :user_agent} %></p></li>
+  <li><p><%= link_to "Nastav si svoj identifikátor, aby si mohol surfovať anonymne", {:controller => :info, :action => :identifier} %></p></li>
   <li><p><%= link_to "Surfuj", "http://www.google.com" %></p></li>
   <li><p><%= link_to "Nechaj si posielať mailom novinky", {:controller => :emails, :action => :register}, :class => 'voluntary' %></p></li>
 </ol>
