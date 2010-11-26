@@ -41,6 +41,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mysql2 (0.2.6)
     mysql2 (0.2.6-x86-mingw32)
     panmind-http_accept_language (1.1.1)
     polyglot (0.3.1)
@@ -72,6 +73,7 @@ GEM
     will_paginate (3.0.pre2)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
