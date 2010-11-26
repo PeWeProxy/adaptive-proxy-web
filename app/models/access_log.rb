@@ -1,7 +1,7 @@
 class AccessLog < ActiveRecord::Base
   belongs_to :page
 
-  named_scope :by_checksum, lambda { |checksum, userid| { :select => "access_logs.*", :joins => "INNER JOIN pages ON pages.id = access_logs.page_id", :conditions => [ "pages.checksum = ? AND userid = ?", checksum, userid ], :order => 'timestamp DESC', :limit => 1 } }
+  scope :by_checksum, lambda { |checksum, userid| { :select => "access_logs.*", :joins => "INNER JOIN pages ON pages.id = access_logs.page_id", :conditions => [ "pages.checksum = ? AND userid = ?", checksum, userid ], :order => 'timestamp DESC', :limit => 1 } }
 
   def increase_time_on_page(period)
     self[:time_on_page] ||= 0
