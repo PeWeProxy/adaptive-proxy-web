@@ -11,10 +11,10 @@
   <% @logs.each_with_index do |log, index| %>
       <tr>
         <td class="timestamp" title="<%= log.timestamp %>"><%= time_ago_in_words(log.timestamp) %></td>
-        <td class="url"><a href="<%= log.page.url %>" title="<%= log.page.url %>"><%= shorten log.page.url %></a></td>
+        <td class="url"><a href="<%= log.page.url %>" title="<%= log.page.url %>"><%= truncate log.page.url, :length => 45 %></a></td>
         <td class="keywords" title="<%= log.page.keywords %>">
 	<% unless log.page.keywords.nil? %>
-		<%= shorten log.page.keywords.gsub(/,(?=\S+?)/, ', ') %>
+      <%= truncate log.page.keywords.gsub(/,(?=\S+?)/, ', '), :length => 55 %>
 	<% end %>
 	</td>
         <td class="delete"><%= link_to "zmaž", {:action => :delete, :id => log.id}, {:confirm => "Delete", :method => :post} %>
