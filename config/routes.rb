@@ -46,13 +46,11 @@ AdaptiveProxyWeb3::Application.routes.draw do
   #     resources :products
   #   end
 
-  scope "/proxy" do
-    scope "/:locale" do
-      root :to => "info#index"
-      match ':controller(/:action(/:id(.:format)))'
-      match ':controller(/:action(/:id))'
-    end
-
+  scope "/:locale" do
     root :to => "info#index"
+    match ':controller(/:action(/:id(.:format)))'
+    match ':controller(/:action(/:id))'
   end
+
+  root :to => "info#index"
 end
