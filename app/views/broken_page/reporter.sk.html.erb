@@ -1,0 +1,9 @@
+<% #if (request.env['HTTP_VIA'] =~ /AdaptiveProxy/) -%>
+<div class="broken_page_report">
+  <%= form_tag(:action=>"create") do %>
+	<%= label_tag(:url, "URL:") %>
+	<%= text_field_tag(:url) %>
+	<%= submit_tag("Nahlásiť nefunkčnú stránku", :class => 'submit') %>
+  <% end %>
+</div>
+<% #end %>

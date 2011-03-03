@@ -41,6 +41,7 @@
     <a href="/news.xml" title="Subscribe to Atom news">
       <%= image_tag 'feed.png', :class => 'feed', :title => 'Atom news' %>
     </a>
+	<%= link_to image_tag("broken_page.png", :border=>0, :class=>'feed', :title=>'Report broken page'), :controller => :broken_page, :action => 'reporter'%>
   </div>
 </header>
 

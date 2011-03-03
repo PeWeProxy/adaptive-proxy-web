@@ -41,6 +41,7 @@
     <a href="/news.xml" title="Prihlásiť sa na odber noviniek">
       <%= image_tag 'feed.png', :class => 'feed', :title => 'Subscribe to news' %>
     </a>
+	<%= link_to image_tag("broken_page.png", :border=>0, :class=>'feed', :title=>'Nahlásiť nefunkčnú stránku'), :controller => :broken_page, :action => 'reporter'%>
   </div>
 </header>
 
