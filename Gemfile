@@ -31,3 +31,7 @@ gem 'capistrano-ext'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+# CouchMigrations
+gem 'couch_potato'
+gem 'validatable'

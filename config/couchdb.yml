@@ -1,0 +1,11 @@
+development: 
+  host: http://localhost 
+  port: 5984 
+
+test: 
+  host: http://localhost 
+  port: 5984 
+  
+production:
+  host: http://localhost 
+  port: 5984 
