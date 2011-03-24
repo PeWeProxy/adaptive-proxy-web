@@ -1,11 +1,20 @@
-development: 
+default: &default
+  validation_framework: :active_model #optional
+
+development:
+  <<: *default
+  database: proxy
   host: http://localhost 
   port: 5984 
 
-test: 
+test:
+  <<: *default
+  database: proxy
   host: http://localhost 
   port: 5984 
   
 production:
+  <<: *default
+  database: proxy
   host: http://localhost 
   port: 5984 

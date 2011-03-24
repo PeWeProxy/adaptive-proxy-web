@@ -11,16 +11,14 @@
   <% @logs.each_with_index do |log, index| %>
       <tr>
         <td class="timestamp" title="<%= log.timestamp %>"><%= time_ago_in_words(log.timestamp) %></td>
-        <td class="url"><a href="<%= log.page.url %>" title="<%= log.page.url %>"><%= truncate log.page.url, :length => 45 %></a></td>
-        <td class="keywords" title="<%= log.page.keywords %>">
-	<% unless log.page.keywords.nil? %>
-      <%= truncate log.page.keywords.gsub(/,(?=\S+?)/, ', '), :length => 55 %>
+        <td class="url"><a href="<%= log.referer %>" title="<%= log.referer %>"><%= truncate log.referer %></a></td>
+        <td class="keywords" title="<%= log.keywords %>">
+	<% unless log.keywords.nil? %>
+		<%= truncate log.keywords %>
 	<% end %>
 	</td>
-        <td class="delete"><%= link_to "zmaž", {:action => :delete, :id => log.id}, {:confirm => "Delete", :method => :post} %>
+        <td class="delete"><%= link_to "delete", {:action => :delete, :id => log._id}, {:confirm => "Delete", :method => :post} %></td>
       </tr>
   <% end %>
   </tbody>
 </table>
-
-<%= will_paginate @logs %>
