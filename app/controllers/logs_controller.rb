@@ -7,22 +7,25 @@ class LogsController < ApplicationController
     @uid = session[:apuid]
   end
 
-  def delete
-    #AccessLog.find_by_id(params[:id]).destroy
-    docs = CouchPotato.database.view AccessLog.by_id(:key => params[:id])
-    docs.each do |doc|
-      CouchPotato.database.destroy_document doc
+  def delete_many
+    if params[:for_deletion] == nil
+      flash[:error] = "You haven't selected any log to be deleted, yet."
+      redirect_to :action => :list
+      return
     end
+
+    params[:for_deletion].each do |doc_for_deletion|
+      docs = CouchPotato.database.view AccessLog.by_id(:key => doc_for_deletion)
+      docs.each do |doc|
+        CouchPotato.database.destroy_document doc
+      end
+    end
+
+    flash[:notice] = "Items successfuly deleted."
     redirect_to :action => :list
   end
 
-  def multiple_delete
-    #params[:delete].each { |i|  }
-    flash[:notice] = "Successfuly deleted"
-    flash[:error] = "Error when deleting"
-    redirect_to :action => :list
-  end
-
+  private
   def parse_keywords(string)
     result = ""
     string.scan(/"label":"[^,]+"/){|a| result << a.gsub(/"label":|"/, '') + ", "} #magic :)
