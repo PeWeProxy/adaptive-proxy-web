@@ -1,26 +1,42 @@
-<table>
-  <thead>
-  <tr>
-    <th class="timestamp">Kedy</th>
-    <th class="url">URL</th>
-    <th class="keywords">Kľúčové slová</th>
-    <th class="delete"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @logs.each_with_index do |log, index| %>
-      <tr>
-        <td class="timestamp" title="<%= log.timestamp %>"><%= time_ago_in_words(log.timestamp) %></td>
-        <td class="url"><a href="<%= log.page.url %>" title="<%= log.page.url %>"><%= truncate log.page.url, :length => 45 %></a></td>
-        <td class="keywords" title="<%= log.page.keywords %>">
-	<% unless log.page.keywords.nil? %>
-      <%= truncate log.page.keywords.gsub(/,(?=\S+?)/, ', '), :length => 55 %>
-	<% end %>
-	</td>
-        <td class="delete"><%= link_to "zmaž", {:action => :delete, :id => log.id}, {:confirm => "Zmazať", :method => :post} %>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+<script type="text/javascript">
+  // <![CDATA[
+  function check_all(sender, checkboxes){
+    for (i = 0; i < checkboxes.length; i++){
+      checkboxes[i].checked=sender.checked
+    }
+  }
+  // ]]>
+</script>
 
-<%= will_paginate @logs %>
+<% form_tag({:action => "delete_many"}, {:name => "delete_many_form"}) do %>
+  <table>
+    <thead>
+      <tr>
+        <th class="timestamp">Kedy</th>
+        <th class="url">URL</th>
+        <th class="keywords">Kľúčové slová</th>
+        <th class="delete"><input type="checkbox" id="multiple_select" onclick="check_all(this, document.delete_many_form.for_deletion_)" /></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @logs.each_with_index do |log, index| %>
+        <tr>
+          <td class="timestamp" title="<%= log.timestamp %>"><%= time_ago_in_words(log.timestamp) %></td>
+          <td class="url"><a href="<%= log.referer %>" title="<%= log.referer %>"><%= truncate log.referer, :length => 45 %></a></td>
+          <td class="keywords" title="<%= log.keywords %>">
+            <% unless log.keywords.nil? %>
+              <%= truncate log.keywords %>
+            <% end %>
+          </td>
+          <td class="delete">
+            <%= check_box_tag("for_deletion[]", log._id) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div style="text-align: right; margin-top: 10px">
+    <%= submit_tag("Zmaž označené") %>
+  </div>
+<% end %>

@@ -8,8 +8,9 @@ class LogsController < ApplicationController
   end
 
   def delete_many
-    if params[:for_deletion] == nil
+    if params[:for_deletion].nil?
       flash[:error] = "You haven't selected any log to be deleted, yet."
+      flash[:error_sk] = "Nevybral si logy na zmazanie."
       redirect_to :action => :list
       return
     end
@@ -22,6 +23,7 @@ class LogsController < ApplicationController
     end
 
     flash[:notice] = "Items successfuly deleted."
+    flash[:notice_sk] = "Hotovo."
     redirect_to :action => :list
   end
 
