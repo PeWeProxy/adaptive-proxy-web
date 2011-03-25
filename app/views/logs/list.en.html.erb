@@ -1,24 +1,42 @@
-<table>
-  <thead>
-  <tr>
-    <th class="timestamp">When</th>
-    <th class="url">URL</th>
-    <th class="keywords">Keywords</th>
-    <th class="delete"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @logs.each_with_index do |log, index| %>
+<script type="text/javascript">
+  // <![CDATA[
+  function check_all(sender, checkboxes){
+    for (i = 0; i < checkboxes.length; i++){
+      checkboxes[i].checked=sender.checked
+    }
+  }
+  // ]]>
+</script>
+
+<% form_tag({:action => "multiple_delete"}, {:name => "multiple_delete_form"}) do %>
+  <table>
+    <thead>
       <tr>
-        <td class="timestamp" title="<%= log.timestamp %>"><%= time_ago_in_words(log.timestamp) %></td>
-        <td class="url"><a href="<%= log.referer %>" title="<%= log.referer %>"><%= truncate log.referer %></a></td>
-        <td class="keywords" title="<%= log.keywords %>">
-	<% unless log.keywords.nil? %>
-		<%= truncate log.keywords %>
-	<% end %>
-	</td>
-        <td class="delete"><%= link_to "delete", {:action => :delete, :id => log._id}, {:confirm => "Delete", :method => :post} %></td>
+        <th class="timestamp">When</th>
+        <th class="url">URL</th>
+        <th class="keywords">Keywords</th>
+        <th class="delete"><input type="checkbox" id="multiple_select" onclick="check_all(this, document.multiple_delete_form._delete)" /></th>
       </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @logs.each_with_index do |log, index| %>
+        <tr>
+          <td class="timestamp" title="<%= log.timestamp %>"><%= time_ago_in_words(log.timestamp) %></td>
+          <td class="url"><a href="<%= log.referer %>" title="<%= log.referer %>"><%= truncate log.referer %></a></td>
+          <td class="keywords" title="<%= log.keywords %>">
+            <% unless log.keywords.nil? %>
+              <%= truncate log.keywords %>
+            <% end %>
+          </td>
+          <td class="delete">
+            <% # = link_to "delete", {:action => :delete, :id => log._id}, {:confirm => "Delete", :method => :post} %>
+            <%= check_box_tag("_delete", log._id) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<div style="text-align: right; margin-top: 10px">
+  <%= submit_tag("Delete selected") %>
+</div>
+<% end %>

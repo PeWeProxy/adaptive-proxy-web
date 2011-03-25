@@ -16,6 +16,13 @@ class LogsController < ApplicationController
     redirect_to :action => :list
   end
 
+  def multiple_delete
+    #params[:delete].each { |i|  }
+    flash[:notice] = "Successfuly deleted"
+    flash[:error] = "Error when deleting"
+    redirect_to :action => :list
+  end
+
   def parse_keywords(string)
     result = ""
     string.scan(/"label":"[^,]+"/){|a| result << a.gsub(/"label":|"/, '') + ", "} #magic :)
