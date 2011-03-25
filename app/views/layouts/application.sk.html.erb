@@ -66,14 +66,25 @@
       </div>
   <% end %>
 
-  <% if flash[:notice] %>
+  <% if flash[:notice] and not flash[:notice_sk] %>
       <div class="setup info">
         <%= flash[:notice] %>
       </div>
   <% end %>
-  <% if flash[:error] %>
+  <% if flash[:error] and not flash[:error_sk] %>
       <div class="setup warning">
         <%= flash[:error] %>
+      </div>
+  <% end %>
+
+  <% if flash[:notice_sk] %>
+      <div class="setup info">
+        <%= flash[:notice_sk] %>
+      </div>
+  <% end %>
+  <% if flash[:error_sk] %>
+      <div class="setup warning">
+        <%= flash[:error_sk] %>
       </div>
   <% end %>
 
