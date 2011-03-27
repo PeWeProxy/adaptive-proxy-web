@@ -39,10 +39,20 @@ GEM
       net-ssh-gateway (>= 1.0.0)
     capistrano-ext (1.2.1)
       capistrano (>= 1.0.0)
+    couch_potato (0.4.0)
+      activemodel
+      couchrest (>= 1.0.1)
+      json
+    couchrest (1.0.2)
+      json (~> 1.5.1)
+      mime-types (~> 1.15)
+      rest-client (~> 1.6.1)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     highline (1.6.1)
     i18n (0.4.2)
+    json (1.5.1)
+    json (1.5.1-x86-mingw32)
     macaddr (1.0.0)
     mail (2.2.9)
       activesupport (>= 2.3.6)
@@ -80,10 +90,13 @@ GEM
       rake (>= 0.8.4)
       thor (~> 0.14.0)
     rake (0.8.7)
+    rest-client (1.6.1)
+      mime-types (>= 1.16)
     thor (0.14.4)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    validatable (1.6.7)
     will_paginate (3.0.pre2)
 
 PLATFORMS
@@ -93,8 +106,10 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   capistrano-ext
+  couch_potato
   macaddr
   mysql2
   panmind-http_accept_language (= 1.1.1)
   rails (= 3.0.1)
+  validatable
   will_paginate
