@@ -8,7 +8,7 @@ class Page
   property :url, :type => String
 
   view :by_id, :map => "function(doc) {if(doc.type == 'PAGE') {emit(doc._id, doc);}}", :include_docs => true, :type => :custom
-
+  view :url, :map => "function(doc) {if(doc.type = 'PAGE') {emit(doc.url, doc);}}", :include_docs => true, :type => :custom
 =begin
   has_one :access_log
   has_one :wi_feedback
