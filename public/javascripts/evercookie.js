@@ -148,8 +148,8 @@ this._evercookie = function(name, cb, value, i, dont_reset)
 	if (i == 0)
 	{
 		self.evercookie_database_storage(name, value);
-		self.evercookie_png(name, value);
-		self.evercookie_etag(name, value);
+		//self.evercookie_png(name, value);
+		//self.evercookie_etag(name, value);
 		self.evercookie_lso(name, value);
 
 		self._ec.userData = self.evercookie_userdata(name, value);
