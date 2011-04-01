@@ -1,10 +1,43 @@
 class LogsController < ApplicationController
   CouchPotato::Config.database_name = 'proxy'
 
+  LOGS_PER_PAGE = 2
+
   before_filter :retrieve_logs
 
   def list
     @uid = session[:apuid]
+    
+    @page = 0 if @page.nil?
+    @page = params[:page].to_i unless params[:page].nil?
+
+    @previous_pages_logs_ids = Array.new if @previous_pages_logs_ids.nil?
+    @previous_pages_logs_ids = params[:previous_pages] unless params[:previous_pages].nil?
+
+    @logs = CouchPotato.database.view AccessLog.all_by_user(:key => session[:apuid], :startkey_docid => params[:next_startkey], :limit => LOGS_PER_PAGE + 1)
+    
+    if @logs.length > LOGS_PER_PAGE
+      @next_page_log_id = @logs.delete_at(@logs.length - 1)._id
+    else
+      @next_page_log_id = nil
+    end
+
+    @previous_pages_logs_ids << @logs[0]._id
+
+    p @previous_pages_logs_ids
+
+    @logs.each_with_index do |log, index|
+      pages = CouchPotato.database.view Page.by_id(:key => log.page_id)
+      if pages.length == 0
+        log.keywords = "no keywords found"
+        next
+      end
+      log.keywords = parse_keywords(pages[0].pages_terms.to_json)
+    end
+  end
+
+  def prev_list
+
   end
 
   def delete_many
@@ -37,8 +70,10 @@ class LogsController < ApplicationController
 
   private
   def retrieve_logs
+    
     #@logs = AccessLog.paginate(:conditions => ['userid like ?', session[:apuid]], :page => params[:page], :order => 'timestamp DESC', :include => 'page')
-    @logs = CouchPotato.database.view AccessLog.all_by_user(:key => session[:apuid])
+=begin
+    @logs = CouchPotato.database.view AccessLog.all_by_user(:key => session[:apuid], :limit => LOGS_PER_PAGE + 1)
 
     @logs.each_with_index do |log, index|
       pages = CouchPotato.database.view Page.by_id(:key => log.page_id)
@@ -47,7 +82,7 @@ class LogsController < ApplicationController
         next
       end
       log.keywords = parse_keywords(pages[0].pages_terms.to_json)
-
     end
+=end
   end
 end

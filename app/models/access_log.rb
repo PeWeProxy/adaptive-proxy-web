@@ -13,8 +13,8 @@ class AccessLog
 
   property :keywords, :type => String
 
-  view :all_by_user, :map => "function(doc) {if(doc.type == 'ACCESS_LOG' && doc.referer) {emit(doc.userid, doc);}}", :include_docs => true, :type => :custom
-  view :by_id, :map => "function(doc) {if(doc.type == 'ACCESS_LOG' && doc.referer) {emit(doc._id, doc);}}",  :include_docs => true, :type => :custom
+  view :all_by_user, :map => "function(doc) {if(doc.type == 'ACCESS_LOG' && doc.referer) {emit(doc.userid, null);}}", :include_docs => true, :type => :custom
+  view :by_id, :map => "function(doc) {if(doc.type == 'ACCESS_LOG' && doc.referer) {emit(doc._id, null);}}",  :include_docs => true, :type => :custom
 
 =begin
   belongs_to :page
