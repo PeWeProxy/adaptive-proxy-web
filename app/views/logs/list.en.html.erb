@@ -45,9 +45,17 @@
   <div style="margin-right: 20px; float: left">
     <%=  link_to "<< previous", {:action => :list, :next_startkey => @previous_pages_logs_ids[@page - 1], :previous_pages => @previous_pages_logs_ids[0, @page-1], :page => @page - 1}%>
   </div>
+<%else%>
+  <div style="margin-right: 20px; float: left; color: grey">
+    << previous
+  </div>
 <%end%>
 <%unless @next_page_log_id.nil? %>
   <div style="float: left">
     <%=  link_to "next >>", {:action => :list, :next_startkey => @next_page_log_id, :previous_pages => @previous_pages_logs_ids, :page => @page + 1}%>
+  </div>
+<%else%>
+   <div style="margin-right: 20px; float: left; color: grey">
+    next >>
   </div>
 <%end%>
