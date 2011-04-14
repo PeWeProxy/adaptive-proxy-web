@@ -17,7 +17,7 @@ function(doc) {
 }
 js
 
-  view :by_id, :include_docs => false, :type => :custom, :map => <<js
+  view :by_id, :include_docs => true, :type => :custom, :map => <<js
 function(doc) {
   if(doc.type == 'ACCESS_LOG') {
     emit(doc._id, null);

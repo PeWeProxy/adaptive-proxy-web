@@ -23,7 +23,6 @@ class LogsController < ApplicationController
     @previous_pages_logs_ids << @logs[0]._id if @logs.length > 0
   end
 
-  private
   def fetch_logs
     @logs = CouchPotato.database.view AccessLog.all_by_user(:key => session[:apuid], :startkey_docid => params[:next_startkey], :limit => LOGS_PER_PAGE + 1)
     @logs.each_with_index do |log, index|
