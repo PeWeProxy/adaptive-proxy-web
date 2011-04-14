@@ -22,10 +22,18 @@
       <% @logs.each_with_index do |log, index| %>
         <tr>
           <td class="timestamp" title="<%= log.timestamp %>"><%= time_ago_in_words(log.timestamp) %></td>
-          <td class="url"><a href="<%= log.referer %>" title="<%= log.referer %>"><%= truncate log.referer %></a></td>
+          <td class="url">
+            <% unless log.url.nil? %>
+              <a href="<%= log.url %>" title="<%= log.url %>"><%= truncate log.url, :length => 60, :separator => '/' %></a>
+            <% else %>
+              unknown
+            <% end %>
+          </td>
           <td class="keywords" title="<%= log.keywords %>">
-            <% unless log.keywords.nil? %>
-              <%= truncate log._id %>
+            <% unless log.keywords.nil? || log.keywords == ""%>
+              <%= truncate log.keywords, :length => 60, :separator => ',' %>
+            <%else%>
+              no keywords available
             <% end %>
           </td>
           <td class="delete">
