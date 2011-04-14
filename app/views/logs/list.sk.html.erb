@@ -22,10 +22,18 @@
       <% @logs.each_with_index do |log, index| %>
         <tr>
           <td class="timestamp" title="<%= log.timestamp %>"><%= time_ago_in_words(log.timestamp) %></td>
-          <td class="url"><a href="<%= log.referer %>" title="<%= log.referer %>"><%= truncate log.referer, :length => 45 %></a></td>
+          <td class="url">
+            <% unless log.url.nil? %>
+              <a href="<%= log.url %>" title="<%= log.url %>"><%= truncate log.url, :length => 60, :separator => '/' %></a>
+            <% else %>
+              neznáma
+            <% end %>
+          </td>
           <td class="keywords" title="<%= log.keywords %>">
-            <% unless log.keywords.nil? %>
-              <%= truncate log.keywords %>
+            <% unless log.keywords.nil? || log.keywords == ""%>
+              <%= truncate log.keywords, :length => 60, :separator => ',' %>
+            <%else%>
+              kľúčové slová nie sú k dispozícii
             <% end %>
           </td>
           <td class="delete">
@@ -40,3 +48,22 @@
     <%= submit_tag("Zmaž označené") %>
   </div>
 <% end %>
+
+<%if @page > 0%>
+  <div style="margin-right: 20px; float: left">
+    <%=  link_to "<< späť", {:action => :list, :next_startkey => @previous_pages_logs_ids[@page - 1], :previous_pages => @previous_pages_logs_ids[0, @page-1], :page => @page - 1}%>
+  </div>
+<%else%>
+  <div style="margin-right: 20px; float: left; color: grey">
+    << späť
+  </div>
+<%end%>
+<%unless @next_page_log_id.nil? %>
+  <div style="float: left">
+    <%=  link_to "ďalej >>", {:action => :list, :next_startkey => @next_page_log_id, :previous_pages => @previous_pages_logs_ids, :page => @page + 1}%>
+  </div>
+<%else%>
+   <div style="margin-right: 20px; float: left; color: grey">
+    ďalej >>
+  </div>
+<%end%>
