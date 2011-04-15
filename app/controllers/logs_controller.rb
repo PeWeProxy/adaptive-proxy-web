@@ -1,7 +1,7 @@
 class LogsController < ApplicationController
   CouchPotato::Config.database_name = 'proxy'
 
-  LOGS_PER_PAGE = 2
+  LOGS_PER_PAGE = 10
 
   def list
     @uid = session[:apuid]

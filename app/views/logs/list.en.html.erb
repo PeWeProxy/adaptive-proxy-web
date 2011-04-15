@@ -24,7 +24,7 @@
           <td class="timestamp" title="<%= log.timestamp %>"><%= time_ago_in_words(log.timestamp) %></td>
           <td class="url">
             <% unless log.url.nil? %>
-              <a href="<%= log.url %>" title="<%= log.url %>"><%= truncate log.url, :length => 60, :separator => '/' %></a>
+              <a href="<%= log.url %>" title="<%= log.url %>"><%= truncate log.url, :length => 50 %></a>
             <% else %>
               unknown
             <% end %>
