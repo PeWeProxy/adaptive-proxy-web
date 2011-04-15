@@ -36,8 +36,8 @@ class BrokenPageController < ApplicationController
     end
 
 
-    templateFile = './Public/proxy.pac.template'
-    targetFile = './Public/proxy.pac'
+    templateFile = './public/proxy.pac.template'
+    targetFile = './public/proxy.pac'
     
     mystring = ''
     File.open(templateFile, "r") { |f|
