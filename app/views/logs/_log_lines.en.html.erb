@@ -1,0 +1,15 @@
+<% @logs.each_with_index do |log, index| %>
+  <tr>
+    <td class="timestamp" title="<%= log.timestamp %>"><%= time_ago_in_words(log.timestamp) %></td>
+    <td class="url">
+      <% unless log.page.nil? %>
+        <a href="<%= log.page %>" title="<%= log.page %>"><%= truncate log.page, :length => 50 %></a>
+      <% else %>
+        unknown
+      <% end %>
+    </td>
+    <td class="delete">
+      <%= check_box_tag("for_deletion[]", log._id) %>
+    </td>
+  </tr>
+<% end %>

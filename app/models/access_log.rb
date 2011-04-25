@@ -1,28 +1,20 @@
 class AccessLog
   include CouchPotato::Persistence
 
-  property :page_id, :type => String
-  property :referer, :type => String
-  property :timestamp, :type => Date
-  property :userid, :type => String
+  property :page, :type => String
+  #property :page_rev => String
+  property :referrer, :type => String
+  property :timestamp, :type => String
+  property :user_id, :type => String
+  property :ip, :type => String
 
-  property :url, :type => String
-  property :keywords, :type => String
-
-  view :all_by_user, :include_docs => false, :type => :custom, :map => <<js
-function(doc) {
-  if(doc.type == 'ACCESS_LOG') {
-    emit(doc.userid, {page_id: doc.page_id, referer: doc.referer, timestamp: doc.timestamp});
+  view :by_user_and_timestamp, :include_docs => true, :type => :custom, :map => <<-js
+  function(doc) {
+    if (doc.type == 'access') {
+      emit([doc.user_id, doc.timestamp], null);
+    }
   }
-}
-js
+  js
 
-  view :by_id, :include_docs => true, :type => :custom, :map => <<js
-function(doc) {
-  if(doc.type == 'ACCESS_LOG') {
-    emit(doc._id, null);
-  }
-}
-js
 
 end

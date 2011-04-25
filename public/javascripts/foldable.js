@@ -7,4 +7,4 @@ foldable = function($) {
       this.scrollIntoView();
     }).css('cursor', 'pointer');
   });
-} (adaptiveProxyJQuery);
+} (jQuery);

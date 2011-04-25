@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'macaddr'
 gem 'panmind-http_accept_language', '1.1.1', :require => 'http_accept_language'
 gem 'will_paginate'
+gem 'jquery-rails'
 # Use unicorn as the web server
 # gem 'unicorn'
 
