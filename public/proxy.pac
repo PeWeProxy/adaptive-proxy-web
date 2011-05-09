@@ -1,6 +1,6 @@
 function FindProxyForURL(url,host) {
 
-  var PROXY = "PROXY peweproxy-staging.fiit.stuba.sk:9666; DIRECT"
+  var PROXY = "PROXY peweproxy.fiit.stuba.sk:9666; DIRECT"
 
  if(shExpMatch(url, "ftp://*")) {
    return "DIRECT";
