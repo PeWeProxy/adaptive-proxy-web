@@ -7,8 +7,10 @@ class LogsController < ApplicationController
     @logs = CouchPotato.database.view AccessLog.by_user_and_timestamp(:startkey => [session[:apuid], params[:start]], :startkey_docid => params[:start_id], :limit => LOGS_PER_PAGE + 1)
 
     last_log = @logs.pop
-    @next_page_startkey = last_log.timestamp
-    @next_page_startkey_docid = last_log.id
+		if last_log
+			@next_page_startkey = last_log.timestamp
+			@next_page_startkey_docid = last_log.id
+		end
   end
 
   def delete_many
