@@ -1,7 +1,7 @@
 class LogsController < ApplicationController
   CouchPotato::Config.database_name = 'proxy'
 
-  LOGS_PER_PAGE = 3
+  LOGS_PER_PAGE = 20
 
   def list
     @logs = CouchPotato.database.view AccessLog.by_user_and_timestamp(:startkey => [session[:apuid], params[:start]], :startkey_docid => params[:start_id], :limit => LOGS_PER_PAGE + 1)
