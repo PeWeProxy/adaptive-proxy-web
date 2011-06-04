@@ -102,9 +102,7 @@ function _evercookie_flash_var(cookie)
 
 	// remove the flash object now
 	var swf;
-	var temp = function ($){
 	swf = $('#myswf');
-	} (adaptiveProxyJQuery);
 	if (swf && swf.parentNode)
 		swf.parentNode.removeChild(swf);
 }
@@ -120,20 +118,16 @@ var no_color = -1;
 
 this.get = function(name, cb, dont_reset)
 {
-	var temp = function($) {
 		$(document).ready(function() {
 			self._evercookie(name, cb, undefined, undefined, dont_reset);
 		});
-	} (adaptiveProxyJQuery);
 }
 
 this.set = function(name, value)
 {
-	var temp = function($) {
 		$(document).ready(function() {
 			self._evercookie(name, function() { }, value);
 		});
-	} (adaptiveProxyJQuery);
 }
 
 this._evercookie = function(name, cb, value, i, dont_reset)
@@ -267,7 +261,6 @@ this.evercookie_etag = function(name, value)
 		self._ec.etagData = undefined;
 		document.cookie = 'evercookie_etag=; expires=Mon, 20 Sep 2010 00:00:00 UTC; path=/';
 
-		var temp = function($) {
 		$.ajax({
 			url: 'evercookie_etag.php?name=' + name,
 			success: function(data) {
@@ -277,7 +270,6 @@ this.evercookie_etag = function(name, value)
 				self._ec.etagData = data;
 			}
 		});
-		} (adaptiveProxyJQuery);
 	}
 }
 
