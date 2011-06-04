@@ -3,7 +3,6 @@
 <div style="text-align: center; color: green">You will be redirected back to <%= @back %></div>
 <script type="text/javascript">
   // <![CDATA[
-  retrieveCookie = function($){
 	$(document).ready(function(){
 	  var ec = new evercookie();
 	  ec.get('__peweproxy_uid',function(uid){
@@ -13,6 +12,5 @@
 		window.location = '<%= @back %> '
 	  });
 	});
-  }(adaptiveProxyJQuery);
   // ]]>
 </script>
